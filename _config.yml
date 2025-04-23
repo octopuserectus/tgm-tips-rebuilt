@@ -1,0 +1,28 @@
+title: TGM Tips (Modernized)
+description: >-
+ Tips and techniques for the Tetris: The Grand Master series.
+baseurl: "/tgm-tips-rebuilt"
+url: "https://octopuserectus.github.io" # The base hostname & protocol for your site
+github_username: octopuserectus # Optional: For potential theme use
+
+# Build settings
+markdown: kramdown # Common Markdown processor
+theme: minima # Default theme, replace if using a custom one or starting from scratch
+plugins:
+
+collections:
+  tips:
+    output: true
+    permalink: /tips/:path/
+
+defaults:
+  - scope:
+      path: "" # empty string for all files
+      type: "tips" # limit to posts in the tips collection
+    values:
+      layout: "tip" # Default layout for tips
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page" # Default layout for other pages
