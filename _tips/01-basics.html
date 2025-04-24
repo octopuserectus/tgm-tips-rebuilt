@@ -6,21 +6,11 @@ layout: tip
 tags: ["Core Mechanics", "Rotation", "Gameplay Loop", "IRS", "Wall Kick"]
 ---
 
-{% comment %} 
-  This is the main content area that will be inserted into the 
-  {{ content }} tag of the _layouts/tip.html file.
-  Footer links updated for permalink: /tips/:title.html
-{% endcomment %}
+{% comment %} HTML for Lesson 1 - Wall Kicks section updated {% endcomment %}
 
-<style>
-  /* Basic Modern Styling - Move to main CSS (jekyll_main_css) later for better organization */
-  /* Styles omitted here for brevity - assume they are in main.css */
-</style>
-
-<div class="basics-content">
+<div class="tip-content">
 
   <h3 class="section-heading">The 7 tetrominoes and the buttons.</h3>
-
   <table class="rotation-table">
     <thead>
       <tr>
@@ -134,14 +124,10 @@ tags: ["Core Mechanics", "Rotation", "Gameplay Loop", "IRS", "Wall Kick"]
   </p>
 
   <h3 class="section-heading">IRS</h3>
-  <p>
-    IRS Stands for Initial Rotation System.<br>
-    If you <span class="highlight">keep a button pressed</span> during the ARE, the block will appear rotated.
-  </p>
   <div class="info-section">
      <div class="example-images">
         <img src="{{ '/assets/images/basics/kiso02.PNG' | relative_url }}" alt="S piece spawning normally causing game over" width="119" height="239">
-        <span>→</span>
+        <span class="arrow">→</span> 
         <img src="{{ '/assets/images/basics/kiso03.PNG' | relative_url }}" alt="S piece spawning rotated via IRS, avoiding game over" width="119" height="239">
         <img src="{{ '/assets/images/basics/kiso07.PNG' | relative_url }}" alt="Close up of IRS'd S piece" width="119" height="239">
      </div>
@@ -152,26 +138,28 @@ tags: ["Core Mechanics", "Rotation", "Gameplay Loop", "IRS", "Wall Kick"]
      </div>
   </div>
 
-
   <h3 class="section-heading">Wall kicks</h3>
    <div class="info-section">
      <div class="example-images">
        <img src="{{ '/assets/images/basics/01.png' | relative_url }}" alt="T piece next to wall" width="119" height="239">
-       <div style="text-align: center;">→<br><img src="{{ '/assets/images/basics/01.gif' | relative_url }}" alt="Rotation icon" width="31" height="31"></div>
+       {% comment %} Updated structure for arrow and icon {% endcomment %}
+       <div class="icon-group"> 
+         <span>→</span>
+         <img src="{{ '/assets/images/basics/01.gif' | relative_url }}" alt="Rotation icon" width="31" height="31">
+       </div>
        <img src="{{ '/assets/images/basics/02.png' | relative_url }}" alt="T piece rotated, kicking off wall" width="119" height="239">
      </div>
      <div class="text example-explanation">
        According to the table above this rotation should be impossible.<br>
        But, because of an empty space to the right the T will kick the wall.<br>
        Wall kicks, along with IRS make TGM a comfortable series to play.<br>
-       {% comment %} Update these links later using Jekyll's link tags {% endcomment %}
        <a href="{{ '/tips/08-advanced-rotation.html' | relative_url }}">Lesson 8</a> will handle IRS more and <a href="{{ '/tips/11-time-attack.html' | relative_url }}">lesson 11</a> will help you use wall kicks.
      </div>
   </div>
 
   <hr>
   
-  {% comment %} Basic Navigation - Update later with Jekyll link/include tags {% endcomment %}
+  {% comment %} Lesson Navigation {% endcomment %}
   <table style="width:100%; border: none;">
     <tbody>
       <tr>

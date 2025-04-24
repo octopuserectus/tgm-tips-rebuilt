@@ -10,6 +10,7 @@ tags: ["Time Attack", "GM Rank", "Speed", "Optimization", "DAS", "Line Clears", 
   Modernized HTML content for Lesson 11.
   Uses CSS classes defined in the main stylesheet (jekyll_main_css).
   Image paths assume images are in /assets/images/11pics/
+  Layout fixed for optimization example with purple.gif
 {% endcomment %}
 
 <div class="tip-content">
@@ -31,12 +32,14 @@ tags: ["Time Attack", "GM Rank", "Speed", "Optimization", "DAS", "Line Clears", 
       </div>
   </div>
 
-  <div class="info-section">
+  {% comment %} Updated structure for this section {% endcomment %}
+  <div class="info-section optimization-example">
       <div class="example-images">
          <img src="{{ '/assets/images/11pics/01.gif' | relative_url }}" alt="Fast S placement start" width="119" height="239">
          <img src="{{ '/assets/images/11pics/02.png' | relative_url }}" alt="Fast S placement end" width="119" height="239">
-         <img src="{{ '/assets/images/7pics/purple.gif' | relative_url }}" alt="S piece rotation" width="31" height="31"> {% comment %} Reusing image from lesson 7 {% endcomment %}
+         {% comment %} Small image moved out of example-images div {% endcomment %}
       </div>
+       <img class="small-rotation-img" src="{{ '/assets/images/7pics/purple.gif' | relative_url }}" alt="S piece rotation" width="31" height="31"> 
       <div class="text example-explanation">
          <span class="highlight">You can use right DAS and rotate again.</span>
       </div>

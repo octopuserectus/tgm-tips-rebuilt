@@ -11,46 +11,49 @@ tags: ["TAP", "Master Mode", "Staff Roll", "GM Rank", "Advanced", "Strategy"]
   Uses CSS classes defined in the main stylesheet (jekyll_main_css).
   Image paths assume images are in /assets/images/16pics/
   Video link uses relative_url filter.
+  Staff roll list wrapped in a container for width control.
 {% endcomment %}
 
 <div class="tip-content">
 
   <h3 class="section-heading">Staff roll overview</h3>
   
-  {% comment %} Using a definition list for better structure than the original table {% endcomment %}
-  <dl class="staff-roll-list" style="font-size: 0.9em; line-height: 1.6; background-color: #111; padding: 1em; border-radius: 5px; border: 1px solid #444;">
-    <dt>1. <strong style="color: #ffcc00;">EFFECT DESIGN</strong></dt>
-    <dd>SAKAI</dd>
-    
-    <dt>2. <strong style="color: #ffcc00;">SOUND STAFF</strong></dt>
-    <dd>MEGATEN<br>AYA</dd>
-    
-    <dt>3. <strong style="color: #ffcc00;">VISUAL DESIGN</strong></dt>
-    <dd>CHIBA</dd>
-    
-    <dt>4. <strong style="color: #ffcc00;">PROGRAMMER</strong></dt>
-    <dd>KKARASAWA<br>HASHIDATE<br>O.SASAKI</dd>
-    
-    <dt>5. <strong style="color: #ffcc00;">B. G. DESIGN</strong></dt>
-    <dd>IWAOKA<br>MATSUMOTO<br>ROHI<br>YAMAGUCHI<br>FUNATO<br>TANAKA<br>MATSUMURA<br>TAKAOKA<br>DAN<br>USHIRODA<br>YAMAMOTO<br>TSUHURA</dd>
-    
-    <dd style="margin-top: 1em; font-style: italic;">(Note: Sections 1-5 are not always in the same order.)</dd>
+  {% comment %} Container for the staff roll list {% endcomment %}
+  <div class="staff-roll-container"> 
+    <dl class="staff-roll-list">
+      <dt>1. <strong style="color: #ffcc00;">EFFECT DESIGN</strong></dt>
+      <dd>SAKAI</dd>
+      
+      <dt>2. <strong style="color: #ffcc00;">SOUND STAFF</strong></dt>
+      <dd>MEGATEN<br>AYA</dd>
+      
+      <dt>3. <strong style="color: #ffcc00;">VISUAL DESIGN</strong></dt>
+      <dd>CHIBA</dd>
+      
+      <dt>4. <strong style="color: #ffcc00;">PROGRAMMER</strong></dt>
+      <dd>KKARASAWA<br>HASHIDATE<br>O.SASAKI</dd>
+      
+      <dt>5. <strong style="color: #ffcc00;">B. G. DESIGN</strong></dt>
+      <dd>IWAOKA<br>MATSUMOTO<br>ROHI<br>YAMAGUCHI<br>FUNATO<br>TANAKA<br>MATSUMURA<br>TAKAOKA<br>DAN<br>USHIRODA<br>YAMAMOTO<br>TSUHURA</dd>
+      
+      <dd style="margin-top: 1em; font-style: italic;">(Note: Sections 1-5 are not always in the same order.)</dd>
 
-    <dt style="margin-top: 1.5em;">6. <strong style="color: #ffcc00;">SPECIAL THANKS</strong> <span style="float: right; color: #aaa;">(~37 Seconds in)</span></dt>
-    <dd><strong>[PSIKYO]</strong><br>NIWA<br>NAKAMURA</dd>
-    <dd><strong>[BP]</strong><br>JOHN RAY</dd>
-    
-    <dt style="margin-top: 1.5em;">7. <strong style="color: #ffcc00;">DIRECTOR</strong> <span style="float: right; color: #aaa;">(~43 Seconds in)</span></dt>
-    <dd>HASHIDATE</dd>
-    
-    <dt style="margin-top: 1.5em;">8. <strong style="color: #ffcc00;">PLANNER AND PRODUCER</strong> <span style="float: right; color: #aaa;">(~47 Seconds in)</span></dt>
-    <dd>MIHARA</dd>
-    
-    <dt style="margin-top: 1.5em;">9. <strong style="color: #ffcc00;">PRODUCED BY</strong> <span style="float: right; color: #aaa;">(~51 Seconds in)</span></dt>
-    <dd><strong style="font-size: 1.5em; color: #0000ff; display: block; text-align: center; margin: 0.5em 0;">ARIKA</strong> <span style="display: block; text-align: right; color: #aaa; font-size: 0.8em;">(~58 Seconds in, will stop in center of well)</span></dd>
+      <dt style="margin-top: 1.5em;">6. <strong style="color: #ffcc00;">SPECIAL THANKS</strong> <span style="float: right; color: #aaa;">(~37 Seconds in)</span></dt>
+      <dd><strong>[PSIKYO]</strong><br>NIWA<br>NAKAMURA</dd>
+      <dd><strong>[BP]</strong><br>JOHN RAY</dd>
+      
+      <dt style="margin-top: 1.5em;">7. <strong style="color: #ffcc00;">DIRECTOR</strong> <span style="float: right; color: #aaa;">(~43 Seconds in)</span></dt>
+      <dd>HASHIDATE</dd>
+      
+      <dt style="margin-top: 1.5em;">8. <strong style="color: #ffcc00;">PLANNER AND PRODUCER</strong> <span style="float: right; color: #aaa;">(~47 Seconds in)</span></dt>
+      <dd>MIHARA</dd>
+      
+      <dt style="margin-top: 1.5em;">9. <strong style="color: #ffcc00;">PRODUCED BY</strong> <span style="float: right; color: #aaa;">(~51 Seconds in)</span></dt>
+      <dd><strong style="font-size: 1.5em; color: #0000ff; display: block; text-align: center; margin: 0.5em 0;">ARIKA</strong> <span style="display: block; text-align: right; color: #aaa; font-size: 0.8em;">(~58 Seconds in, will stop in center of well)</span></dd>
 
-    <dd style="margin-top: 1em; font-style: italic;">Takes about <span class="highlight">61.5 seconds</span> to clear.</dd>
-  </dl>
+      <dd style="margin-top: 1em; font-style: italic;">Takes about <span class="highlight">61.5 seconds</span> to clear.</dd>
+    </dl>
+  </div>
 
   <p style="margin-top: 1.5em;">
     <a href="{{ '/tips/14-death-m.html' | relative_url }}">Lesson 14</a> mentioned that the master mode staff roll is very difficult because blocks disappear as they lock.<br>

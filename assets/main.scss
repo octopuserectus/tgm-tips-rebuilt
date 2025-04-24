@@ -3,124 +3,36 @@
 ---
 
 /* --- Basic Layout Structure --- */
-html {
-  height: 100%; 
-}
-
-body {
-  background-color: #000; 
-  color: #ccc; 
-  margin: 0;
-  font-family: sans-serif; 
-  display: flex !important; /* FORCE FLEXBOX */
-  flex-direction: row !important; /* Explicitly set row direction */
-  min-height: 100vh; 
-  position: relative; 
-  overflow-x: hidden; 
-}
+html { height: 100%; }
+body { background-color: #000; color: #ccc; margin: 0; font-family: sans-serif; display: flex !important; flex-direction: row !important; min-height: 100vh; position: relative; overflow-x: hidden; }
 
 /* --- General Link Styling --- */
-a {
-  color: #00ff00; 
-  text-decoration: underline; 
-}
-a:hover {
-  color: #00cc00; 
-}
+a { color: #00ff00; text-decoration: underline; }
+a:hover { color: #00cc00; }
 
 /* --- Sidebar Styles (Desktop) --- */
-.sidebar {
-  width: 290px; 
-  flex: 0 0 290px; 
-  background-color: #050505; 
-  border-right: 1px solid #444; 
-  height: 100vh; 
-  position: sticky; 
-  top: 0;
-  overflow-y: auto; 
-  transition: transform 0.3s ease-in-out; 
-  box-sizing: border-box; 
-}
+.sidebar { width: 290px; flex: 0 0 290px; background-color: #050505; border-right: 1px solid #444; height: 100vh; position: sticky; top: 0; overflow-y: auto; transition: transform 0.3s ease-in-out; box-sizing: border-box; }
 
 /* --- Main Content Styles --- */
-.main-content {
-  flex: 1 1 auto; 
-  padding: 20px;
-  overflow-x: hidden; 
-  box-sizing: border-box; 
-}
+.main-content { flex: 1 1 auto; padding: 20px; overflow-x: hidden; box-sizing: border-box; }
 
 /* --- Mobile Navigation Toggle Button --- */
-.mobile-nav-toggle {
-  display: none; 
-  position: fixed; 
-  top: 15px;
-  /* left: 15px; */ /* REMOVED */
-  right: 15px; /* ADDED */
-  z-index: 1001; 
-  background-color: rgba(50, 50, 50, 0.8);
-  color: #fff;
-  border: 1px solid #555;
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-size: 1.5em;
-  cursor: pointer;
-}
+.mobile-nav-toggle { display: none; position: fixed; top: 15px; right: 15px; z-index: 1001; background-color: rgba(50, 50, 50, 0.8); color: #fff; border: 1px solid #555; border-radius: 5px; padding: 5px 10px; font-size: 1.5em; cursor: pointer; }
 
 /* --- Navigation Overlay (Mobile) --- */
-.nav-overlay {
-    display: none; 
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
-    z-index: 999; 
-}
+.nav-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 999; }
 
 /* --- Responsive Styles (Mobile) --- */
 @media (max-width: 768px) {
-  /* Body remains display: flex, row */
-  
-  .mobile-nav-toggle {
-    display: block; 
-  }
-
-  .sidebar {
-    position: fixed; 
-    left: 0;
-    top: 0;
-    height: 100vh; 
-    width: 280px; 
-    z-index: 1000; 
-    transform: translateX(-100%); 
-    border-right: 1px solid #555; 
-    background-color: #050505; 
-    flex-basis: 280px !important; 
-    flex-shrink: 0 !important; 
-    flex-grow: 0 !important; 
-  }
-
-  body.nav-open .sidebar {
-    transform: translateX(0); 
-  }
-  
-  body.nav-open .nav-overlay {
-      display: block; 
-  }
-
-  .main-content { 
-      flex: 1 1 auto !important;
-   }
+  .mobile-nav-toggle { display: block; }
+  .sidebar { position: fixed; left: 0; top: 0; height: 100vh; width: 280px; z-index: 1000; transform: translateX(-100%); border-right: 1px solid #555; background-color: #050505; flex-basis: 280px !important; flex-shrink: 0 !important; flex-grow: 0 !important; }
+  body.nav-open .sidebar { transform: translateX(0); }
+  body.nav-open .nav-overlay { display: block; }
+  .main-content { flex: 1 1 auto !important; }
 }
 
 /* --- Navigation Styles (Sidebar Content) --- */
-.site-nav {
-  padding: 1em;
-  height: 100%; 
-  box-sizing: border-box; 
-}
+.site-nav { padding: 1em; height: 100%; box-sizing: border-box; }
 .site-nav h3 { color: #ccc; font-size: 1em; margin-top: 1.5em; margin-bottom: 0.5em; border-bottom: 1px solid #333; padding-bottom: 0.2em; }
 .site-nav ul { list-style: none; padding: 0; margin: 0; font-size: 0.9em; }
 .site-nav li { margin-bottom: 0.3em; display: flex !important; align-items: flex-start !important; gap: 5px !important; }
@@ -155,14 +67,71 @@ a:hover {
 .rotation-table th, .rotation-table td, .info-table th, .info-table td { border: 1px solid #444; padding: 8px; text-align: center; vertical-align: middle; font-size: 0.9em; }
 .rotation-table th { background-color: #222; }
 .rotation-table img, .info-table img { max-width: 100%; height: auto; display: block; margin: 0 auto; background-color: #fff; }
+/* Default info section alignment */
 .info-section { display: flex; align-items: center; gap: 15px; margin-bottom: 1.5em; flex-wrap: wrap; border: 1px solid #333; padding: 10px; border-radius: 5px; }
 .info-section img { max-width: 120px; height: auto; flex-shrink: 0; }
 .info-section .text { flex-grow: 1; }
-.example-images { display: flex; gap: 10px; align-items: flex-start; justify-content: center; flex-wrap: wrap; margin-bottom: 0.5em; }
+.example-images { display: flex; gap: 10px; align-items: center; justify-content: center; flex-wrap: wrap; margin-bottom: 0.5em; }
 .example-images img { max-width: 120px; height: auto; background-color: #fff; }
 .example-explanation { margin-top: 0.5em; }
 .gravity-examples { justify-content: space-around; align-items: flex-start; gap: 10px; border: none; padding: 0; }
 .gravity-example { display: inline-block; text-align: center; width: 119px; margin-bottom: 1em; vertical-align: top; }
 .gravity-example img { display: block; margin: 0 auto 0.5em auto; }
 .gravity-label { display: block; font-weight: bold; font-size: 0.9em; }
+
+/* --- Styles for intermediate arrows/icons --- */
+.example-images .arrow, 
+.example-images .icon-group { display: flex; flex-direction: column; align-items: center; justify-content: center; align-self: center; padding: 0 10px; font-size: 1.2em; font-weight: bold; color: #ccc; min-height: 40px; }
+.example-images .icon-group img { max-width: 31px; height: 31px; margin-top: 5px; background-color: transparent; }
+
+/* --- Styles for Lesson 7 Synchronous Actions --- */
+.sync-action-container { margin-top: 1.5em; }
+.sync-step { display: flex; align-items: center; gap: 15px; margin-bottom: 1.5em; }
+.sync-step-img-arrow { display: flex; flex-direction: column; align-items: center; width: 119px; flex-shrink: 0; }
+.sync-step-img-arrow img { display: block; }
+.sync-step-arrow { font-size: 1.2em; font-weight: bold; color: #ccc; margin-top: 0.2em; }
+.sync-step-text { font-size: 0.85em; color: #aaa; margin: 0; flex-grow: 1; }
+
+/* --- Styles for Lesson 11 Optimization --- */
+.info-section.optimization-example { align-items: center; }
+.optimization-example .example-images { align-items: center; justify-content: center; gap: 10px; }
+.optimization-example .example-images img { max-width: 119px; height: auto; background-color: #fff; }
+.optimization-example .small-rotation-img { max-width: 31px; height: 31px; margin: 0 5px; align-self: center; background-color: #fff; }
+
+/* --- Styles for Lesson 16 Staff Roll --- */
+.staff-roll-container {
+  max-width: 450px; /* Limit width */
+  margin: 1.5em auto; /* Center horizontally, add vertical margin */
+  background-color: #111; 
+  padding: 1em; 
+  border-radius: 5px; 
+  border: 1px solid #444;
+}
+.staff-roll-list {
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+.staff-roll-list dt {
+  font-weight: bold;
+  color: #ffcc00; /* Original gold color */
+  margin-top: 1em;
+  padding-bottom: 0.2em;
+  border-bottom: 1px dotted #555; /* Dotted separator */
+}
+.staff-roll-list dt:first-of-type {
+    margin-top: 0; /* Remove top margin for first item */
+}
+.staff-roll-list dd {
+  margin-left: 1em; /* Indent names */
+  margin-bottom: 0.5em;
+  color: #ccc;
+}
+.staff-roll-list dd strong { /* Style for [PSIKYO] etc */
+    color: #eee;
+}
+.staff-roll-list dt span { /* Style for the time hints */
+    font-weight: normal;
+    font-style: italic;
+    color: #aaa;
+}
 
