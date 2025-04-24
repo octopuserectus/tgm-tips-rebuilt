@@ -1,31 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+# This layout inherits from the default layout
+layout: default 
+---
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  {% comment %} Add SEO plugin or basic title/meta tags {% endcomment %}
-  {% if site.plugins contains "jekyll-seo-tag" %}{% seo %}{% else %}<title>{{ page.title | escape }} | {{ site.title | escape }}</title>{% endif %}
+{% comment %} 
+  This file defines the layout for the home page (index.html).
+  It inherits the main structure (sidebar, main area, mobile nav) from _layouts/default.html.
+  The content from index.html will be placed where {{ content }} is below.
+{% endcomment %}
 
-  {% comment %} Link to your main CSS file {% endcomment %}
-  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}"> 
-  
-  {% comment %} Embedded styles removed - they should be in main.css {% endcomment %}
-
-</head>
-
-<body>
-
-  <aside class="sidebar">
-    {% comment %} Include the navigation component {% endcomment %}
-    {% include navigation.html %}
-  </aside>
-
-  <main class="main-content">
-    {% comment %} Render the content from the specific page (e.g., index.html) {% endcomment %}
-    {{ content }}
-  </main>
-
-</body>
-</html>
+{{ content }} 

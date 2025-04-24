@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  {% comment %} Add SEO plugin or basic title/meta tags {% endcomment %}
+  {% if site.plugins contains "jekyll-seo-tag" %}{% seo %}{% else %}<title>{% if page.order %}Lesson {{ page.order }}: {% endif %}{{ page.title | default: site.title | escape }} | {{ site.title | escape }}</title>{% endif %}
+
+  {% comment %} Favicon Links - Add these lines {% endcomment %}
+  <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" sizes="any"> {% comment %} Standard .ico favicon {% endcomment %}
+  <link rel="icon" href="{{ '/assets/images/icons/icon.svg' | relative_url }}" type="image/svg+xml"> {% comment %} Optional SVG favicon {% endcomment %}
+  <link rel="apple-touch-icon" href="{{ '/assets/images/icons/apple-touch-icon.png' | relative_url }}"> {% comment %} Optional Apple touch icon (e.g., 180x180 png) {% endcomment %}
+  {% comment %} You might add more sizes/types if needed {% endcomment %}
+
+  {% comment %} Link to your main CSS file {% endcomment %}
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}"> 
+  
+</head>
+
+<body>
+
+  {% comment %} Mobile Navigation Toggle Button (Hidden on Desktop) {% endcomment %}
+  <button id="mobile-nav-toggle" class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    ☰
+  </button>
+
+  <aside class="sidebar" id="sidebar">
+    {% comment %} Include the navigation component {% endcomment %}
+    {% include navigation.html %}
+  </aside>
+
+  <main class="main-content">
+    {% comment %} Render the content from the specific page (e.g., index.html, 01-basics.html) {% endcomment %}
+    {{ content }}
+  </main>
+
+  {% comment %} Optional: Overlay for closing menu on mobile {% endcomment %}
+  <div class="nav-overlay" id="nav-overlay"></div>
+
+  {% comment %} Simple JavaScript for Mobile Nav Toggle {% endcomment %}
+  <script>
+    const toggleButton = document.getElementById('mobile-nav-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('nav-overlay');
+    const body = document.body;
+
+    if (toggleButton && sidebar) {
+      toggleButton.addEventListener('click', () => {
+        const isOpen = body.classList.toggle('nav-open');
+        toggleButton.setAttribute('aria-expanded', isOpen);
+        // Optional: Change button text/icon
+        // toggleButton.innerHTML = isOpen ? '✕' : '☰'; 
+      });
+    }
+    
+    if (overlay) {
+        overlay.addEventListener('click', () => {
+            body.classList.remove('nav-open');
+            toggleButton.setAttribute('aria-expanded', 'false');
+            // toggleButton.innerHTML = '☰';
+        });
+    }
+
+    // Optional: Close nav when a link inside it is clicked
+    if (sidebar) {
+        sidebar.addEventListener('click', (event) => {
+            if (event.target.tagName === 'A') {
+                 body.classList.remove('nav-open');
+                 toggleButton.setAttribute('aria-expanded', 'false');
+                 // toggleButton.innerHTML = '☰';
+            }
+        });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,43 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+# This layout inherits from the default layout
+layout: default 
+---
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  {% comment %} Add SEO plugin or basic title/meta tags {% endcomment %}
-  {% if site.plugins contains "jekyll-seo-tag" %}
-    {% seo %}
-  {% else %}
-    {% comment %} Update title tag to include lesson number as well {% endcomment %}
-    <title>Lesson {{ page.order }}: {{ page.title | escape }} | {{ site.title | escape }}</title>
-    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
-  {% endif %}
+{% comment %} 
+  This file defines the layout for the home page (index.html).
+  It inherits the main structure (sidebar, main area, mobile nav) from _layouts/default.html.
+  The content from index.html will be placed where {{ content }} is below.
+{% endcomment %}
 
-  {% comment %} Link to your main CSS file {% endcomment %}
-  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}"> 
-  
-</head>
-
-<body>
-
-  <aside class="sidebar">
-    {% comment %} Include the navigation component {% endcomment %}
-    {% include navigation.html %}
-  </aside>
-
-  <main class="main-content">
-    {% comment %} 
-      Display the Lesson Number (from front matter 'order') 
-      and the Page Title (from front matter 'title') 
-    {% endcomment %}
-    <h1>Lesson {{ page.order }}: {{ page.title | escape }}</h1>
-    
-    <hr> {% comment %} Add a horizontal rule below the main title {% endcomment %}
-
-    {% comment %} Render the content from the specific tip file (e.g., 01-basics.html) {% endcomment %}
-    {{ content }}
-  </main>
-
-</body>
-</html>
+{{ content }} 
