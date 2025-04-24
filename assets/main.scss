@@ -28,7 +28,7 @@ a:hover {
 }
 
 .sidebar {
-  width: 250px; /* Fixed width for sidebar */
+  width: 290px; /* INCREASED sidebar width again */
   flex-shrink: 0; /* Prevent sidebar from shrinking */
 }
 
@@ -80,46 +80,48 @@ a:hover {
 .site-nav li {
   margin-bottom: 0.3em;
   display: flex !important; /* FORCE FLEX */
-  flex-wrap: nowrap; /* Ensure items stay on one line */
-  align-items: baseline; /* Align text baselines */
-  gap: 5px; /* Space between number and link */
+  flex-wrap: nowrap !important; /* FORCE nowrap */
+  align-items: baseline !important; /* Align text baselines */
+  gap: 5px !important; /* Space between number and link */
 }
 
 /* Style the sidebar number span */
 .site-nav .nav-lesson-number {
-  width: 25px; 
+  display: block; /* Treat as block within flex */
+  width: 25px;
   color: #888;
-  text-align: right; 
-  flex-shrink: 0; /* Prevent number from shrinking */
+  text-align: right;
+  flex-shrink: 0 !important; /* Prevent number from shrinking */
 }
 
 /* Style the sidebar link */
 .site-nav a {
-  color: #cccccc; 
-  padding: 3px 5px; 
+  display: block !important; /* Treat as block within flex */
+  color: #cccccc;
+  padding: 3px 5px;
   border-radius: 3px;
   transition: background-color 0.2s ease, color 0.2s ease;
-  white-space: nowrap; 
-  overflow: hidden; 
-  text-overflow: ellipsis; 
+  white-space: nowrap !important; /* FORCE nowrap */
+  overflow: hidden !important; /* FORCE overflow hidden */
+  text-overflow: ellipsis !important; /* FORCE ellipsis */
   flex-grow: 1; /* Allow link to take up remaining space */
-  min-width: 0; 
-  vertical-align: baseline; /* Align with baseline of number */
+  min-width: 0; /* Allow shrinking */
+  /* vertical-align: baseline; */ /* Not needed for block */
 }
 
 .site-nav a:hover {
-  color: #00ff00; 
-  background-color: #222; 
+  color: #00ff00;
+  background-color: #222;
 }
 
 /* Style the sidebar intro link */
 .site-nav .intro-link a {
    font-weight: bold;
-   color: #eee; 
+   color: #eee;
    margin-bottom: 1em;
-   display: block; 
-   padding: 3px 5px; 
-   white-space: normal; 
+   display: block;
+   padding: 3px 5px;
+   white-space: normal; /* Override nowrap for this specific link */
    overflow: visible;
    text-overflow: clip;
 }
@@ -139,39 +141,30 @@ a:hover {
 /* Style for list items within the landing page guides container */
 .guide-section li {
   margin-bottom: 0.6em;
-  /* display: flex; */ /* REMOVED flex */
-  /* align-items: baseline; */ /* REMOVED */
-  /* gap: 5px; */ /* REMOVED */
   line-height: 1.4; /* Use line-height for spacing */
 }
 
 /* Style for links within the landing page guides container */
 .guides-container .guide-section a {
-  color: #cccccc; 
-  padding: 5px 0; 
+  color: #cccccc;
+  padding: 5px 0;
   border-radius: 4px;
   transition: background-color 0.2s ease;
-  /* overflow: hidden; */ /* REMOVED */
-  /* text-overflow: ellipsis; */ /* REMOVED */
-  /* white-space: nowrap; */ /* REMOVED */
-  /* flex-grow: 1; */ /* REMOVED */
-  /* min-width: 0; */ /* REMOVED */
   display: inline; /* Ensure link is inline */
   margin-left: 5px; /* Space after number */
 }
 
 .guides-container .guide-section a:hover {
-  color: #00ff00; 
-  background-color: #222; 
+  color: #00ff00;
+  background-color: #222;
 }
 
 /* Style for lesson numbers within the landing page guides container */
 .guide-section .lesson-number {
   display: inline-block; /* Keep inline-block */
-  width: 70px; /* INCREASED width to accommodate "Lesson XX" */
+  width: 70px; /* Width to accommodate "Lesson XX" */
   color: #aaa;
   font-size: 0.9em;
-  /* flex-shrink: 0; */ /* REMOVED */
   vertical-align: baseline; /* Align with link text */
 }
 
@@ -191,4 +184,31 @@ a:hover {
 .example-images { display: flex; gap: 10px; align-items: flex-start; justify-content: center; flex-wrap: wrap; margin-bottom: 0.5em; }
 .example-images img { max-width: 120px; height: auto; background-color: #fff; }
 .example-explanation { margin-top: 0.5em; }
+
+/* --- Styles for Lesson 5 Gravity Examples --- */
+.gravity-examples {
+  justify-content: space-around; /* Distribute items evenly */
+  align-items: flex-start; /* Align tops */
+  gap: 10px; /* Add small gap */
+  border: none; /* Remove default border if not needed */
+  padding: 0; /* Remove default padding if not needed */
+}
+.gravity-example {
+  display: inline-block; /* Display side-by-side */
+  text-align: center; /* Center the label text */
+  width: 119px; /* Match image width */
+  margin-bottom: 1em; /* Spacing below each example */
+  vertical-align: top; /* Align elements to the top */
+}
+.gravity-example img {
+  display: block; /* Ensure image is block level */
+  margin: 0 auto 0.5em auto; /* Center image and add space below */
+}
+.gravity-label {
+  display: block; /* Make label block level */
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+/* Add other styles as needed */
 

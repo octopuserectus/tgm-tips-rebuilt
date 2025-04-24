@@ -10,6 +10,7 @@ tags: ["Speed", "Gravity", "20G", "Lock Delay", "ARE"]
   Modernized HTML content for Lesson 5.
   Uses CSS classes defined in the main stylesheet (jekyll_main_css).
   Image paths assume images are in /assets/images/5pics/
+  Gravity examples structure updated.
 {% endcomment %}
 
 <div class="tip-content">
@@ -20,18 +21,23 @@ tags: ["Speed", "Gravity", "20G", "Lock Delay", "ARE"]
     Here are the trajectories for 2 to 5G.
   </p>
   
-  <div class="info-section">
-      <div class="example-images">
+  {% comment %} Updated structure for gravity examples {% endcomment %}
+  <div class="info-section gravity-examples">
+      <div class="gravity-example">
          <img src="{{ '/assets/images/5pics/01.png' | relative_url }}" alt="2G trajectory" width="119" height="239">
-         <img src="{{ '/assets/images/5pics/02.png' | relative_url }}" alt="3G trajectory" width="119" height="239">
-         <img src="{{ '/assets/images/5pics/03.png' | relative_url }}" alt="4G trajectory" width="119" height="239">
-         <img src="{{ '/assets/images/5pics/04.png' | relative_url }}" alt="5G trajectory" width="119" height="239">
+         <span class="gravity-label">2G</span>
       </div>
-      <div class="text example-explanation" style="text-align: center;"> 
-         <span style="display:inline-block; width: 119px;">2G</span>
-         <span style="display:inline-block; width: 119px;">3G</span>
-         <span style="display:inline-block; width: 119px;">4G</span>
-         <span style="display:inline-block; width: 119px;">5G</span>
+      <div class="gravity-example">
+         <img src="{{ '/assets/images/5pics/02.png' | relative_url }}" alt="3G trajectory" width="119" height="239">
+         <span class="gravity-label">3G</span>
+      </div>
+      <div class="gravity-example">
+         <img src="{{ '/assets/images/5pics/03.png' | relative_url }}" alt="4G trajectory" width="119" height="239">
+         <span class="gravity-label">4G</span>
+      </div>
+      <div class="gravity-example">
+         <img src="{{ '/assets/images/5pics/04.png' | relative_url }}" alt="5G trajectory" width="119" height="239">
+         <span class="gravity-label">5G</span>
       </div>
   </div>
 
