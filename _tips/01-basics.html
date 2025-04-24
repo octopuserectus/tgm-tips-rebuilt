@@ -1,72 +1,70 @@
 ---
-title: "Basics"
+title: "Basic Knowledge (基礎知識)"
 guide: "TGM"
 order: 1
 layout: tip 
-tags: ["Core Mechanics", "Rotation", "Gameplay Loop", "IRS", "Wall Kick"]
+tags: ["Core Mechanics", "Rotation", "Gameplay Loop", "IRS", "Wall Kick", "ARE", "DAS"]
 ---
-
-{% comment %} HTML for Lesson 1 - Wall Kicks section updated {% endcomment %}
 
 <div class="tip-content">
 
-  <h3 class="section-heading">The 7 tetrominoes and the buttons.</h3>
+  <h3 class="section-heading">About the 7 Block Types and Buttons</h3>
   <table class="rotation-table">
     <thead>
       <tr>
         <th>Piece</th>
-        <th><span class="highlight">A</span> Button (CCW)</th>
-        <th>Initial Appearance</th>
-        <th><span class="highlight">B</span> Button (CW)</th>
-        <th><span class="highlight">C</span> Button</th>
+        <th><span class="highlight">A</span> Button<br>Rotation</th>
+        <th>Spawn<br>Location/Orientation</th>
+        <th><span class="highlight">B</span> Button<br>Rotation</th>
+        <th><span class="highlight">C</span> Button<br>Rotation</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>T</td>
+        <td>Cyan (T)</td>
         <td><img src="{{ '/assets/images/basics/mizu_a.gif' | relative_url }}" alt="T piece A rotation" width="31" height="31"></td>
         <td><img src="{{ '/assets/images/basics/mizu00.PNG' | relative_url }}" alt="T piece initial state" width="119" height="60"></td>
         <td><img src="{{ '/assets/images/basics/mizu_b.gif' | relative_url }}" alt="T piece B rotation" width="31" height="31"></td>
         <td>Same as <span class="highlight">A</span></td>
       </tr>
       <tr>
-        <td>J</td>
+        <td>Blue (J)</td>
         <td><img src="{{ '/assets/images/basics/blue_a.gif' | relative_url }}" alt="J piece A rotation" width="31" height="31"></td>
         <td><img src="{{ '/assets/images/basics/blue00.PNG' | relative_url }}" alt="J piece initial state" width="119" height="60"></td>
         <td><img src="{{ '/assets/images/basics/blue_b.gif' | relative_url }}" alt="J piece B rotation" width="31" height="31"></td>
         <td>Same as <span class="highlight">A</span></td>
       </tr>
       <tr>
-        <td>L</td>
+        <td>Orange (L)</td>
         <td><img src="{{ '/assets/images/basics/orange_a.gif' | relative_url }}" alt="L piece A rotation" width="31" height="31"></td>
         <td><img src="{{ '/assets/images/basics/orange00.PNG' | relative_url }}" alt="L piece initial state" width="119" height="60"></td>
         <td><img src="{{ '/assets/images/basics/orange_b.gif' | relative_url }}" alt="L piece B rotation" width="31" height="31"></td>
         <td>Same as <span class="highlight">A</span></td>
       </tr>
       <tr>
-        <td>Z</td>
+        <td>Green (Z)</td>
         <td><img src="{{ '/assets/images/basics/green.gif' | relative_url }}" alt="Z piece rotation" width="31" height="31"></td>
         <td><img src="{{ '/assets/images/basics/green00.PNG' | relative_url }}" alt="Z piece initial state" width="119" height="60"></td>
         <td>Same as <span class="highlight">A</span></td>
         <td>Same as <span class="highlight">A</span></td>
       </tr>
       <tr>
-        <td>S</td>
+        <td>Purple (S)</td>
         <td><img src="{{ '/assets/images/basics/purple.gif' | relative_url }}" alt="S piece rotation" width="31" height="31"></td>
         <td><img src="{{ '/assets/images/basics/parple00.PNG' | relative_url }}" alt="S piece initial state" width="119" height="60"></td>
         <td>Same as <span class="highlight">A</span></td>
         <td>Same as <span class="highlight">A</span></td>
       </tr>
       <tr>
-        <td>I</td>
+        <td>Red (I)</td>
         <td><img src="{{ '/assets/images/basics/red.gif' | relative_url }}" alt="I piece rotation" width="41" height="41"></td>
         <td><img src="{{ '/assets/images/basics/red00.PNG' | relative_url }}" alt="I piece initial state" width="119" height="60"></td>
         <td>Same as <span class="highlight">A</span></td>
         <td>Same as <span class="highlight">A</span></td>
       </tr>
       <tr>
-        <td>O</td>
-        <td>Cannot be rotated.</td>
+        <td>Yellow (O)</td>
+        <td>Shape doesn't change,<br>but it is rotating.</td>
         <td><img src="{{ '/assets/images/basics/yellow00.PNG' | relative_url }}" alt="O piece initial state" width="119" height="60"></td>
         <td>Same as <span class="highlight">A</span></td>
         <td>Same as <span class="highlight">A</span></td>
@@ -74,56 +72,72 @@ tags: ["Core Mechanics", "Rotation", "Gameplay Loop", "IRS", "Wall Kick"]
     </tbody>
   </table>
   <p>
-    TGM Follows the SEGA rotation system. All of the blocks except I always have a block in the lowest row, and in this way, appear to roll on the ground.<br>
-    This might seem unnatural at first, but I think it is easier to use in high speed situations.
+    Tetris rotation systems are broadly divided into "Sega-style" and "BPS-style". BPS-style seems to be becoming the world standard recently, called the "World Rule".<br>
+    TGM follows the Sega-style rotation system, and as shown in the table above, <span class="highlight">except for the I-piece, pieces rotate such that the height of their lowest edge does not change</span>. You could also say they roll along the ground.<br>
+    It might seem a bit unnatural at first, but I think this rotation system makes rotation placement (回転入れ - kaiten-ire) easy to use and features easy operation in high-speed drop areas.
   </p>
 
-  <h3 class="section-heading">The Well</h3>
+  <h3 class="section-heading">About the "Well"</h3>
   <div class="info-section">
     <img src="{{ '/assets/images/basics/kiso01.gif' | relative_url }}" alt="TGM Playfield Diagram" width="119" height="239">
-    <div class="text">
-      The well is a <span class="highlight">20 rows by 10 columns</span> field.<br>
-      However, as shown to the left, the blocks can go over the uppermost row.<br>
-      The stacked blocks as a whole are called the stack.<br>
-      The game is over when blocks are forced to overlap.<br>
-      Above the well you can see the next block to come.
+    <div class="text example-explanation"> 
+      The "Well" (or Playfield) is composed of <span class="highlight">20 rows (lines) × 10 columns</span>. Usually counted as 1st row, 2nd row... from the bottom, and 1st column, 2nd column... from the left.<br>
+      However, as shown in the diagram, pieces can overhang one row above when rotated. To rotate the I-piece, the top 3 rows of the well must be empty, but other blocks can be rotated if the top 2 rows are empty.<br>
+      The collection of stacked blocks is called the "<span class="highlight">Stack</span>" (地形 - chikei).<br>
+      If a block overlaps the stack when it appears, the game is over; this is called "topping out" (窒息 - chissoku).<br>
+      The block appearing next, displayed above the well, is called the "NEXT display" or simply "NEXT".
     </div>
   </div>
 
-  <h3 class="section-heading">Levels</h3>
+  <h3 class="section-heading">About "Level" and "Max Out"</h3>
   <p>
-    Progress in the game is represented by levels.<br>
-    The game starts at level 0 and end at level 999.<br>
-    For each block to appear the level <span class="highlight">will raise by 1</span>. Every time you clear lines the level will go up by the amount of lines cleared.<br><br>
-    Every level divisible by 100 is the start of a new <span class="highlight">section.</span><br>
-    To rise from x99 to x00 or from 998 to 999 you will need to clear a line.<br><br>
-    Examples:<br>
-    - Clearing a line at Lv.99 will raise it to 100, the next block to enter the well will raise it to 101.<br>
-    - Clearing 4 lines at Lv.95 will raise it to 99, when the next block enters the well it <b>still</b> be at Lv.99
+    Game progress is represented by "Level (Lv)".<br>
+    It starts at Lv 0, and clearing the game at Lv 999 is called "maxing out" (カンスト - kansuto), short for counter stop.<br>
+    The level <span class="highlight">increases by 1 each time a block appears</span> (tsumo - ツモ), and <span class="highlight">increases by the number of lines cleared</span> when lines are cleared.<br>
+    (Meaning, to max out, you drop just over 700 blocks and clear just under 300 lines).<br><br>
+    Each 100-level interval is called a "<span class="highlight">section</span>".<br>
+    The boundary between sections (Lv *99 → Lv *00, only Lv 998 → Lv 999 at the end) can only be passed by clearing lines.<br>
+    Just drawing a piece keeps the level at Lv *99; this is called "<span class="highlight">level stop</span>". This results in lost time during time attacks.<br><br>
+    Example: Clearing 1 line with a block at Lv 99 makes it Lv 100, and the next piece draw is Lv 101.<br>
+    Clearing 4 lines with a block at Lv 98 makes it Lv 102, and the next piece draw is Lv 103.<br>
+    Clearing 4 lines with a block at Lv 95 makes it Lv 99, and the next piece draw is <B>still</B> Lv 99.
   </p>
 
-  <h3 class="section-heading">20G</h3>
+  <h3 class="section-heading">About "20G"</h3>
   <p>
-    A frame is calculated 60 times every second.<br>
-    The amount of rows a block descends every frame is called a <span class="highlight">G</span>.<br>
-    TGM Has a new mode called <b>20G</b> in which blocks appear at the bottom of the well.
+    The game draws 60 images per second to express movement, and each of these frames is called a "<span class="highlight">frame</span>".<br>
+    Block drop speed is expressed in units of "<span class="highlight">G</span>", representing "how many rows dropped per frame".<br>
+    One of the most characteristic features symbolizing the TGM series is <B>20G</B>, where blocks don't so much fall as suddenly "appear on the ground" (or rather, on the stack).
   </p>
 
-  <h3 class="section-heading">ARE/Lock delay</h3>
+  <h3 class="section-heading">About "Lock Delay" and "ARE"</h3>
   <p>
-    When blocks fall on the stack there is a brief period before they lock.<br>
-    This allows you to move blocks in 20G mode.<br>
-    This period is called the Lock Delay and is set at about 0.5 seconds.<br><br>
-    There is also a brief pause after a block locks and before the next one appears, this is called the ARE.
+    There is a slight delay between when a block touches the stack and when it locks (the block flashes white momentarily), during which it can be rotated or moved horizontally.<br>
+    Especially in 20G where blocks appear grounded instantly, this period is used to slide blocks for movement.<br>
+    This time is called "Lock Delay" (固定時間 - kotei jikan), and in TGM it is set to about 0.5 seconds. It shortens in the advanced stages of TAP.<br>
+    Lock delay resets when the piece drops down a step. (See <a href="{{ '/tips/05-fast-falling.html' | relative_url }}">Chapter 5</a>)<br><br>
+    There is also a slight delay after a block locks and before the next block appears; this is called "ARE".<br>
+    It shortens in the advanced stages of TAP.
   </p>
 
-  <h3 class="section-heading">Soft drop/Manual Lock</h3>
+  <h3 class="section-heading">About "Soft Drop" and "DAS"</h3>
   <p>
-    You can make a block fall faster by holding the control stick down. It will fall at 1G unless the current speed is higher than 1G, then it will not fall faster.<br>
-    If you pull the control stick down while a block is on the ground it will lock despite any lock delays.
+    Holding the lever down during block fall allows you to make the block fall faster. This speed is 1G; if the natural gravity is faster than that, it doesn't change.<br>
+    Pressing the lever down while a block is grounded forces the block to lock immediately, even if lock delay time remains.<br>
+    In the TGM series, "Soft Drop" (下入れ - shita-ire) generally refers to the latter. The former is also called "Drop".<br><br>
+    Holding the lever sideways for a while allows for high-speed horizontal movement of the block; this is called "<span class="highlight">DAS</span>" (Delayed Auto-Shift) (横溜め - yoko-tame).<br>
+    (The movement speed is equivalent to 1G, so it's the same as inputting sideways every frame).<br>
+    The time until it "charges" is called "<span class="highlight">DAS Charge Time</span>" (横溜め時間 - yoko-tame jikan), which is about 0.25 seconds in TGM. It shortens in the advanced stages of TAP.<br>
+    <span class="highlight">DAS input is accepted even before the block appears</span>. If it's already "charged" before appearance, the block will fly sideways the moment it appears.<br>
+    This is important for time attacks.
   </p>
 
-  <h3 class="section-heading">IRS</h3>
+  <h3 class="section-heading">About "IRS"</h3>
+  <p>
+    IRS stands for Initial Rotation System (先行回転入力システム - senkou kaiten nyuuryoku system).<br>
+    <span class="highlight">If a button is held down when the block appears</span>, the block will appear in the well already rotated once.<br>
+    It enables comfortable controls even at high drop speeds, so you should consciously use it early on to make it natural.
+  </p>
   <div class="info-section">
      <div class="example-images">
         <img src="{{ '/assets/images/basics/kiso02.PNG' | relative_url }}" alt="S piece spawning normally causing game over" width="119" height="239">
@@ -132,17 +146,16 @@ tags: ["Core Mechanics", "Rotation", "Gameplay Loop", "IRS", "Wall Kick"]
         <img src="{{ '/assets/images/basics/kiso07.PNG' | relative_url }}" alt="Close up of IRS'd S piece" width="119" height="239">
      </div>
      <div class="text example-explanation">
-        IRS Can be used to prevent a game over.<br>
-        Normal appearance of the S block would have caused a game over by intersecting the Z block. IRS prevents this.<br>
-        <span class="highlight">IRS will be blocked when it would cause a game over.</span>
+        Avoiding top out using IRS.<br>
+        Appearing in the normal state would cause a top out, but IRS allows avoiding the stack shape.<br>
+        <span class="highlight">When using IRS would cause a top out, pressing the button is ignored and the piece appears normally. (Corrected 2008/08/26)</span>
      </div>
   </div>
 
-  <h3 class="section-heading">Wall kicks</h3>
+  <h3 class="section-heading">About "Wall kicks"</h3>
    <div class="info-section">
      <div class="example-images">
        <img src="{{ '/assets/images/basics/01.png' | relative_url }}" alt="T piece next to wall" width="119" height="239">
-       {% comment %} Updated structure for arrow and icon {% endcomment %}
        <div class="icon-group"> 
          <span>→</span>
          <img src="{{ '/assets/images/basics/01.gif' | relative_url }}" alt="Rotation icon" width="31" height="31">
@@ -150,24 +163,27 @@ tags: ["Core Mechanics", "Rotation", "Gameplay Loop", "IRS", "Wall Kick"]
        <img src="{{ '/assets/images/basics/02.png' | relative_url }}" alt="T piece rotated, kicking off wall" width="119" height="239">
      </div>
      <div class="text example-explanation">
-       According to the table above this rotation should be impossible.<br>
-       But, because of an empty space to the right the T will kick the wall.<br>
-       Wall kicks, along with IRS make TGM a comfortable series to play.<br>
-       <a href="{{ '/tips/08-advanced-rotation.html' | relative_url }}">Lesson 8</a> will handle IRS more and <a href="{{ '/tips/11-time-attack.html' | relative_url }}">lesson 11</a> will help you use wall kicks.
+       Consider rotating a block near the wall as shown.<br>
+       Thinking according to the rotation rules presented above, it seems impossible to rotate because the left square would clip into the wall.<br>
+       However, because there is space to shift to the right, the position is automatically corrected, allowing the rotation.<br>
+       This allows easy rotation of blocks moved to the edge with DAS, and along with IRS, it supports the comfortable controls of the TGM series.<br>
+       It's useful in many situations, such as the rotation placements (回転入れ - kaiten-ire) introduced in <a href="{{ '/tips/08-advanced-rotation.html' | relative_url }}">Chapter 8</a> and the control optimization introduced in <a href="{{ '/tips/11-time-attack.html' | relative_url }}">Chapter 11</a>.
      </div>
   </div>
 
   <hr>
   
-  {% comment %} Lesson Navigation {% endcomment %}
-  <table style="width:100%; border: none;">
-    <tbody>
-      <tr>
-        <td><a href="{{ '/' | relative_url }}">Previous lesson (Top)</a></td>
-        <td style="text-align:center;"><a href="{{ '/' | relative_url }}">Top level</a></td>
-        <td style="text-align:right;"><a href="{{ '/tips/02-basic-stacking.html' | relative_url }}">Next lesson</a></td>
-      </tr>
-    </tbody>
-  </table>
+    <nav class="lesson-nav">
+      <div class="nav-item prev">
+        {% comment %} No previous lesson, link to top {% endcomment %}
+        <a href="{{ '/' | relative_url }}">← Top Level</a> 
+      </div>
+      <div class="nav-item top">
+        <a href="{{ '/' | relative_url }}">Top Level</a>
+      </div>
+      <div class="nav-item next">
+        <a href="{{ '/tips/02-basic-stacking.html' | relative_url }}">Next Lesson →</a>
+      </div>
+    </nav>
 
 </div>

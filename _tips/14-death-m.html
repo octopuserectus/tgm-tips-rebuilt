@@ -3,56 +3,58 @@ title: "Death m"
 guide: "TAP" # TAP Guide
 order: 14
 layout: tip 
-tags: ["TAP", "Death Mode", "Speed", "IRS", "Strategy", "Advanced"]
+tags: ["TAP", "Death Mode", "Speed", "IRS", "Strategy", "Advanced", "Torikan"]
 ---
-
-{% comment %} 
-  Modernized HTML content for Lesson 14.
-  Uses CSS classes defined in the main stylesheet (jekyll_main_css).
-  Image paths assume images are in /assets/images/14pics/
-{% endcomment %}
 
 <div class="tip-content">
 
   <h3 class="section-heading">Death mode overview</h3>
   <p>
-    Death mode starts at speeds similar to the ending of master mode.<br>
-    During the run from Lv.1 to 900 the delays shorten every section.
+    ・Up to Lv 100 is comparable to Master mode Lv 700 range. However, DAS charge time is slightly longer.<br>
+    ・Lv 100 range is faster than Master mode Lv 800 range.<br>
+    ・Lv 200 range is slower than Master mode Lv 900 range.<br>
+    ・Lv 300 range is faster than Master mode Lv 900 range.<br>
+    ・Lv 400 range is faster than the 300 range.<br>
+    ・Lv 500 onwards is faster than the 400 range.
   </p>
   <p>
-    The torikan moment in death mode is at LV.500 if you reach it with more than 03:25:00 on the clock.<br>
-    You will need to finish up to Lv.999 for the Gm rank.
+    ・If you exceed 3 minutes 25 seconds at Lv 500, the staff roll plays there and the game ends. This is called "Torikan" (とりカン), short for "toriaezu kansuto" (とりあえずカンスト - max out for now).<br>
+    ・Passing Lv 500 earns m grade, reaching Lv 999 earns Gm grade.<br>
+    ・Repeating soft drops (下入れの使い回し - shita-ire no tsukaimawashi) is impossible from the start.
   </p>
 
-  <h3 class="section-heading">IRS in death mode</h3>
+  <h3 class="section-heading">Reusing IRS (IRSの使いまわし - IRS no tsukaimawashi)</h3>
   <div class="info-section">
       <div class="example-images">
          <img src="{{ '/assets/images/14pics/01.gif' | relative_url }}" alt="IRS timing example in Death mode" width="119" height="239">
       </div>
       <div class="text example-explanation">
-         Starting from LV.300 the ARE becomes extremely short which means you'll have to time your IRS input well.<br>
-         If the current block has not yet locked, you could easily rotate it by accident.<br>
-         You should release the rotate button as soon as you have rotated, but keep yourself ready to hit it again as soon as the block locks.<br><br>
-         In this example:<br>
-         You shift the O to the left and wait for it to lock and then hold A.<br>
-         Rotate the L again while shifting to the left and then hold A.<br>
-         You shift the S to the right against the obstruction and rotate against it.<br>
-         This leaves room to IRS the I into position.
+         From Lv 300 onwards, the ARE becomes extremely short, making IRS input timing severe, not just because the pace is fast.<br>
+         If you try to press the button early, you might "edit the past" if the previous block hasn't locked yet.<br>
+         To prevent this, utilizing the property that "IRS can be reused (if you hold down the button when rotating a block, it remains valid as input for the next block's IRS)" can be convenient.<br>
+         In other words, instead of thinking "whether to press the button", think "whether to release the button". Since "releasing the button" causes no change to the block, there's no worry about editing the past.<br>
+         Having the button pressed becomes the default state, which might feel unnatural until you get used to it, and there are cases where the rotation direction is limited and reuse isn't straightforward, but I think it's a reasonably practical technique.<br><br>
+         In the diagram's example:<br>
+         ・The moment the O-piece appears in NEXT, you see an I-piece setup can be made, so press and hold A (any button is fine) as soon as you notice.<br>
+         ・The next L-piece needs to be flipped, so upon appearance, release the held A, press A again, and hold it down.<br>
+         ・For the next S-piece, you could press A again, but in my case, the flow A→B feels more intuitive based on the movement image, so I do that.<br>
+         ・By always passing the baton to the next block with a button held down like this, the I-piece's IRS will always succeed.
       </div>
   </div>
 
-  <h3 class="section-heading">Manual locking, compromises and skimming</h3>
+  <h3 class="section-heading">Skimming and Compromise Placement with Pre-Charging DAS (Tori-tame)</h3>
   <div class="info-section">
       <div class="example-images">
          <img src="{{ '/assets/images/14pics/02.gif' | relative_url }}" alt="Manual locking and strategy in Death mode" width="119" height="239">
       </div>
       <div class="text example-explanation">
-         To get to Lv.500 before 03:25:00, you should get to Lv.300 in about 2 minutes.<br>
-         Manual locking changes in Lv.300 since the ARE is too short to effectively do so.<br>
-         Therefore you should play as fast as possible in early death mode.<br><br>
-         As seen in <a href="{{ '/tips/11-time-attack.html' | relative_url }}">Lesson 11</a> manual locking is a great way to save time.<br>
-         In death your goal is not to clear only tetrisses, but to keep 2 columns open to the right so that you have many possibilities.<br>
-         You should also aim to form the stack in a rightwards sloping slope.
+         To pass Lv 500 under 3:25, reaching Lv 300 within 2:05 becomes tough.<br>
+         If soft drop were possible after Lv 300 it would be different, but considering losses from level stops etc., ideally you want to pass within 2 minutes.<br>
+         However, early Death mode feels heavier compared to late Master mode, making losses from charge delays likely.<br><br>
+         Therefore, the "Tori-tame" (とり溜め - pre-charging DAS) introduced in <a href="{{ '/tips/11-time-attack.html' | relative_url }}">Chapter 11</a> becomes effective. (Originally conceived to overcome time stagnation in early Death.)<br>
+         Moreover, unlike TGM where keeping a Tetris setup is necessary, in Death, where the goal is simply to drop pieces quickly, charging DAS not just left but also right can be used.<br>
+         Especially if a right-downward sloping stack forms with the right 2-3 columns open, being able to continuously throw pieces right is powerful.<br>
+         How well you've mastered skimming patterns is key.
       </div>
   </div>
 
@@ -62,36 +64,41 @@ tags: ["TAP", "Death Mode", "Speed", "IRS", "Strategy", "Advanced"]
          <img src="{{ '/assets/images/14pics/04.gif' | relative_url }}" alt="Compromise example 2" width="119" height="239">
       </div>
       <div class="text example-explanation">
-         While it is in your best interests to keep a hole-free terrain, these are cases where doing so would impede movement.<br>
-         In these cases we leave some easy to fix holes so that our possibilities of movement are still the same.
+         In TGM, to maintain a clean stack shape, one must flexibly change operations even if DAS is charged. But in Death, you can choose placements that prioritize utilizing the charge more.<br>
+         It's even possible to almost never use bumps (kon-kon).<br>
+         Furthermore, there's the method of prioritizing operation speed or stack flatness even if it means creating holes. Learning "how to create easily recoverable holes" is useful.<br>
+         The key is to place blocks flatly, covering holes. Try various patterns.
       </div>
   </div>
 
-  <h3 class="section-heading">IRS after manual locking</h3>
+  <h3 class="section-heading">Reusing DAS Charge (横溜めの使いまわし - Yoko-tame no tsukaimawashi)</h3>
   <div class="info-section">
       <div class="example-images">
-         <img src="{{ '/assets/images/14pics/06.gif' | relative_url }}" alt="IRS after manual locking example" width="119" height="239">
+         <img src="{{ '/assets/images/14pics/06.gif' | relative_url }}" alt="Reusing DAS charge example" width="119" height="239">
       </div>
       <div class="text example-explanation">
-         To be able to get a good time and a nice rhythm in your game, you have to be able to use IRS after you manual lock a piece into play.<br>
-         However, the ARE will become extremely short nearing the end of death mode.<br>
-         Lv.300 will feel slow compared to later levels, where if you hesitate even a little bit, the block will lock.<br><br>
-         What matters is to stack blocks on the left and clear lines on the right.<br><br>
-         Do keep an eye out for dangerous situations though. And do not try to be foolish and wait as long as possible to clear lines.
+         Once you can consistently clear Torikan and reach the level of aiming for Death m, you might hesitate whether to use soft drop in the Lv 300 range.<br>
+         Because the ARE is extremely short, carelessly inputting down can lead to an incredible speed increase, making judgment unable to keep up.<br>
+         If you play without soft drop, the 300 range can feel quite slow. Yet, if you're careful not to edit the past, charge delays accumulate, and a slight level stop might mean you won't make the time.<br><br>
+         In such times, there's the method of reusing the DAS charge.<br>
+         Essentially, it's the version of Tori-tame without the soft drop input. A key feature is that even when not moving horizontally, like with the T-piece or I-piece in the diagram, you can keep the lever held sideways.<br>
+         Of course, it's effective when sending blocks consecutively to the right as well, but the key is "when to switch direction". If you can switch back and bump the wall like with the O-piece in the diagram, you can achieve zero charge delay without worrying about editing the past.<br><br>
+         Naturally, eliminating charge delay means blocks fall at a faster pitch than usual. Especially in the 400 range, considerable judgment speed is required, so doing this continuously is risky. Start by trying to chain 2 or 3 blocks and see how it feels.
       </div>
   </div>
 
   <hr>
 
-  {% comment %} Lesson Navigation {% endcomment %}
-  <table style="width:100%; border: none;">
-    <tbody>
-      <tr>
-        <td><a href="{{ '/tips/13-master-m.html' | relative_url }}">Previous lesson</a></td>
-        <td style="text-align:center;"><a href="{{ '/' | relative_url }}">Top level</a></td>
-        <td style="text-align:right;"><a href="{{ '/tips/15-death-gm.html' | relative_url }}">Next lesson</a></td>
-      </tr>
-    </tbody>
-  </table>
+    <nav class="lesson-nav">
+      <div class="nav-item prev">
+        <a href="{{ '/tips/13-master-m.html' | relative_url }}">← Previous Lesson</a> 
+      </div>
+      <div class="nav-item top">
+        <a href="{{ '/' | relative_url }}">Top Level</a>
+      </div>
+      <div class="nav-item next">
+        <a href="{{ '/tips/15-death-gm.html' | relative_url }}">Next Lesson →</a>
+      </div>
+    </nav>
 
 </div>

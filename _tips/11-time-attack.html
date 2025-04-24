@@ -1,47 +1,52 @@
 ---
-title: "Time attack"
+title: "Time Attack (タイムアタック)"
 guide: "TGM"
 order: 11
 layout: tip 
-tags: ["Time Attack", "GM Rank", "Speed", "Optimization", "DAS", "Line Clears", "Advanced"]
+tags: ["Time Attack", "GM Grade", "Speed", "Optimization", "DAS", "Line Clears", "Advanced"]
 ---
-
-{% comment %} 
-  Modernized HTML content for Lesson 11.
-  Uses CSS classes defined in the main stylesheet (jekyll_main_css).
-  Image paths assume images are in /assets/images/11pics/
-  Layout fixed for optimization example with purple.gif
-{% endcomment %}
 
 <div class="tip-content">
 
-  <h3 class="section-heading">Getting the GM rank</h3>
+  <h3 class="section-heading">Achieving the GM Grade</h3>
   <p>
-    To get the GM rank you have to play quick, there are 2 cutoff points.<br>
-    You need to finish the game with <span class="highlight">126,000 points and a time of 13:30:00 or less.</span><br>
-    You also need to have rank 1 by level 300 and rank S4 in less than 7:00:00 by level 500.
+    Once you can max out, aim for the highest grade, GM.<br>
+    To achieve GM, the minimum condition is to <span class="highlight">max out with S9 grade (120,000 points or more) within 13 minutes 30 seconds</span>.<br>
+    There seem to be several other conditions, like reaching S4 by Lv 500, but if you stack quickly and cleanly, it shouldn't be that difficult.<br><br>
+    Speed and cleanliness might seem contradictory, but remember that "getting faster by being cleaner (regional variation: stack cleaner and faster)" is also true.<br>
+    If the stack shape is clean, finding placements is easy, and grasping the resulting shape is also easy. Often, the controls are simpler too.
   </p>
 
-  <h3 class="section-heading">Optimizing operation</h3>
+  <hr style="margin: 2em 0;">
+
+  <p>
+    Once you can get GM, aim for under 10 minutes max out time in time attack.<br>
+    I think you can get down to around 11 minutes just by diligently using soft drop, but beyond that, you'll be shaving off time in fractions of a second.<br>
+    Since you drop over 700 blocks from start to max out, speeding up each piece by just 0.1 seconds saves over a minute overall.
+  </p>
+
+  <h3 class="section-heading">Control Optimization 1</h3>
   <div class="info-section">
       <div class="example-images">
          <img src="{{ '/assets/images/11pics/01.png' | relative_url }}" alt="Slow S placement" width="119" height="239">
       </div>
       <div class="text example-explanation">
-         In 20G instead of using IRS and tapping right 4 times, which would take too long...
+         In 20G, in a situation like this, how would you stand up the S-piece leaving the rightmost column empty?<br>
+         If the drop speed were slow, you could DAS charge right to the edge with the piece upright and then tap back once, but in 20G it would fall.<br>
+         Inputting right one tap at a time requires 4 inputs and takes time.
       </div>
   </div>
 
-  {% comment %} Updated structure for this section {% endcomment %}
   <div class="info-section optimization-example">
       <div class="example-images">
          <img src="{{ '/assets/images/11pics/01.gif' | relative_url }}" alt="Fast S placement start" width="119" height="239">
          <img src="{{ '/assets/images/11pics/02.png' | relative_url }}" alt="Fast S placement end" width="119" height="239">
-         {% comment %} Small image moved out of example-images div {% endcomment %}
       </div>
        <img class="small-rotation-img" src="{{ '/assets/images/7pics/purple.gif' | relative_url }}" alt="S piece rotation" width="31" height="31"> 
       <div class="text example-explanation">
-         <span class="highlight">You can use right DAS and rotate again.</span>
+         Therefore,<br>
+         "<span class="highlight">DAS charge right to the edge with the piece in its spawn state, and upon reaching the edge, return the lever to neutral and rotate</span>"<br>
+         becomes a very effective operation.
       </div>
   </div>
 
@@ -52,7 +57,8 @@ tags: ["Time Attack", "GM Rank", "Speed", "Optimization", "DAS", "Line Clears", 
          <img src="{{ '/assets/images/11pics/04.gif' | relative_url }}" alt="Fast I placement" width="119" height="239">
       </div>
       <div class="text example-explanation">
-         This same principle applies to the L, T and I.
+         Similar operations can be applied to the T-piece, L-piece, and I-piece.<br>
+         At first, perform it slowly and surely. With practice, you'll be able to execute it smoothly and precisely.
       </div>
   </div>
 
@@ -62,7 +68,10 @@ tags: ["Time Attack", "GM Rank", "Speed", "Optimization", "DAS", "Line Clears", 
          <img src="{{ '/assets/images/11pics/06.gif' | relative_url }}" alt="Fast soft lock 2" width="119" height="239">
       </div>
       <div class="text example-explanation">
-         Earlier in the game you can soft lock faster with techniques like this.
+         Early in the game, when speed is slow, it's possible to<br>
+         "rotate while soft dropping after reaching the edge"<br>
+         without needing to return the lever to neutral.<br><br>
+         This is the pattern for moving left.
       </div>
   </div>
 
@@ -72,15 +81,19 @@ tags: ["Time Attack", "GM Rank", "Speed", "Optimization", "DAS", "Line Clears", 
          <img src="{{ '/assets/images/11pics/09.gif' | relative_url }}" alt="DAS to wall then tap back 2" width="119" height="239">
       </div>
       <div class="text example-explanation">
-         You also DAS to the wall and tap back once.<br>
-         <span class="highlight">This might sometimes be impossible in 20G.</span>
+         An application of the above,<br>
+         "After DAS charging to the edge, tap back once and rotate while dropping"<br>
+         pattern.<br>
+         If you can do this confidently even when the stack is high, breaking 5 minutes by Lv 500 isn't just a dream.<br><br>
+         Using the methods above, horizontal operations in the early stages should ideally be completed within <span class="highlight">two inputs</span>.<br>
+         If you find yourself doing operations like right-right-right, or right-charge-left-left, it means it's not optimal.
       </div>
   </div>
 
-  <h3 class="section-heading">Erasing lines</h3>
+  <h3 class="section-heading">Clearing Lines Together</h3>
   <p>
-    The ARE in TGM is 0.7 seconds long.<br>
-    A line clear takes 0.68 seconds. <span class="highlight">Singles take as long as tetrisses.</span>
+    When clearing lines, the ARE becomes 0.7 seconds longer than when not clearing. Therefore, naturally, reducing the number of line clears speeds up the time.<br>
+    Assuming the time loss for a 4-line clear is 0, each clear results in the following delays: 3-line clear: 0.18s, 2-line clear: 0.35s, <span class="highlight">1-line clear: 0.53s</span>.
   </p>
   <div class="info-section">
       <div class="example-images">
@@ -90,9 +103,16 @@ tags: ["Time Attack", "GM Rank", "Speed", "Optimization", "DAS", "Line Clears", 
          <img src="{{ '/assets/images/11pics/07.png' | relative_url }}" alt="Recovery with tetris" width="119" height="239">
       </div>
       <div class="text example-explanation">
-         As seen here, this recovery can be done with all types of line clear, therefore it's best to do a tetris.
+         Just because you can recover instantly with an I-piece single doesn't mean you should in time attack.<br>
+         You want to develop this into a double, triple, or ideally, a Tetris.
       </div>
   </div>
+
+  <p>
+    However, don't overdo it. Especially when aiming for max out times from the low 10-minute range to the high 9-minute range, "<span class="highlight">maintaining a constant soft drop rhythm is more important than forcibly aiming for multi-line clears</span>".<br>
+    For example, even in the <a href="{{ '/assets/images/11pics/tgm.mpg' | relative_url }}">TGM video</a> released on the <a href="https://www.arika.co.jp/" target="_blank" rel="noopener noreferrer">official Arika website</a>, while it's primarily based on Tetrises, you can see quite a few other smaller clears mixed in. Nevertheless, by mastering control optimization and maintaining a constant soft drop rhythm, an extremely fast time of 9:19 is achieved.<br>
+    Develop setups only within the range you can do without hesitation.
+  </p>
 
   <div class="info-section">
       <div class="example-images">
@@ -100,8 +120,10 @@ tags: ["Time Attack", "GM Rank", "Speed", "Optimization", "DAS", "Line Clears", 
          <img src="{{ '/assets/images/11pics/09.png' | relative_url }}" alt="S doesn't fit result" width="119" height="239">
       </div>
       <div class="text example-explanation">
-         What to do when the S doesn't fit?<br>
-         In 20G, rotating would cause you to lose time.
+         What to do when an S-piece comes with no suitable placement?<br>
+         In 20G, using a shift placement (zurashi-ire) is an option, but early on it's a time loss. (Though, once the drop speed picks up to a certain point, it's not necessary to avoid it so forcefully.)<br><br>
+         If you stand it up and insert it into the hole, you perform a single line clear, and then you still need to clear another line to recover.<br>
+         Since the block is stood up, the subsequent stack shape also tends to become rugged.
       </div>
   </div>
 
@@ -111,8 +133,10 @@ tags: ["Time Attack", "GM Rank", "Speed", "Optimization", "DAS", "Line Clears", 
          <img src="{{ '/assets/images/11pics/13.png' | relative_url }}" alt="Tetris revival" width="119" height="239">
       </div>
       <div class="text example-explanation">
-         It's better to place it like this.<br><br>
-         As such, you can do a tetris revival.
+         Therefore, the recommended method is to place it flat, covering the hole.<br>
+         This way, you can recover with a single line clear.<br><br>
+         Furthermore, stacking "O-piece → L-piece" on top creates a Tetris recovery setup. Learn this as a set.<br>
+         The L-piece placement is useful for "adding just a 1-cell lid on a narrow foothold".
       </div>
   </div>
 
@@ -122,40 +146,53 @@ tags: ["Time Attack", "GM Rank", "Speed", "Optimization", "DAS", "Line Clears", 
          <img src="{{ '/assets/images/11pics/12.png' | relative_url }}" alt="Similar strategy other blocks 2" width="119" height="239">
       </div>
       <div class="text example-explanation">
-         Similar strategies will work for other blocks.
+         In the case of the Z-piece, stand it up like this.<br>
+         Placing a T-piece on top develops into a triple recovery setup.
       </div>
   </div>
 
-  <h3 class="section-heading">Stack high early</h3>
-  <p>Soft drop speed is 1G, therefore you should minimise the distance it should have to fall.</p>
+  <h3 class="section-heading">Stack High Early On</h3>
+  <p>Since soft drop speed is 1G, the time lost due to the length of the drop distance accumulates considerably. Therefore, the standard strategy early on is to stack high to minimize the time blocks spend in the air.<br>
+     When aiming for a 9-minute GM, become able to stack up to around 16 rows high while still performing control optimizations without charge delays.</p>
   <div class="info-section">
       <div class="example-images">
          <img src="{{ '/assets/images/11pics/14.png' | relative_url }}" alt="Stack high on left" width="119" height="239">
       </div>
       <div class="text example-explanation">
-         You should stack the left higher than the right because the wallkicks are biased to the right.<br>
-         Due to the time it takes for a line to clear, you should try to make line clears high and in triples or tetrisses.
+         Even stacking high, if you leave the right two columns open, you can always escape with skimming, so topping out due to bad piece draw (tsumo) is almost never an issue.<br>
+         Since the game is about how much you can shorten the drop distance, prioritizing stacking the left edge all the way to the top is likely advantageous.<br><br>
+         Also, since dropping from the very top of the well to the bottom takes 0.3 seconds, considering the 0.18 second loss for a triple, "<span class="highlight">a triple clear high up is more valuable than a Tetris at the very bottom</span>".<br>
+         Therefore, if you stack with setups for both Tetris and triple, you can stack more aggressively, and losses due to hesitation will likely decrease.
       </div>
   </div>
 
   <div class="info-section">
       <div class="example-images">
          <img src="{{ '/assets/images/11pics/15.png' | relative_url }}" alt="Setting aside mistake start" width="119" height="239">
-         <span>→</span>
+         <span class="arrow">→</span>
          <img src="{{ '/assets/images/11pics/16.png' | relative_url }}" alt="Setting aside mistake end" width="119" height="239">
       </div>
       <div class="text example-explanation">
-         If you make a mistake early in the game, you should set it aside and fix it later to not lose time.
+         If a hole forms in a low position, it's often better to ignore it and stack on top without trying to recover immediately.<br>
+         Early on, it's a game of who drops pieces from the highest position, so recovery can be done after the drop speed increases.<br><br>
+         "<span class="highlight">It's not a mistake until you make a compromise clear</span> (妥協消し - dakyou-geshi)".
       </div>
   </div>
 
-  <h3 class="section-heading">Optimizing operation 2</h3>
+  <p>As a point of caution, as the stack gets higher, the time from block appearance to locking naturally shortens, meaning the block appearance pitch inevitably speeds up.<br>
+     If you continue playing with the same feeling as right after the start, your reactions will gradually lag, potentially causing DAS charge delays and dropping pieces one column short.</p>
+
+  <h3 class="section-heading">Control Optimization 2</h3>
   <div class="info-section">
       <div class="example-images">
          <img src="{{ '/assets/images/11pics/07.gif' | relative_url }}" alt="Fast upside down T" width="119" height="239">
       </div>
       <div class="text example-explanation">
-         C rotates the same way as A, therefore you should not double tap A, but IRS C then press A quickly to enter at upside down.
+         "Instant Flip" (瞬間裏返し - shunkan uragaeshi) using the C button to rotate twice.<br>
+         Sometimes can be chained using wall kicks.<br>
+         In this case, holding C for IRS, then inputting A and Down the moment it appears allows for locking at the fastest possible timing.<br><br>
+         By the way, the processing order within a frame is "Rotation → Horizontal Movement → Drop", as mentioned in Chapter 7, but <span class="highlight">the judgment for locking via soft drop occurs even after that</span>.<br>
+         Therefore, in this case, the button for the second rotation and the down input for soft drop can be simultaneous (within the same frame).
       </div>
   </div>
 
@@ -164,7 +201,9 @@ tags: ["Time Attack", "GM Rank", "Speed", "Optimization", "DAS", "Line Clears", 
          <img src="{{ '/assets/images/11pics/13.gif' | relative_url }}" alt="Complex rotation/movement 1" width="119" height="239">
       </div>
       <div class="text example-explanation">
-         In this case you should IRS with B and after tapping left twice, you should tap AC quickly.
+         Instant Flip can also be used during the "Nurikabe" on the left side.<br>
+         In this case, "slightly bend the ring finger (or pinky if hands are small like mine) more than the index finger, then drop the weight of the wrist straight down (pressing C then A)" makes it easy, and since <span class="highlight">it can be recognized as a single action</span>, you can immediately think about the next step.<br>
+         Rather than thinking "A twice = AC", it's easier to understand as "<span class="highlight">to flip, slam the buttons on both ends</span>".
       </div>
   </div>
 
@@ -173,7 +212,10 @@ tags: ["Time Attack", "GM Rank", "Speed", "Optimization", "DAS", "Line Clears", 
          <img src="{{ '/assets/images/11pics/10.gif' | relative_url }}" alt="Quick slide under" width="119" height="239">
       </div>
       <div class="text example-explanation">
-         If you press right B left here you can quickly slide underneath.
+         After standing up the Z-piece with "left 1", input "<span class="highlight">right B left</span>" for the J-piece.<br>
+         Using wall kicks avoids bumping (コンコン - kon-kon), making it a powerful tool for time attack and advanced TAP stages.<br><br>
+         Note that you must shift one space sideways before the wall kick is possible.<br>
+         It's a detailed point, but because processing is "Rotation → Horizontal Movement → Drop", even if you press the button later, if it's within the same frame, it gets judged first and won't rotate. Again, until you're used to it, it's recommended to perform it slowly and surely.
       </div>
   </div>
 
@@ -183,7 +225,9 @@ tags: ["Time Attack", "GM Rank", "Speed", "Optimization", "DAS", "Line Clears", 
          <img src="{{ '/assets/images/11pics/12.gif' | relative_url }}" alt="Move then rotate example 2" width="119" height="239">
       </div>
       <div class="text example-explanation">
-         Sometimes you should pay attention to the order of moving and rotating, in this case moving first, then rotating is quicker.
+         An example where using wall kicks turns a bump (kon-kon) into a single horizontal input.<br>
+         Since the second rotation and soft drop can be simultaneous, it can lock at roughly the same timing as operations like "DAS charge → down" or "horizontal → down".<br>
+         The strength of optimization using wall kicks, besides shortening the operation time itself, I believe lies in "being able to maintain a constant soft drop rhythm". Recovering rhythm after a bump takes time.
       </div>
   </div>
 
@@ -192,34 +236,43 @@ tags: ["Time Attack", "GM Rank", "Speed", "Optimization", "DAS", "Line Clears", 
          <img src="{{ '/assets/images/11pics/14.gif' | relative_url }}" alt="Combined technique example" width="119" height="239">
       </div>
       <div class="text example-explanation">
-         This case is an example of the previous two techniques.
+         Though opportunities to use it aren't frequent, "Fuse" can also be utilized for optimization.
       </div>
   </div>
 
-  <h3 class="section-heading">Charging DAS</h3>
+  <h3 class="section-heading">Pre-Charging DAS (とり溜め - tori-tame)</h3>
   <div class="info-section">
       <div class="example-images">
          <img src="{{ '/assets/images/11pics/15.gif' | relative_url }}" alt="DAS charging example" width="119" height="239">
       </div>
       <div class="text example-explanation">
-         You can charge the DAS during the ARE, however it can be difficult to use.<br>
-         For example you can shift a block too far if you're not careful, or you can actually charge a block you didn't want to if you had to charge a series of blocks.<br>
-         In TGM the input of the joystick is dropped if it has been held for too long.<br><br>
-         DAS can be very useful at high speeds but it has its risks.
+         "Tori-tame" means, instead of thinking about placement then starting the charge, you start charging to one side while thinking about placement.<br>
+         That said, in TGM, it's almost always used with left charge.<br><br>
+         The ideal for time attack is "charge complete before appearance, and upon reaching the edge after appearance, lock instantly without stopping for even a single frame", and reality is how close you can get to that.<br>
+         Actually, the accumulation of slight losses from charge delays is extremely troublesome in time attack.<br>
+         Stacking methods can be reflected upon and improved endlessly afterwards, but momentary hesitation during play is not something easily improved through reflection.<br><br>
+         This "tori-tame" allows zero charge delay if a placement on the left side is found. Even if an operation other than left charge is needed and you have to redo it, the loss isn't that significant.<br>
+         Efficiency should improve if you can identify when to use it based on the stack shape and piece flow (tsumo).<br>
+         Using it for 3-4 blocks consecutively is desirable; at this time, the lever movement repeats as "left charge → moment block appears, briefly input down then left charge → ...".<br><br>
+         Also, using "tori-tame" helps in quickening the soft drop timing.<br>
+         Since TGM blocks are relatively heavy (long DAS charge time), it's often unclear whether there was a charge delay or none at all. This makes it difficult to confidently soft drop at an aggressively early timing.<br>
+         However, if "tori-tame" succeeds, you can operate knowing <span class="highlight">with certainty that there was absolutely no charge delay</span>, making it easier to find the optimal timing by repeating trials like "this timing was OK, so next time let's try inputting down a split second earlier".<br><br>
+         While it has various benefits, overuse carries the risk of disrupting the stack shape, so be mindful of that.
       </div>
   </div>
 
   <hr>
 
-  {% comment %} Lesson Navigation {% endcomment %}
-  <table style="width:100%; border: none;">
-    <tbody>
-      <tr>
-        <td><a href="{{ '/tips/10-advanced-stacking.html' | relative_url }}">Previous lesson</a></td>
-        <td style="text-align:center;"><a href="{{ '/' | relative_url }}">Top level</a></td>
-        <td style="text-align:right;"><a href="{{ '/tips/12-advanced-techniques.html' | relative_url }}">Next lesson</a></td>
-      </tr>
-    </tbody>
-  </table>
+    <nav class="lesson-nav">
+      <div class="nav-item prev">
+        <a href="{{ '/tips/10-advanced-stacking.html' | relative_url }}">← Previous Lesson</a> 
+      </div>
+      <div class="nav-item top">
+        <a href="{{ '/' | relative_url }}">Top Level</a>
+      </div>
+      <div class="nav-item next">
+        <a href="{{ '/tips/12-advanced-techniques.html' | relative_url }}">Next Lesson →</a>
+      </div>
+    </nav>
 
 </div>
