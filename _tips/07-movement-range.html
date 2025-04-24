@@ -1,0 +1,204 @@
+---
+title: "Understanding the range of movement"
+guide: "TGM"
+order: 7
+layout: tip 
+tags: ["Movement", "Rotation", "IRS", "Wall Kick", "20G", "Synchronous Actions"]
+---
+
+{% comment %} 
+  Modernized HTML content for Lesson 7.
+  Uses CSS classes defined in the main stylesheet (jekyll_main_css).
+  Image paths assume images are in /assets/images/7pics/
+{% endcomment %}
+
+<div class="tip-content">
+
+  <h3 class="section-heading">Sliding over holes</h3>
+  <div class="info-section">
+      <div class="example-images">
+         <img src="{{ '/assets/images/7pics/12.gif' | relative_url }}" alt="J/L IRS for sliding" width="119" height="239">
+      </div>
+      <div class="text example-explanation">
+         With J and L it's a good idea to use IRS to land with the blunt side down.
+      </div>
+  </div>
+
+  <div class="info-section">
+      <div class="example-images">
+         <img src="{{ '/assets/images/7pics/14.gif' | relative_url }}" alt="Sliding over bumps 1" width="119" height="239">
+         <img src="{{ '/assets/images/7pics/15.gif' | relative_url }}" alt="Sliding over bumps 2" width="119" height="239">
+      </div>
+      <div class="text example-explanation">
+         You can slide over bumps when they're out of reach like this.
+      </div>
+  </div>
+
+  <div class="info-section">
+      <div class="example-images">
+         <img src="{{ '/assets/images/7pics/16.gif' | relative_url }}" alt="Rotating J example 1" width="119" height="239">
+         <img src="{{ '/assets/images/7pics/17.gif' | relative_url }}" alt="Rotating J example 2" width="119" height="239">
+      </div>
+      <div class="text example-explanation">
+         <b>Rotating J:</b><br>
+         As seen left you'll often need to use IRS and keep rotating in that direction.<br>
+         On the right side you can see a more complicated example.
+      </div>
+  </div>
+
+  <h3 class="section-heading">When not to use IRS</h3>
+  <div class="info-section">
+      <div class="example-images">
+         <img src="{{ '/assets/images/7pics/18.gif' | relative_url }}" alt="Sliding L/S left without IRS" width="119" height="239">
+      </div>
+      <div class="text example-explanation">
+         L and S are easy to slide to the left without IRS in most cases.
+      </div>
+  </div>
+
+  <div class="info-section">
+      <div class="example-images">
+         <img src="{{ '/assets/images/7pics/19.gif' | relative_url }}" alt="Shift before rotate example 1" width="119" height="239">
+         <img src="{{ '/assets/images/7pics/20.gif' | relative_url }}" alt="Shift before rotate example 2" width="119" height="239">
+      </div>
+      <div class="text example-explanation">
+         Sometimes you have to shift the block first before rotating; using IRS they'd get stuck.
+      </div>
+  </div>
+
+  <h3 class="section-heading">Rotating the I</h3>
+  <div class="info-section">
+      <div class="example-images">
+         <img src="{{ '/assets/images/7pics/red.gif' | relative_url }}" alt="I piece rotation" width="41" height="41">
+         <img src="{{ '/assets/images/7pics/red2.gif' | relative_url }}" alt="I piece rotation req (left)" width="119" height="239">
+         <img src="{{ '/assets/images/7pics/red3.gif' | relative_url }}" alt="I piece rotation req (right)" width="119" height="239">
+      </div>
+      <div class="text example-explanation">
+         The I can only be rotated on the right when there's a 2 x 2 space free.
+      </div>
+  </div>
+  <div class="info-section">
+      <div class="example-images">
+         <img src="{{ '/assets/images/7pics/21.gif' | relative_url }}" alt="I rotation with 2x2 space 1" width="119" height="239">
+         <img src="{{ '/assets/images/7pics/22.gif' | relative_url }}" alt="I rotation with 2x2 space 2" width="119" height="239">
+      </div>
+      <div class="text example-explanation">
+         If a 2 x 2 space is available the other terrain doesn't matter.
+      </div>
+  </div>
+  <div class="info-section">
+      <div class="example-images">
+         <img src="{{ '/assets/images/7pics/red4.gif' | relative_url }}" alt="I piece rotation req (left side)" width="119" height="239">
+         <img src="{{ '/assets/images/7pics/red5.gif' | relative_url }}" alt="I piece rotation req (right side)" width="119" height="239">
+      </div>
+      <div class="text example-explanation">
+         On the right side a 3 x 2 space is needed.<br>
+         <span class="highlight">The steps pattern works only on the right.</span>
+      </div>
+  </div>
+  <div class="info-section">
+      <div class="example-images">
+         <img src="{{ '/assets/images/7pics/25.gif' | relative_url }}" alt="Careful I rotation example 1" width="119" height="239">
+         <img src="{{ '/assets/images/7pics/26.gif' | relative_url }}" alt="Careful I rotation example 2" width="119" height="239">
+         <img src="{{ '/assets/images/7pics/24.gif' | relative_url }}" alt="Careful I rotation example 3" width="119" height="239">
+      </div>
+      <div class="text example-explanation">
+         In some cases you need to be careful with rotating so you don't get stuck.
+      </div>
+  </div>
+
+  <div class="info-section">
+      <div class="example-images">
+         <img src="{{ '/assets/images/7pics/01.png' | relative_url }}" alt="Difficult I piece placement scenario" width="119" height="239">
+      </div>
+      <div class="text example-explanation">
+         What can you do when the situation is like this?<br>
+         In 20G mode, it would seem that you'd get stuck in the hole there.<br>
+         In this case, however, with accumulated speed to the left, the game will perform more than one action in a frame.<br><br>
+         See the next section for more details.
+      </div>
+  </div>
+
+  <h3 class="section-heading">Synchronous actions</h3>
+  <p>
+    In some cases you can perform multiple actions in one frame.<br>
+    As mentioned in <a href="{{ '/tips/01-basics.html' | relative_url }}">lesson 1</a> a frame is the smallest time-unit visible to the player.<br><br>
+    Here is an example of this behaviour.<br>
+    More advanced examples can be found in <a href="{{ '/tips/12-advanced-techniques.html' | relative_url }}">lesson 12</a>.
+  </p>
+  
+  <div class="info-section">
+    <div class="text example-explanation"> <table>
+        <tbody>
+          <tr><td>While holding left, we rotate.</td></tr>
+          <tr><td style="text-align:center;">↓</td></tr>
+          <tr><td>The game will rotate in memory, this is not shown on screen.</td></tr>
+          <tr><td style="text-align:center;">↓</td></tr>
+          <tr><td>Now it will try to move to the left, this is still not shown on screen.</td></tr>
+          <tr><td style="text-align:center;">↓</td></tr>
+          <tr><td>Now it will process the fall and show it on screen.</td></tr>
+        </tbody>
+      </table>
+    </div>
+     <div class="example-images" style="flex-direction: column;"> <img src="{{ '/assets/images/7pics/02.png' | relative_url }}" alt="Sync action step 1 (initial)" width="119" height="239">
+         <img src="{{ '/assets/images/7pics/03.png' | relative_url }}" alt="Sync action step 2 (memory rotate)" width="119" height="239">
+         <img src="{{ '/assets/images/7pics/04.png' | relative_url }}" alt="Sync action step 3 (memory move)" width="119" height="239">
+         <img src="{{ '/assets/images/7pics/05.png' | relative_url }}" alt="Sync action step 4 (final display)" width="119" height="239">
+     </div>
+  </div>
+
+  <div class="info-section">
+      <div class="example-images">
+         <img src="{{ '/assets/images/7pics/06.gif' | relative_url }}" alt="Normal I piece fall (neutral joystick)" width="119" height="239">
+         <img src="{{ '/assets/images/7pics/07.gif' | relative_url }}" alt="Normal I piece fall result" width="119" height="239">
+      </div>
+      <div class="text example-explanation">
+         Of course, if the joystick is in a neutral position, the I will fall as usual.
+      </div>
+  </div>
+
+  <h3 class="section-heading">Special rotations</h3>
+  <div class="info-section">
+      <div class="example-images">
+         <img src="{{ '/assets/images/7pics/purple.gif' | relative_url }}" alt="S piece rotation" width="31" height="31">
+         <img src="{{ '/assets/images/7pics/08.gif' | relative_url }}" alt="S piece special rotation result" width="119" height="239">
+      </div>
+      <div class="text example-explanation">
+         As shown here the top of the S will end up one column to the left, usable to our advantage.
+      </div>
+  </div>
+  <div class="info-section">
+      <div class="example-images">
+         <img src="{{ '/assets/images/7pics/09.gif' | relative_url }}" alt="Using special S rotation to fill hole" width="119" height="239">
+      </div>
+      <div class="text example-explanation">
+         This behaviour can also be used to fill holes like this.
+      </div>
+  </div>
+
+  <h3 class="section-heading">Across holes</h3>
+  <div class="info-section">
+      <div class="example-images">
+         <img src="{{ '/assets/images/7pics/10.gif' | relative_url }}" alt="Moving across hole example 1" width="119" height="239">
+         <img src="{{ '/assets/images/7pics/11.gif' | relative_url }}" alt="Moving across hole example 2" width="119" height="239">
+      </div>
+      <div class="text example-explanation">
+         Sometimes you can move across holes and rotate the block in place.<br>
+         You will need to look at the terrain on a case by case basis though.
+      </div>
+  </div>
+
+  <hr>
+
+  {% comment %} Lesson Navigation {% endcomment %}
+  <table style="width:100%; border: none;">
+    <tbody>
+      <tr>
+        <td><a href="{{ '/tips/06-fifth-column.html' | relative_url }}">Previous lesson</a></td>
+        <td style="text-align:center;"><a href="{{ '/' | relative_url }}">Top level</a></td>
+        <td style="text-align:right;"><a href="{{ '/tips/08-advanced-rotation.html' | relative_url }}">Next lesson</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

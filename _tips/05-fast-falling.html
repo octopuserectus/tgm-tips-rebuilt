@@ -1,0 +1,102 @@
+---
+title: "Fast falling stages"
+guide: "TGM"
+order: 5
+layout: tip 
+tags: ["Speed", "Gravity", "20G", "Lock Delay", "ARE"]
+---
+
+{% comment %} 
+  Modernized HTML content for Lesson 5.
+  Uses CSS classes defined in the main stylesheet (jekyll_main_css).
+  Image paths assume images are in /assets/images/5pics/
+{% endcomment %}
+
+<div class="tip-content">
+
+  <p>
+    From Lv.300 speed will increase to 2G and 4G, from Lv.400 it will increase to 5G and end with 3G.<br>
+    As mentioned in <a href="{{ '/tips/01-basics.html' | relative_url }}">lesson 1</a> a G is the amount of rows dropped per frame.<br>
+    Here are the trajectories for 2 to 5G.
+  </p>
+  
+  <div class="info-section">
+      <div class="example-images">
+         <img src="{{ '/assets/images/5pics/01.png' | relative_url }}" alt="2G trajectory" width="119" height="239">
+         <img src="{{ '/assets/images/5pics/02.png' | relative_url }}" alt="3G trajectory" width="119" height="239">
+         <img src="{{ '/assets/images/5pics/03.png' | relative_url }}" alt="4G trajectory" width="119" height="239">
+         <img src="{{ '/assets/images/5pics/04.png' | relative_url }}" alt="5G trajectory" width="119" height="239">
+      </div>
+      <div class="text example-explanation" style="text-align: center;"> 
+         <span style="display:inline-block; width: 119px;">2G</span>
+         <span style="display:inline-block; width: 119px;">3G</span>
+         <span style="display:inline-block; width: 119px;">4G</span>
+         <span style="display:inline-block; width: 119px;">5G</span>
+      </div>
+  </div>
+
+  <div class="info-section">
+      <div class="example-images">
+         <img src="{{ '/assets/images/5pics/03.gif' | relative_url }}" alt="Block getting stuck at high speed" width="119" height="239">
+      </div>
+      <div class="text example-explanation">
+         If blocks are going faster than expected, they can get stuck on other blocks.
+      </div>
+  </div>
+  
+  <div class="info-section">
+      <div class="example-images">
+          <img src="{{ '/assets/images/5pics/01.gif' | relative_url }}" alt="Block stuck in 20G" width="119" height="239">
+      </div>
+      <div class="text example-explanation">
+          This is even more common in 20G.<br>
+          In 20G blocks will appear on the floor.<br>
+          In this example it is impossible to escape.
+      </div>
+  </div>
+
+  <div class="info-section">
+      <div class="example-images">
+         <img src="{{ '/assets/images/5pics/04.gif' | relative_url }}" alt="Stack built for 20G" width="119" height="239">
+      </div>
+      <div class="text example-explanation">
+         Therefore you should build your stack like this, using lock delay to form it.
+      </div>
+  </div>
+
+  <p>Specifics on this can be found in the next chapters.</p>
+
+  <h3 class="section-heading">Lock delay</h3>
+  <div class="info-section">
+      <div class="example-images">
+         <img src="{{ '/assets/images/5pics/02.gif' | relative_url }}" alt="Sliding using lock delay" width="119" height="239">
+      </div>
+      <div class="text example-explanation">
+         When you have to slide blocks you use the <span class="highlight">lock delay</span> mechanism.<br>
+         You have 0.5 seconds to set your piece except if it drops down another line, then the lock delay will be reset.
+      </div>
+  </div>
+  <div class="info-section">
+      <div class="example-images">
+         <img src="{{ '/assets/images/5pics/05.gif' | relative_url }}" alt="Accidental movement during ARE" width="119" height="239">
+      </div>
+      <div class="text example-explanation">
+         You have to be aware that you can still move a block before the lock delay runs out.<br>
+         Like this, you can accidentally move a piece while you are preparing for the next block during the ARE.
+      </div>
+  </div>
+
+  <hr>
+
+  {% comment %} Lesson Navigation {% endcomment %}
+  <table style="width:100%; border: none;">
+    <tbody>
+      <tr>
+        <td><a href="{{ '/tips/04-recovery.html' | relative_url }}">Previous lesson</a></td>
+        <td style="text-align:center;"><a href="{{ '/' | relative_url }}">Top level</a></td>
+        <td style="text-align:right;"><a href="{{ '/tips/06-fifth-column.html' | relative_url }}">Next lesson</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

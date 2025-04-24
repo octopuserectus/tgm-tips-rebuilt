@@ -1,0 +1,82 @@
+---
+title: Home # Or "TGM Tips Guide" etc.
+layout: home # Assumes you have a _layouts/home.html (can be simple)
+---
+
+{% comment %} 
+  This is the main content for the landing page (index.html).
+  It will be inserted into the {{ content }} tag of the specified layout.
+  Styles have been moved to the main CSS file.
+{% endcomment %}
+
+<div class="landing-content">
+
+  <h1 class="site-title">Tetris Guide</h1>
+  <hr>
+
+  <div class="intro-text">
+    <p>
+      The official Japanese Arika website can be found <a href="http://www.arika.co.jp/" target="_blank" rel="noopener noreferrer">here</a>.
+    </p>
+    <p>
+      This website contains guides for: <br>
+      - Tetris The Grand Master (<span class="highlight">TGM</span>).<br>
+      - Tetris The Absolute Grand Master 2 (<span class="highlight">TAP</span>) Master mode and Death mode.<br>
+      - Tetris The Grand Master 3 Terror Instinct (<span class="highlight">Ti</span>) Shirase mode and Master mode using the classic ruleset.
+    </p>
+    <p>
+      This guide has been translated by villadelfia, the original can be found <a href="http://www13.plala.or.jp/TETRiS_TGM/kouza/" target="_blank" rel="noopener noreferrer">here</a>.
+    </p>
+  </div>
+
+  <div class="guides-container">
+
+    <div class="guide-section tgm-guide">
+      <h3>TGM Guide</h3>
+      <ul>
+        {% comment %} Update hrefs with Jekyll link tags or relative_url filter {% endcomment %}
+        <li><span class="lesson-number">Lesson 1</span> <a href="{{ '/tips/01-basics.html' | relative_url }}">Basics</a></li>
+        <li><span class="lesson-number">Lesson 2</span> <a href="{{ '/tips/02-basic-stacking.html' | relative_url }}">Basic stacking</a></li>
+        <li><span class="lesson-number">Lesson 3</span> <a href="{{ '/tips/03-skimming.html' | relative_url }}">Skimming</a></li>
+        <li><span class="lesson-number">Lesson 4</span> <a href="{{ '/tips/04-recovery.html' | relative_url }}">Recovery</a></li>
+        <li><span class="lesson-number">Lesson 5</span> <a href="{{ '/tips/05-fast-falling.html' | relative_url }}">Fast falling stages</a></li>
+        <li><span class="lesson-number">Lesson 6</span> <a href="{{ '/tips/06-fifth-column.html' | relative_url }}">Increasing the fifth column</a></li>
+        <li><span class="lesson-number">Lesson 7</span> <a href="{{ '/tips/07-movement-range.html' | relative_url }}">Understanding the range of movement</a></li>
+        <li><span class="lesson-number">Lesson 8</span> <a href="{{ '/tips/08-advanced-rotation.html' | relative_url }}">Advanced rotation</a></li>
+        <li><span class="lesson-number">Lesson 9</span> <a href="{{ '/tips/09-rotating-obstacles.html' | relative_url }}">Rotating over obstacles</a></li>
+        <li><span class="lesson-number">Lesson 10</span> <a href="{{ '/tips/10-advanced-stacking.html' | relative_url }}">Advanced stacking</a></li>
+        <li><span class="lesson-number">Lesson 11</span> <a href="{{ '/tips/11-time-attack.html' | relative_url }}">Time attack</a></li>
+        <li><span class="lesson-number">Lesson 12</span> <a href="{{ '/tips/12-advanced-techniques.html' | relative_url }}">Advanced Techniques</a></li>
+      </ul>
+    </div>
+
+    <div class="guide-section tap-guide">
+      <h3>TAP Guide</h3>
+      <ul>
+        <li><span class="lesson-number">Lesson 13</span> <a href="{{ '/tips/13-master-m.html' | relative_url }}">Master m</a></li>
+        <li><span class="lesson-number">Lesson 14</span> <a href="{{ '/tips/14-death-m.html' | relative_url }}">Death m</a></li>
+        <li><span class="lesson-number">Lesson 15</span> <a href="{{ '/tips/15-death-gm.html' | relative_url }}">Death Gm</a></li>
+        <li><span class="lesson-number">Lesson 16</span> <a href="{{ '/tips/16-master-gm.html' | relative_url }}">Master Gm</a></li>
+      </ul>
+    </div>
+
+    <div class="guide-section ti-guide">
+      <h3>Ti Guide</h3>
+      <ul>
+        <li><span class="lesson-number">Lesson 17</span> <a href="{{ '/tips/17-new-system.html' | relative_url }}">The new system</a></li>
+        <li><span class="lesson-number">Lesson 18</span> <a href="{{ '/tips/18-shirase-1300.html' | relative_url }}">Shirase to Lv.1300</a></li>
+        <li><span class="lesson-number">Lesson 19</span> <a href="{{ '/tips/19-invisible-roll.html' | relative_url }}">Invisible staff roll</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="free-images">
+    <hr>
+    <p>These pics are free for you to use.</p>
+    {% comment %} Assuming images are in assets/images/ipics/ folder {% endcomment %}
+    <img src="{{ '/assets/images/ipics/field.gif' | relative_url }}" alt="Empty TGM playfield" width="119" height="239">
+    <img src="{{ '/assets/images/ipics/field_r.gif' | relative_url }}" alt="Empty TGM playfield, reversed colors" width="119" height="239">
+  </div>
+
+</div>
