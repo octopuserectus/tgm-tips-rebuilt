@@ -8,7 +8,7 @@ title: Select Language
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 60vh;
+    min-height: 60vh; /* Adjusted to accommodate images */
     text-align: center;
   }
   .language-selector h1 {
@@ -31,14 +31,31 @@ title: Select Language
     background-color: #374151;
     color: #ffffff;
   }
+  .title-images { /* Style for the image container */
+    text-align: center; /* Center the container content */
+    margin-top: 1em; /* Add some space below the hr */
+    margin-bottom: 2em; /* Add space above the language selector */
+  }
+  .title-images img { /* Style for the images */
+    margin: 0 5px; /* Add small horizontal space between images */
+    vertical-align: middle; /* Align images nicely */
+  }
 </style>
+
 <h1 class="site-title">Tetris: The Grand Master (TGM) series guide</h1>
 <hr>
-    <div class="language-selector">
-        <h1>Select Language / 言語を選択</h1>
-        <div>
-            <a href="{{ '/en-vd/' | relative_url }}">English (villadelfia, incomplete)</a>
-            <a href="{{ '/en-ai/' | relative_url }}">English (AI, full text)</a>
-            <a href="{{ '/jp/' | relative_url }}">日本語 (Japanese, original)</a>
-        </div>
-    </div>
+
+<div class="title-images">
+  <img src="{{ '/assets/images/title/tgm1_title.png' | relative_url }}" alt="TGM1 Title" width="320" height="240">
+  <img src="{{ '/assets/images/title/tgm2_title.png' | relative_url }}" alt="TGM2 Title" width="320" height="240">
+  <img src="{{ '/assets/images/title/tgm3_title.png' | relative_url }}" alt="TGM3 Title" width="320" height="240">
+</div>
+
+<div class="language-selector">
+  <h1>Select Language / 言語を選択</h1>
+  <div>
+    <a href="{{ '/en-vd/' | relative_url }}">English (villadelfia, incomplete)</a>
+    <a href="{{ '/en-ai/' | relative_url }}">English (AI, full text)</a>
+    <a href="{{ '/jp/' | relative_url }}">日本語 (Japanese, original)</a>
+  </div>
+</div>
