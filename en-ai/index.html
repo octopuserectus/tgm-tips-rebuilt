@@ -1,0 +1,75 @@
+---
+title: Home # Or "TGM Tips Guide" etc.
+layout: home # Assumes you have a _layouts/home.html (can be simple)
+---
+
+{% comment %} 
+  This is the main content for the landing page (index.html).
+  It will be inserted into the {{ content }} tag of the specified layout.
+  Styles have been moved to the main CSS file.
+{% endcomment %}
+
+<div class="landing-content">
+
+  <h1 class="site-title">Tetris: The Grand Master (TGM) series guide</h1>
+  <hr>
+
+  <div class="intro-text">
+    <p>
+      This guide covers <a href="https://www.arika.co.jp/" target="_blank" rel="noopener noreferrer">Arika</a>'s:<br>
+      • Tetris: The Grand Master (<span class="highlight">TGM</span>)<br>
+      • Tetris: The Absolute The Grand Master 2 PLUS (<span class="highlight">TAP</span>) - Master Mode and Death Mode<br>
+      • Tetris: The Grand Master 3 - Terror-Instinct (<span class="highlight">Ti</span>) - Master Mode and Shirase Mode (Classic Rule only for both)<br>
+    </p>
+  </div>
+
+  <div class="guides-container">
+
+    <div class="guide-section tgm-guide">
+      <h3>TGM Guide</h3>
+      <ul>
+        {% comment %} Update hrefs with Jekyll link tags or relative_url filter {% endcomment %}
+        <li><span class="lesson-number">Lesson 1</span> <a href="{{ 'en-ai/tips/01-basics.html' | relative_url }}">Basic Knowledge (基礎知識)</a></li>
+        <li><span class="lesson-number">Lesson 2</span> <a href="{{ 'en-ai/tips/02-basic-stacking.html' | relative_url }}">Basic Stacking (基本的な積み方)</a></li>
+        <li><span class="lesson-number">Lesson 3</span> <a href="{{ 'en-ai/tips/03-skimming.html' | relative_url }}">Skimming (削り)</a></li>
+        <li><span class="lesson-number">Lesson 4</span> <a href="{{ 'en-ai/tips/04-recovery.html' | relative_url }}">Recovery (復活)</a></li>
+        <li><span class="lesson-number">Lesson 5</span> <a href="{{ 'en-ai/tips/05-fast-falling.html' | relative_url }}">High-Speed Stages (高速落下ステージ)</a></li>
+        <li><span class="lesson-number">Lesson 6</span> <a href="{{ 'en-ai/tips/06-fifth-column.html' | relative_url }}">Raising the 5th Column (５列目を高くする)</a></li>
+        <li><span class="lesson-number">Lesson 7</span> <a href="{{ 'en-ai/tips/07-movement-range.html' | relative_url }}">Understanding Movement Range (可動範囲を理解する)</a></li>
+        <li><span class="lesson-number">Lesson 8</span> <a href="{{ 'en-ai/tips/08-advanced-rotation.html' | relative_url }}">Rotation Placement (回転入れ)</a></li>
+        <li><span class="lesson-number">Lesson 9</span> <a href="{{ 'en-ai/tips/09-rotating-obstacles.html' | relative_url }}">Skips & Passes (飛ばし・渡し)</a></li>
+        <li><span class="lesson-number">Lesson 10</span> <a href="{{ 'en-ai/tips/10-advanced-stacking.html' | relative_url }}">Advanced Stacking (アクティブな積み方)</a></li>
+        <li><span class="lesson-number">Lesson 11</span> <a href="{{ 'en-ai/tips/11-time-attack.html' | relative_url }}">Time Attack (タイムアタック)</a></li>
+        <li><span class="lesson-number">Lesson 12</span> <a href="{{ 'en-ai/tips/12-advanced-techniques.html' | relative_url }}">Advanced Techniques (上級テクニック)</a></li>
+      </ul>
+    </div>
+
+    <div class="guide-section tap-guide">
+      <h3>TAP Guide</h3>
+      <ul>
+        <li><span class="lesson-number">Lesson 13</span> <a href="{{ 'en-ai/tips/13-master-m.html' | relative_url }}">Master m</a></li>
+        <li><span class="lesson-number">Lesson 14</span> <a href="{{ 'en-ai/tips/14-death-m.html' | relative_url }}">Death m</a></li>
+        <li><span class="lesson-number">Lesson 15</span> <a href="{{ 'en-ai/tips/15-death-gm.html' | relative_url }}">Death Gm</a></li>
+        <li><span class="lesson-number">Lesson 16</span> <a href="{{ 'en-ai/tips/16-master-gm.html' | relative_url }}">Master Gm</a></li>
+      </ul>
+    </div>
+
+    <div class="guide-section ti-guide">
+      <h3>Ti Guide</h3>
+      <ul>
+        <li><span class="lesson-number">Lesson 17</span> <a href="{{ 'en-ai/tips/17-new-system.html' | relative_url }}">New System (新システム)</a></li>
+        <li><span class="lesson-number">Lesson 18</span> <a href="{{ 'en-ai/tips/18-shirase-1300.html' | relative_url }}">Shirase to Lv 1300 (シラセＬｖ１３００まで)</a></li>
+        <li><span class="lesson-number">Lesson 19</span> <a href="{{ 'en-ai/tips/19-invisible-roll.html' | relative_url }}">Invisible Staff Roll (シャドウスタッフロール)</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="free-images">
+    <hr>
+    <p>The well diagrams below are free materials. Please save locally and use freely.</p>
+    <img src="{{ '/assets/images/ipics/field.gif' | relative_url }}" alt="Empty TGM playfield" width="119" height="239">
+    <img src="{{ '/assets/images/ipics/field_r.gif' | relative_url }}" alt="Empty TGM playfield, reversed colors" width="119" height="239">
+  </div>
+
+</div>

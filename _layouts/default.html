@@ -4,11 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  {% comment %} Add SEO plugin or basic title/meta tags {% endcomment %}
-  {% if site.plugins contains "jekyll-seo-tag" %}{% seo %}{% else %}<title>{% if page.order %}Lesson {{ page.order }}: {% endif %}{{ page.title | default: site.title | escape }} | {{ site.title | escape }}</title>{% endif %}
-
-  {% comment %} Favicon Links - Add these lines {% endcomment %}
   <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" sizes="any"> {% comment %} Standard .ico favicon {% endcomment %}
   <link rel="icon" href="{{ '/assets/images/icons/icon.svg' | relative_url }}" type="image/svg+xml"> {% comment %} Optional SVG favicon {% endcomment %}
   <link rel="apple-touch-icon" href="{{ '/assets/images/icons/apple-touch-icon.png' | relative_url }}"> {% comment %} Optional Apple touch icon (e.g., 180x180 png) {% endcomment %}

@@ -1,0 +1,103 @@
+---
+title: "High-Speed Stages (高速落下ステージ)"
+guide: "TGM"
+order: 5
+layout: tip 
+tags: ["Speed", "Gravity", "20G", "Lock Delay", "ARE"]
+---
+
+<div class="tip-content">
+
+  <p>
+    From the Lv 300 range, the drop speed increases from 2G to 4G, and in the Lv 400 range, it increases to 5G then slows down to 3G.<br>
+    As mentioned in <a href="{{ '/en-ai/tips/ds01-basics.html' | relative_url }}">Chapter 1</a> regarding G, blocks appear at a location one frame's worth of falling from the state touching the top edge of the well (when not rotated), so the block trajectories from 2G to 5G are shown below.
+  </p>
+  
+  <div class="info-section gravity-examples">
+      <div class="gravity-example">
+         <img src="{{ '/assets/images/5pics/01.png' | relative_url }}" alt="2G trajectory" width="119" height="239">
+         <span class="gravity-label">2G</span>
+      </div>
+      <div class="gravity-example">
+         <img src="{{ '/assets/images/5pics/02.png' | relative_url }}" alt="3G trajectory" width="119" height="239">
+         <span class="gravity-label">3G</span>
+      </div>
+      <div class="gravity-example">
+         <img src="{{ '/assets/images/5pics/03.png' | relative_url }}" alt="4G trajectory" width="119" height="239">
+         <span class="gravity-label">4G</span>
+      </div>
+      <div class="gravity-example">
+         <img src="{{ '/assets/images/5pics/04.png' | relative_url }}" alt="5G trajectory" width="119" height="239">
+         <span class="gravity-label">5G</span>
+      </div>
+  </div>
+
+  <div class="info-section">
+      <div class="example-images">
+         <img src="{{ '/assets/images/5pics/03.gif' | relative_url }}" alt="Block getting stuck at high speed" width="119" height="239">
+      </div>
+      <div class="text example-explanation">
+         Of course, the diagrams above show the movement when DAS was already charged before appearance.<br>
+         If the charge is delayed, or the drop speed is faster than expected, situations like "getting caught and not reaching" can occur.
+      </div>
+  </div>
+  
+  <div class="info-section">
+      <div class="example-images">
+          <img src="{{ '/assets/images/5pics/01.gif' | relative_url }}" alt="Block stuck in 20G" width="119" height="239">
+      </div>
+      <div class="text example-explanation">
+          This becomes even more apparent in 20G.<br>
+          DAS can be charged before appearance, but there's no such thing as preceding input for the horizontal movement itself. The first frame always appears directly below.<br>
+          The left diagram shows the famous T-piece trap, where escape becomes impossible. Rotating makes the space above the cavity 3 columns wide, worsening the situation.
+      </div>
+  </div>
+
+  <div class="info-section">
+      <div class="example-images">
+         <img src="{{ '/assets/images/5pics/04.gif' | relative_url }}" alt="Stack built for 20G" width="119" height="239">
+      </div>
+      <div class="text example-explanation">
+         Therefore, when the drop speed is high, it's better to keep the center high and use the lock delay to slide blocks into position.<br>
+         This way, no matter how fast the drop, you can move the block wherever you want.
+      </div>
+  </div>
+
+  <p>Specific stacking methods will be covered in the following chapters.</p>
+
+  <h3 class="section-heading">Lock Delay Reset</h3>
+  <div class="info-section">
+      <div class="example-images">
+         <img src="{{ '/assets/images/5pics/02.gif' | relative_url }}" alt="Sliding using lock delay" width="119" height="239">
+      </div>
+      <div class="text example-explanation">
+         When you start sliding blocks over the stack, you must keep in mind that "<span class="highlight">lock delay resets when the piece drops down a step</span>".<br>
+         (The 2-row drop when standing up an I-piece doesn't count as a fall.)<br>
+         For example, if the lock delay is 0.5 seconds, and 0.4 seconds have passed after landing when you move horizontally causing a drop, it will take another 0.5 seconds from the new landing until locking. This can be repeated as long as you can cause drops, allowing you to gain actual time until locking when the drop speed is high.
+      </div>
+  </div>
+  <div class="info-section">
+      <div class="example-images">
+         <img src="{{ '/assets/images/5pics/05.gif' | relative_url }}" alt="Accidental movement during ARE" width="119" height="239">
+      </div>
+      <div class="text example-explanation">
+         You must be careful about the phenomenon of "editing the past" (過去をいじる - kako o ijiru), where you think a piece has already locked and start charging DAS for the next block, but the previous block wasn't locked yet and moves.<br>
+         Ultimately, using soft drop (下入れ - shita-ire) to force lock can prevent this, but until you're used to it, it's better to handle it by slightly delaying your DAS charge. The DAS charge time is considerably shorter than the lock delay, so you'll still have time even if you start charging upon appearance.
+      </div>
+  </div>
+
+  <hr>
+
+    <nav class="lesson-nav">
+      <div class="nav-item prev">
+        <a href="{{ '/en-ai/tips/04-recovery.html' | relative_url }}">← Previous Lesson</a> 
+      </div>
+      <div class="nav-item top">
+        <a href="{{ '/en-ai/' | relative_url }}">Top Level ⤴</a>
+      </div>
+      <div class="nav-item next">
+        <a href="{{ '/en-ai/tips/06-fifth-column.html' | relative_url }}">Next Lesson →</a>
+      </div>
+    </nav>
+
+</div>

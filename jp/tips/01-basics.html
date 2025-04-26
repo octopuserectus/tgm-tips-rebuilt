@@ -1,0 +1,186 @@
+---
+title: "基礎知識"
+guide: "TGM"
+order: 1
+layout: tip
+tags: ["基本メカニクス", "回転", "ゲームプレイループ", "IRS", "壁蹴り", "ARE", "横溜め"]
+---
+
+<div class="tip-content">
+
+  <h3 class="section-heading">７種類のブロックとボタンについて</h3>
+  <table class="rotation-table">
+    <thead>
+      <tr>
+        <th>ブロック</th>
+        <th><span class="highlight">Ａ</span> ボタン<br>回転</th>
+        <th>出現<br>場所/向き</th>
+        <th><span class="highlight">Ｂ</span> ボタン<br>回転</th>
+        <th><span class="highlight">Ｃ</span> ボタン<br>回転</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>水色 (I)</td>
+        <td><img src="{{ '/assets/images/1pics/mizu_a.gif' | relative_url }}" alt="Iピース A回転" width="31" height="31"></td>
+        <td><img src="{{ '/assets/images/1pics/mizu00.PNG' | relative_url }}" alt="Iピース 初期状態" width="119" height="60"></td>
+        <td><img src="{{ '/assets/images/1pics/mizu_b.gif' | relative_url }}" alt="Iピース B回転" width="31" height="31"></td>
+        <td><span class="highlight">A</span>と同じ</td>
+      </tr>
+      <tr>
+        <td>青 (J)</td>
+        <td><img src="{{ '/assets/images/1pics/blue_a.gif' | relative_url }}" alt="Jピース A回転" width="31" height="31"></td>
+        <td><img src="{{ '/assets/images/1pics/blue00.PNG' | relative_url }}" alt="Jピース 初期状態" width="119" height="60"></td>
+        <td><img src="{{ '/assets/images/1pics/blue_b.gif' | relative_url }}" alt="Jピース B回転" width="31" height="31"></td>
+        <td><span class="highlight">A</span>と同じ</td>
+      </tr>
+      <tr>
+        <td>オレンジ (L)</td>
+        <td><img src="{{ '/assets/images/1pics/orange_a.gif' | relative_url }}" alt="Lピース A回転" width="31" height="31"></td>
+        <td><img src="{{ '/assets/images/1pics/orange00.PNG' | relative_url }}" alt="Lピース 初期状態" width="119" height="60"></td>
+        <td><img src="{{ '/assets/images/1pics/orange_b.gif' | relative_url }}" alt="Lピース B回転" width="31" height="31"></td>
+        <td><span class="highlight">A</span>と同じ</td>
+      </tr>
+      <tr>
+        <td>緑 (S)</td>
+        <td><img src="{{ '/assets/images/1pics/green.gif' | relative_url }}" alt="Sピース 回転" width="31" height="31"></td>
+        <td><img src="{{ '/assets/images/1pics/green00.PNG' | relative_url }}" alt="Sピース 初期状態" width="119" height="60"></td>
+        <td><span class="highlight">A</span>と同じ</td>
+        <td><span class="highlight">A</span>と同じ</td>
+      </tr>
+      <tr>
+        <td>紫 (T)</td>
+        <td><img src="{{ '/assets/images/1pics/purple.gif' | relative_url }}" alt="Tピース 回転" width="31" height="31"></td>
+        <td><img src="{{ '/assets/images/1pics/parple00.PNG' | relative_url }}" alt="Tピース 初期状態" width="119" height="60"></td>
+        <td><span class="highlight">A</span>と同じ</td>
+        <td><span class="highlight">A</span>と同じ</td>
+      </tr>
+      <tr>
+        <td>赤 (Z)</td>
+        <td><img src="{{ '/assets/images/1pics/red.gif' | relative_url }}" alt="Zピース 回転" width="41" height="41"></td>
+        <td><img src="{{ '/assets/images/1pics/red00.PNG' | relative_url }}" alt="Zピース 初期状態" width="119" height="60"></td>
+        <td><span class="highlight">A</span>と同じ</td>
+        <td><span class="highlight">A</span>と同じ</td>
+      </tr>
+      <tr>
+        <td>黄色 (O)</td>
+        <td>形は変わらないが<br>一応回転している</td>
+        <td><img src="{{ '/assets/images/1pics/yellow00.PNG' | relative_url }}" alt="Oピース 初期状態" width="119" height="60"></td>
+        <td><span class="highlight">A</span>と同じ</td>
+        <td><span class="highlight">A</span>と同じ</td>
+      </tr>
+      </tbody>
+  </table>
+  <p>
+    テトリスの回転法則は「セガ系」と「ＢＰＳ系」に大きく分けられる。ＢＰＳ系は、最近では「ワールドルール」という世界統一基準になりつつあるらしい。<br>
+    ＴＧＭはセガ系の回転法則を踏襲しており、上の表のように、<span class="highlight">Iピース（水色）以外は最も低い辺の高さが変わらないように回転</span>する。地面の上を転がるように、とも言える。<br>
+    最初はちょっと不自然に思えるかもしれないが、この回転法則によって、回転入れが使いやすく、高速落下域での操作がやりやすいという特徴があると思う。
+  </p>
+
+  <h3 class="section-heading">「フィールド」について</h3>
+  <div class="info-section">
+    <img src="{{ '/assets/images/1pics/kiso01.gif' | relative_url }}" alt="TGM フィールド図" width="119" height="239">
+    <div class="text example-explanation">
+      「フィールド」は<span class="highlight">２０段（ライン）×１０列</span>で構成され、通常下から１段目、２段目・・・、左から１列目、２列目・・・と数える。<br>
+      ただし、左の図のように、回転した場合は上に１段はみ出すことができる。Iピース（水色）を回すにはフィールドの上３段があいていなければならないが、他のブロックなら上２列があいていれば回すことができる。<br>
+      積み重ねたブロックの集合体を「<span class="highlight">地形</span>」と呼ぶ。<br>
+      ブロックが出現したときに地形と重なってしまうとゲームオーバーとなり、「<span class="highlight">窒息</span>」と呼ぶ。<br>
+      フィールドの上に表示される、次に現れるブロックを「ＮＥＸＴ表示」、または単に「NEXT」と呼ぶ。
+    </div>
+  </div>
+
+  <h3 class="section-heading">「レベル」、「カンスト」について</h3>
+  <p>
+    ゲームの進度は「レベル（Ｌｖ）」で表される。<br>
+    Ｌｖ０から始まり、Ｌｖ９９９でゲームクリアとなる。これを、カウンター・ストップを略して「<span class="highlight">カンスト</span>」と呼ぶ。<br>
+    レベルは、ブロックがフィールドに現れる（<span class="highlight">ツモ</span>）ごとに１上がり、ライン消しを行うと<span class="highlight">消したライン数だけ上がる</span>。<br>
+    （つまりカンストのためには７００ブロック強落として３００ライン弱消すことになる）<br><br>
+    １００レベルごとの区切りを「<span class="highlight">セクション</span>」と呼ぶ。<br>
+    セクションの境界（Ｌｖ*９９→Ｌｖ*００、最後のみＬｖ９９８→Ｌｖ９９９）はライン消しによってのみ通過することができる。<br>
+    ツモだけではＬｖ*９９のまま変わらず、これを「<span class="highlight">レベルストップ</span>」と呼ぶ。タイムアタックの際にはロスとなる。<br><br>
+    例：Ｌｖ９９のブロックで１ライン消すとＬｖ１００となり、次のツモはＬｖ１０１<br>
+    　　 Ｌｖ９８のブロックで４ライン消すとＬｖ１０２となり、次のツモはＬｖ１０３<br>
+    　　 Ｌｖ９５のブロックで４ライン消すとＬｖ９９となり、次のツモ<B>も</B>Ｌｖ９９
+  </p>
+
+  <h3 class="section-heading">「２０Ｇ」について</h3>
+  <p>
+    ゲームは１秒間に６０枚の画を描画することで動きを表現しており、その１枚１枚のコマを「<span class="highlight">フレーム</span>」を呼ぶ。<br>
+    ブロックの落下速度は「１フレームあたり何段落下するか」を「<span class="highlight">Ｇ</span>」という単位で表す。<br>ＴＧＭシリーズを象徴する最も特徴的なものの１つが<B>２０Ｇ</B>で、ブロックは落下というよりいきなり「地面に現れる」。
+  </p>
+
+  <h3 class="section-heading">「固定時間」、「ＡＲＥ」について</h3>
+  <p>
+    ブロックは地形に接してから固定される（ブロックが一瞬白く光る）までに若干時間があり、回転や横移動ができる。<br>
+    特にブロックが出現と同時に接地している２０Ｇでは、この期間を利用してブロックを滑らせて移動することになる。<br>
+    この時間を「<span class="highlight">固定時間</span>」と呼び、ＴＧＭでは約０．５秒設けられている。ＴＡＰの上級ステージになると短縮される。<br>
+    固定時間は段差を落とすとリセットされる。（<a href="{{ '/jp/tips/05-fast-falling.html' | relative_url }}">第５章</a>参照）<br><br>
+    ブロックが固定してから次のブロックが現れるまでにも若干時間があり、これを「<span class="highlight">ＡＲＥ</span>」と呼ぶ。<br>ＴＡＰの上級ステージになると短縮される。
+  </p>
+
+  <h3 class="section-heading">「下入れ」、「横溜め」について</h3>
+  <p>
+    ブロックの落下中にレバーを下に入れるとブロックを高速落下させることができる。このときの速度は１Ｇで、自然落下がそれより速い時は変わらない。<br>
+    ブロックが接地している時にレバーを下に入れると、固定時間が残っていても強制的にブロックを固定させることができる。<br>
+    ＴＧＭシリーズで一般的に「<span class="highlight">下入れ</span>」といった場合、後者を指すことが多い。前者は「ドロップ」とも呼ぶ。<br><br>
+    レバーをしばらく横に入れっぱなしにしておくと、ブロックを高速で横移動させることができ、これを「<span class="highlight">横溜め</span>」と呼ぶ。<br>
+    （移動速度は１Ｇ相当なので、フレーム毎に横を入力しているのと同じである）<br>
+    「溜まる」までの時間を「<span class="highlight">横溜め時間</span>」と呼び、ＴＧＭでは約０．２５秒。ＴＡＰの上級ステージになると短縮される。<br>
+    <span class="highlight">横溜めはブロック出現前から受け付けて</span>おり、出現前にすでに「溜まった」状態にしておけば、ブロックは出現の瞬間に横に飛んでいく。<br>
+    タイムアタックでは重要。
+  </p>
+
+  <h3 class="section-heading">「ＩＲＳ」について</h3>
+  <p>
+    ＩＲＳとはイニシャル・ローテーション・システム（先行回転入力システム）の略。<br>
+    <span class="highlight">ブロックが出現する時にボタンが押された状態にしておく</span>と、ブロックが１回分回った状態でフィールドに現れる。<br>
+    落下速度が速い時でも快適な操作感が実現できるので、はやいうちから意識的に使用して、自然に出来るようになっておきたい。
+  </p>
+  <div class="info-section">
+     <div class="example-images">
+        <img src="{{ '/assets/images/1pics/kiso02.PNG' | relative_url }}" alt="IRSなしで窒息する例" width="119" height="239">
+        <span class="arrow">→</span>
+        <img src="{{ '/assets/images/1pics/kiso03.PNG' | relative_url }}" alt="IRSで窒息を回避する例" width="119" height="239">
+        <img src="{{ '/assets/images/1pics/kiso07.PNG' | relative_url }}" alt="IRS使用後の状態（拡大）" width="119" height="239">
+     </div>
+     <div class="text example-explanation">
+        ＩＲＳを使った窒息の回避。<br>
+        そのままの状態で出現させると窒息となってしまうが、ＩＲＳによって地形をかわすことができる。<br>
+        <span class="highlight">ＩＲＳを使うと窒息になるときはボタンを押しても無効化され通常どおり出現する。(2008/08/26訂正)</span>
+     </div>
+  </div>
+
+  <h3 class="section-heading">「壁蹴り」について</h3>
+   <div class="info-section">
+     <div class="example-images">
+       <img src="{{ '/assets/images/1pics/01.png' | relative_url }}" alt="壁際のTピース" width="119" height="239">
+       <div class="icon-group">
+         <span>→</span>
+         <img src="{{ '/assets/images/1pics/01.gif' | relative_url }}" alt="回転アイコン" width="31" height="31">
+       </div>
+       <img src="{{ '/assets/images/1pics/02.png' | relative_url }}" alt="壁蹴りで回転したTピース" width="119" height="239">
+     </div>
+     <div class="text example-explanation">
+       図のように壁際でブロックを回すことを考える。<br>
+       上で紹介した回転法則どおりに考えると、左側のマスが壁にめり込む位置に来てしまうため回転できないかに思える。<br>
+       しかし実際は右にずれるスペースがあるために、自動的に位置が補正されて回転してくれる。<br>
+       横溜めによる高速移動で端まで持っていったブロックを簡単に回すことができ、IRSと並んでTGMシリーズの快適な操作性を支える要素となっている。<br>
+       <a href="{{ '/jp/tips/08-advanced-rotation.html' | relative_url }}">第８章</a>で紹介する回転入れや<a href="{{ '/jp/tips/11-time-attack.html' | relative_url }}">第１１章</a>で紹介する操作最適化など役立つ機会は非常に多い。
+     </div>
+  </div>
+
+  <hr>
+
+  <nav class="lesson-nav">
+      <div class="nav-item prev">
+        {% comment %} 前の章なし {% endcomment %}
+      </div>
+      <div class="nav-item top">
+        <a href="{{ '/jp/' | relative_url }}">講座トップへ ⤴</a>
+      </div>
+      <div class="nav-item next">
+        <a href="{{ '/jp/tips/02-basic-stacking.html' | relative_url }}">次の章へ →</a>
+      </div>
+    </nav>
+
+</div>

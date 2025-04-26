@@ -1,0 +1,101 @@
+---
+title: "高速落下ステージ"
+guide: "TGM"
+order: 5
+layout: tip
+tags: ["高速落下", "20G", "固定時間", "リセット", "操作テクニック"]
+---
+
+<div class="tip-content">
+
+  <h3 class="section-heading">高速落下ステージの概要</h3>
+  <p>
+    Ｌｖ３００台になると落下速度は２Ｇから４Ｇまで速くなり、Ｌｖ４００台になると５Ｇから３Ｇまで遅くなる。<br>
+    Ｇについては<a href="{{ '/jp/tips/01-basics.html' | relative_url }}">第１章</a>で述べたとおりだが、ブロックは回転しない状態で「フィールドの上端に接した状態から１フレーム分落下した場所」に現れるので、<br>
+    ２Ｇから５Ｇまでのブロックの軌道を表すと次のようになる。
+  </p>
+
+  <div class="info-section">
+    <div class="example-images">
+      <img src="{{ '/assets/images/5pics/01.png' | relative_url }}" alt="2G 落下軌道" width="119" height="239">
+      <img src="{{ '/assets/images/5pics/02.png' | relative_url }}" alt="3G 落下軌道" width="119" height="239">
+      <img src="{{ '/assets/images/5pics/03.png' | relative_url }}" alt="4G 落下軌道" width="119" height="239">
+      <img src="{{ '/assets/images/5pics/04.png' | relative_url }}" alt="5G 落下軌道" width="119" height="239">
+    </div>
+    <div class="text example-explanation" style="text-align: center;">
+      ２Ｇ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      ３Ｇ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      ４Ｇ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      ５Ｇ
+    </div>
+  </div>
+
+  <div class="info-section">
+     <div class="example-images">
+        <img src="{{ '/assets/images/5pics/03.gif' | relative_url }}" alt="高速落下での引っかかり例" width="119" height="239">
+     </div>
+     <div class="text example-explanation">
+        もちろん上の図は、出現前にすでに横が溜まっていた状態での動きである。<br>
+        溜めが遅れたり、落下速度が予想よりも速ければ、「引っかかってしまって届かない」といった事態が発生する。
+     </div>
+  </div>
+  <div class="info-section">
+     <div class="example-images">
+        <img src="{{ '/assets/images/5pics/01.gif' | relative_url }}" alt="20Gでの水色ハマリ" width="119" height="239">
+     </div>
+     <div class="text example-explanation">
+        更に２０Ｇだとこうなる。<br>
+        横溜めは出現前からできるが、横移動そのものには先行入力というものはない。１フレーム目は必ず真下に現れる。<br>
+        左図は「水色ハマリ」という有名なハマリ形で、こうなると脱出は不可能。回転すれば空洞の上が３列になってしまい、余計に状況は悪化する。
+     </div>
+  </div>
+  <div class="info-section">
+     <div class="example-images">
+        <img src="{{ '/assets/images/5pics/04.gif' | relative_url }}" alt="中央を高くして滑らせる" width="119" height="239">
+     </div>
+     <div class="text example-explanation">
+        したがって、落下速度が速い時には真ん中を高くしておいて、固定時間を利用してブロックを滑らせて移動させればいい。<br>
+        これならどんなに落下が速くてもブロックを好きなところまでもっていくことができる。
+     </div>
+  </div>
+
+  <p>具体的なつみ方については次章以降で。</p>
+
+  <hr>
+
+  <h3 class="section-heading">固定時間リセット</h3>
+  <div class="info-section">
+    <div class="example-images">
+      <img src="{{ '/assets/images/5pics/02.gif' | relative_url }}" alt="固定時間リセットの原理" width="119" height="239">
+    </div>
+    <div class="text example-explanation">
+      ブロックを地形の上で滑らせるようになると頭に入れておかなければならないのが、「<span class="highlight">固定時間は段差を落とすとリセットされる</span>」ということ。<br>
+      （Iピース（赤）を立てた時に底辺が２段低くなる分については落下にならない。）<br>
+      例えば固定時間が０．５秒で、接地後０．４秒経過した時に横移動させて落下を起こした場合、新たな接地から固定まで更に０．５秒かかることになる。これは落下を起こせる限り何度でもでき、落下速度が速い時に実際の固定までの時間を稼ぐことができる。
+    </div>
+  </div>
+  <div class="info-section">
+    <div class="example-images">
+      <img src="{{ '/assets/images/5pics/05.gif' | relative_url }}" alt="「過去をいじる」現象" width="119" height="239">
+    </div>
+    <div class="text example-explanation">
+      注意しなければならないのが、もう固定したと思って次のブロックの横溜めを始めたらまだ固定していなくて前のブロックを動かしてしまう「過去をいじる」という現象。<br>
+      究極的には、下入れで強制固定させてしまえば防げるのだが、慣れないうちは横溜めを遅れ気味にして対応するのがいい。横溜め時間は固定時間よりかなり短めになっているので、出現と同時に溜め始めても間に合う。
+    </div>
+  </div>
+
+  <hr>
+
+  <nav class="lesson-nav">
+      <div class="nav-item prev">
+        <a href="{{ '/jp/tips/04-recovery.html' | relative_url }}">← 前の章へ</a>
+      </div>
+      <div class="nav-item top">
+        <a href="{{ '/jp/' | relative_url }}">講座トップへ ⤴</a>
+      </div>
+      <div class="nav-item next">
+        <a href="{{ '/jp/tips/06-fifth-column.html' | relative_url }}">次の章へ →</a>
+      </div>
+    </nav>
+
+</div>

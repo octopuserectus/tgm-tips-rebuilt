@@ -3,13 +3,6 @@
 layout: default 
 ---
 
-{% comment %} 
-  This file defines the layout for individual tip pages.
-  It inherits the main structure (sidebar, main area, mobile nav) from _layouts/default.html.
-  It adds the specific H1 heading for the lesson before rendering the tip's content.
-  The content from the specific tip file (e.g., 01-basics.html) goes into {{ content }} below.
-{% endcomment %}
-
 <h1>Lesson {{ page.order }}: {{ page.title | escape }}</h1>
 <hr> 
 

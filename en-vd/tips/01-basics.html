@@ -1,0 +1,142 @@
+---
+title: "Basics" 
+guide: "Villadelfia" 
+order: 1 
+layout: tip
+tags: ["Core Mechanics", "Tetrominoes", "Controls", "Gameplay", "Levels", "20G", "ARE", "Lock Delay", "Soft Drop", "IRS", "Wall Kicks"] # Extracted concepts from the content
+---
+
+<div class="tip-content">
+    <h3 class="section-heading">The 7 tetrominoes and the buttons.</h3>
+    <table class="rotation-table">
+        <thead>
+            <tr>
+                <th>Piece</th>
+                <th><span class="highlight">A</span> Button<br>Rotation</th>
+                <th>Spawn<br>Location/Orientation</th>
+                <th><span class="highlight">B</span> Button<br>Rotation</th>
+                <th><span class="highlight">C</span> Button<br>Rotation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>T</td>
+                <td><img src="{{ '/assets/images/1pics/mizu_a.gif' | relative_url }}" alt="T piece A rotation" width="31" height="31"></td>
+                <td><img src="{{ '/assets/images/1pics/mizu00.png' | relative_url }}" alt="T piece initial state" width="119" height="60"></td>
+                <td><img src="{{ '/assets/images/1pics/mizu_b.gif' | relative_url }}" alt="T piece B rotation" width="31" height="31"></td>
+                <td>Same as <span class="highlight">A</span></td>
+            </tr>
+            <tr>
+                <td>J</td>
+                <td><img src="{{ '/assets/images/1pics/blue_a.gif' | relative_url }}" alt="J piece A rotation" width="31" height="31"></td>
+                <td><img src="{{ '/assets/images/1pics/blue00.png' | relative_url }}" alt="J piece initial state" width="119" height="60"></td>
+                <td><img src="{{ '/assets/images/1pics/blue_b.gif' | relative_url }}" alt="J piece B rotation" width="31" height="31"></td>
+                <td>Same as <span class="highlight">A</span></td>
+            </tr>
+            <tr>
+                <td>L</td>
+                <td><img src="{{ '/assets/images/1pics/orange_a.gif' | relative_url }}" alt="L piece A rotation" width="31" height="31"></td>
+                <td><img src="{{ '/assets/images/1pics/orange00.png' | relative_url }}" alt="L piece initial state" width="119" height="60"></td>
+                <td><img src="{{ '/assets/images/1pics/orange_b.gif' | relative_url }}" alt="L piece B rotation" width="31" height="31"></td>
+                <td>Same as <span class="highlight">A</span></td>
+            </tr>
+            <tr>
+                <td>Z</td>
+                <td><img src="{{ '/assets/images/1pics/green.gif' | relative_url }}" alt="Z piece rotation" width="31" height="31"></td>
+                <td><img src="{{ '/assets/images/1pics/green00.png' | relative_url }}" alt="Z piece initial state" width="119" height="60"></td>
+                <td>Same as <span class="highlight">A</span></td>
+                <td>Same as <span class="highlight">A</span></td>
+            </tr>
+            <tr>
+                <td>S</td>
+                <td><img src="{{ '/assets/images/1pics/purple.gif' | relative_url }}" alt="S piece rotation" width="31" height="31"></td>
+                <td><img src="{{ '/assets/images/1pics/parple00.png' | relative_url }}" alt="S piece initial state" width="119" height="60"></td> <td>Same as <span class="highlight">A</span></td>
+                <td>Same as <span class="highlight">A</span></td>
+            </tr>
+            <tr>
+                <td>I</td>
+                <td><img src="{{ '/assets/images/1pics/red.gif' | relative_url }}" alt="I piece rotation" width="41" height="41"></td>
+                <td><img src="{{ '/assets/images/1pics/red00.png' | relative_url }}" alt="I piece initial state" width="119" height="60"></td>
+                <td>Same as <span class="highlight">A</span></td>
+                <td>Same as <span class="highlight">A</span></td>
+            </tr>
+            <tr>
+                <td>O</td>
+                <td>Cannot be rotated.</td>
+                <td><img src="{{ '/assets/images/1pics/yellow00.png' | relative_url }}" alt="O piece initial state" width="119" height="60"></td>
+                <td>Same as <span class="highlight">A</span></td>
+                <td>Same as <span class="highlight">A</span></td>
+            </tr>
+        </tbody>
+    </table>
+    <p>
+        TGM Follows the SEGA rotation system. All of the blocks except I always have a block in the lowest row, and in this way, appear to roll on the ground. This might seem unnatural at first, but I think it is easier to use in high speed situations.
+    </p>
+
+    <h3 class="section-heading">The Well</h3>
+    <div class="info-section"> <img src="{{ '/assets/images/1pics/kiso01.gif' | relative_url }}" alt="TGM Playfield Diagram" width="119" height="239">
+        <div class="text example-explanation"> The well is a <span class="highlight">20 rows by 10 columns</span> field. However, as shown to the left, the blocks can go over the uppermost row. The stacked blocks as a whole are called the stack. The game is over when blocks are forced to overlap. Above the well you can see the next block to come.
+        </div>
+    </div>
+
+    <h3 class="section-heading">Levels</h3>
+    <p>
+        Progress in the game is represented by levels. The game starts at level 0 and end at level 999. For each block to appear the level <span class="highlight">will raise by 1</span>, Every time you clear lines the level will go up by the amount of lines cleared.
+        <br><br>
+        Every level divisible by 100 is the start of a new <span class="highlight">section</span>. To rise from x99 to x00 or from 998 to 999 you will need to clear a line.
+        <br><br>
+        Examples:<br>
+        - Clearing a line at Lv.99 will raise it to 100, the next block to enter the well will raise it to 101.<br>
+        - Clearing 4 lines at Lv.95 will raise it to 99, when the next block enters the well it will <b>still</b> be at Lv.99
+    </p>
+
+    <h3 class="section-heading">20G</h3>
+    <p>
+        A frame is calculated 60 times every second. The amount of rows a block descends every frame is called a <span class="highlight">G</span>. TGM Has a new mode called <b>20G</b> in which blocks appear at the bottom of the well.
+    </p>
+
+    <h3 class="section-heading">ARE/Lock delay</h3>
+    <p>
+        When blocks fall on the stack there is a brief period before they lock. This allows you to move blocks in 20G mode. This period is called the Lock Delay and is set at about 0.5 seconds.
+        <br><br>
+        There is also a brief pause after a block locks and before the next one appears; this is called the ARE.
+    </p>
+
+    <h3 class="section-heading">Soft drop/Manual Lock</h3>
+    <p>
+        You can make a block fall faster by holding the control stick down. It will fall at 1G unless the current speed is higher than 1G, then it will not fall faster. If you pull the control stick down while a block is on the ground it will lock despite any lock delays. </p>
+    
+    <h3 class="section-heading">IRS</h3>
+    <p>
+        IRS Stands for Initial Rotation System. If you <span class="highlight">keep a button pressed</span> during the ARE, the block will appear rotated.
+    </p>
+    <div class="info-section"> <div class="example-images"> <img src="{{ '/assets/images/1pics/kiso02.png' | relative_url }}" alt="S piece spawning normally causing game over" width="119" height="239">
+            <span class="arrow">→</span>
+            <img src="{{ '/assets/images/1pics/kiso03.png' | relative_url }}" alt="S piece spawning rotated via IRS, avoiding game over" width="119" height="239">
+            <img src="{{ '/assets/images/1pics/kiso07.png' | relative_url }}" alt="Close up of IRS'd S piece" width="119" height="239">
+        </div>
+        <div class="text example-explanation"> IRS Can be used to prevent a game over. Normal appearance of the S block would have caused a game over by intersecting the Z block. IRS prevents this. <span class="highlight">IRS will be blocked when it would cause a game over.</span>
+        </div>
+    </div>
+
+    <h3 class="section-heading">Wall kicks</h3>
+    <div class="info-section"> <div class="example-images"> <img src="{{ '/assets/images/1pics/01.png' | relative_url }}" alt="T piece next to wall" width="119" height="239">
+            <div class="icon-group"> <span class="arrow">→</span>
+                <img src="{{ '/assets/images/1pics/01.gif' | relative_url }}" alt="Rotation icon" width="31" height="31">
+            </div>
+            <img src="{{ '/assets/images/1pics/02.png' | relative_url }}" alt="T piece rotated, kicking off wall" width="119" height="239">
+        </div>
+        <div class="text example-explanation"> According to the table above this rotation should be impossible. But, because of an empty space to the right the T will kick the wall. Wall kicks, along with IRS make TGM a comfortable series to play. <a href="{{ '/en-vd/tips/08-advanced-rotation.html' | relative_url }}">Lesson 8</a> will handle IRS more and <a href="{{ '/en-vd/tips/11-time-attack.html' | relative_url }}">lesson 11</a> will help you use wall kicks. </div>
+    </div>
+
+    <hr>
+
+    <nav class="lesson-nav"> <div class="nav-item prev">
+            {% comment %} No previous lesson {% endcomment %}
+        </div>
+        <div class="nav-item top">
+            <a href="{{ '/en-vd/' | relative_url }}">Top Level ⤴</a> </div>
+        <div class="nav-item next">
+            <a href="{{ '/en-vd/tips/02-basic-stacking.html' | relative_url }}">Next Lesson →</a> </div>
+    </nav>
+</div>

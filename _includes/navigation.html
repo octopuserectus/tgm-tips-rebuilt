@@ -1,41 +1,56 @@
 {% comment %}
   This file represents the site navigation.
-  "Introduction" link text changed to "Back to Top".
+  Links are dynamically generated based on the first segment of the page URL.
+  Link text is fetched from _data/locales.yml based on the language prefix.
 {% endcomment %}
+
+{% assign url_parts = page.url | split: '/' %}
+{% assign lang_prefix = url_parts[1] %}
+
+{% comment %} Default to 'en-ai' if lang_prefix is empty or not found in locales data {% endcomment %}
+{% assign lang = site.data.locales[lang_prefix] | default: site.data.locales['en-ai'] %}
 
 <nav class="site-nav">
   <div class="intro-link">
-    <a href="{{ '/' | relative_url }}">Back to Top</a>
+     <a href="{{ '/' | relative_url }}">{{ lang.change_language | default: "Change language" }}</a>
   </div>
 
-  <h3>TGM Guide</h3>
+{% comment %} Only show tip links if the first URL part is a known language code {% endcomment %}
+{% if site.data.locales[lang_prefix] %}
+  {% assign base_tip_path = '/' | append: lang_prefix | append: '/tips/' %}
+
+  <h3>{{ lang.tgm_guide_title | default: "TGM Guide" }}</h3>
   <ul>
-    <li><span class="nav-lesson-number">1:</span><a href="{{ '/tips/01-basics.html' | relative_url }}">Basic Knowledge</a></li>
-    <li><span class="nav-lesson-number">2:</span><a href="{{ '/tips/02-basic-stacking.html' | relative_url }}">Basic Stacking</a></li>
-    <li><span class="nav-lesson-number">3:</span><a href="{{ '/tips/03-skimming.html' | relative_url }}">Skimming</a></li>
-    <li><span class="nav-lesson-number">4:</span><a href="{{ '/tips/04-recovery.html' | relative_url }}">Recovery</a></li>
-    <li><span class="nav-lesson-number">5:</span><a href="{{ '/tips/05-fast-falling.html' | relative_url }}">High-Speed Stages</a></li>
-    <li><span class="nav-lesson-number">6:</span><a href="{{ '/tips/06-fifth-column.html' | relative_url }}">Raising the 5th Column</a></li>
-    <li><span class="nav-lesson-number">7:</span><a href="{{ '/tips/07-movement-range.html' | relative_url }}">Understanding Movement Range</a></li>
-    <li><span class="nav-lesson-number">8:</span><a href="{{ '/tips/08-advanced-rotation.html' | relative_url }}">Rotation Placement</a></li>
-    <li><span class="nav-lesson-number">9:</span><a href="{{ '/tips/09-rotating-obstacles.html' | relative_url }}">Skips & Passes</a></li>
-    <li><span class="nav-lesson-number">10:</span><a href="{{ '/tips/10-advanced-stacking.html' | relative_url }}">Advanced Stacking</a></li>
-    <li><span class="nav-lesson-number">11:</span><a href="{{ '/tips/11-time-attack.html' | relative_url }}">Time Attack</a></li>
-    <li><span class="nav-lesson-number">12:</span><a href="{{ '/tips/12-advanced-techniques.html' | relative_url }}">Advanced Techniques</a></li>
+    <li><span class="nav-lesson-number">1:</span><a href="{{ base_tip_path | append: '01-basics.html' | relative_url }}">{{ lang.nav_basics | default: "Basic Knowledge" }}</a></li>
+    <li><span class="nav-lesson-number">2:</span><a href="{{ base_tip_path | append: '02-basic-stacking.html' | relative_url }}">{{ lang.nav_basic_stacking | default: "Basic Stacking" }}</a></li>
+    <li><span class="nav-lesson-number">3:</span><a href="{{ base_tip_path | append: '03-skimming.html' | relative_url }}">{{ lang.nav_skimming | default: "Skimming" }}</a></li>
+    <li><span class="nav-lesson-number">4:</span><a href="{{ base_tip_path | append: '04-recovery.html' | relative_url }}">{{ lang.nav_recovery | default: "Recovery" }}</a></li>
+    <li><span class="nav-lesson-number">5:</span><a href="{{ base_tip_path | append: '05-fast-falling.html' | relative_url }}">{{ lang.nav_fast_falling | default: "High-Speed Stages" }}</a></li>
+    <li><span class="nav-lesson-number">6:</span><a href="{{ base_tip_path | append: '06-fifth-column.html' | relative_url }}">{{ lang.nav_fifth_column | default: "Raising the 5th Column" }}</a></li>
+    <li><span class="nav-lesson-number">7:</span><a href="{{ base_tip_path | append: '07-movement-range.html' | relative_url }}">{{ lang.nav_movement_range | default: "Understanding Movement Range" }}</a></li>
+    <li><span class="nav-lesson-number">8:</span><a href="{{ base_tip_path | append: '08-advanced-rotation.html' | relative_url }}">{{ lang.nav_advanced_rotation | default: "Rotation Placement" }}</a></li>
+    <li><span class="nav-lesson-number">9:</span><a href="{{ base_tip_path | append: '09-rotating-obstacles.html' | relative_url }}">{{ lang.nav_rotating_obstacles | default: "Skips & Passes" }}</a></li>
+    <li><span class="nav-lesson-number">10:</span><a href="{{ base_tip_path | append: '10-advanced-stacking.html' | relative_url }}">{{ lang.nav_advanced_stacking | default: "Advanced Stacking" }}</a></li>
+    <li><span class="nav-lesson-number">11:</span><a href="{{ base_tip_path | append: '11-time-attack.html' | relative_url }}">{{ lang.nav_time_attack | default: "Time Attack" }}</a></li>
+    <li><span class="nav-lesson-number">12:</span><a href="{{ base_tip_path | append: '12-advanced-techniques.html' | relative_url }}">{{ lang.nav_advanced_techniques | default: "Advanced Techniques" }}</a></li>
   </ul>
 
-  <h3>TAP Guide</h3>
+  <h3>{{ lang.tap_guide_title | default: "TAP Guide" }}</h3>
   <ul>
-    <li><span class="nav-lesson-number">13:</span><a href="{{ '/tips/13-master-m.html' | relative_url }}">Master m</a></li>
-    <li><span class="nav-lesson-number">14:</span><a href="{{ '/tips/14-death-m.html' | relative_url }}">Death m</a></li>
-    <li><span class="nav-lesson-number">15:</span><a href="{{ '/tips/15-death-gm.html' | relative_url }}">Death Gm</a></li>
-    <li><span class="nav-lesson-number">16:</span><a href="{{ '/tips/16-master-gm.html' | relative_url }}">Master Gm</a></li>
+    <li><span class="nav-lesson-number">13:</span><a href="{{ base_tip_path | append: '13-master-m.html' | relative_url }}">{{ lang.nav_master_m | default: "Master m" }}</a></li>
+    <li><span class="nav-lesson-number">14:</span><a href="{{ base_tip_path | append: '14-death-m.html' | relative_url }}">{{ lang.nav_death_m | default: "Death m" }}</a></li>
+    <li><span class="nav-lesson-number">15:</span><a href="{{ base_tip_path | append: '15-death-gm.html' | relative_url }}">{{ lang.nav_death_gm | default: "Death Gm" }}</a></li>
+    <li><span class="nav-lesson-number">16:</span><a href="{{ base_tip_path | append: '16-master-gm.html' | relative_url }}">{{ lang.nav_master_gm | default: "Master Gm" }}</a></li>
   </ul>
 
-  <h3>Ti Guide</h3>
+  <h3>{{ lang.ti_guide_title | default: "Ti Guide" }}</h3>
   <ul>
-    <li><span class="nav-lesson-number">17:</span><a href="{{ '/tips/17-new-system.html' | relative_url }}">New System</a></li>
-    <li><span class="nav-lesson-number">18:</span><a href="{{ '/tips/18-shirase-1300.html' | relative_url }}">Shirase to Lv.1300</a></li>
-    <li><span class="nav-lesson-number">19:</span><a href="{{ '/tips/19-invisible-roll.html' | relative_url }}">Invisible Staff Roll</a></li>
+    <li><span class="nav-lesson-number">17:</span><a href="{{ base_tip_path | append: '17-new-system.html' | relative_url }}">{{ lang.nav_new_system | default: "New System" }}</a></li>
+    <li><span class="nav-lesson-number">18:</span><a href="{{ base_tip_path | append: '18-shirase-1300.html' | relative_url }}">{{ lang.nav_shirase_1300 | default: "Shirase to Lv.1300" }}</a></li>
+    <li><span class="nav-lesson-number">19:</span><a href="{{ base_tip_path | append: '19-invisible-roll.html' | relative_url }}">{{ lang.nav_invisible_roll | default: "Invisible Staff Roll" }}</a></li>
   </ul>
+{% else %}
+   {% comment %} Show a message if not in a language section {% endcomment %}
+   <p>{{ lang.nav_select_language_prompt | default: "Select a language section to see the index." }}</p>
+{% endif %}
 </nav>
