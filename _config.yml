@@ -1,23 +1,22 @@
 title: "TGM Guide"
+description: "A classic Japanese strategy guide to Tetris: The Grand Master, TAP and Ti, with English translations."
 baseurl: "/tgm-tips-rebuilt"
 url: "https://octopuserectus.github.io"
 
-collections:
-  tips:
-    output: true
-    permalink: /:path/
+# Language sections are the top-level directories en, en-vd and jp.
+# Chapter order and titles live in _data/chapters.yml, UI strings in _data/locales.yml.
 
 defaults:
   - scope:
       path: ""
     values:
       layout: "default"
-  - scope:
-      path: "_tips"
-    values:
-      layout: "tip"
 
-include:
-  - "en-vd"
-  - "en-ai"
-  - "jp"
+sass:
+  style: compressed
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor

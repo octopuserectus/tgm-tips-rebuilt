@@ -3,7 +3,6 @@ title: "基礎知識"
 guide: "TGM"
 order: 1
 layout: tip
-tags: ["基本メカニクス", "回転", "ゲームプレイループ", "IRS", "壁蹴り", "ARE", "横溜め"]
 ---
 
 <div class="tip-content">
@@ -21,10 +20,10 @@ tags: ["基本メカニクス", "回転", "ゲームプレイループ", "IRS", 
     </thead>
     <tbody>
       <tr>
-        <td>水色 (I)</td>
-        <td><img src="{{ '/assets/images/1pics/mizu_a.gif' | relative_url }}" alt="Iピース A回転" width="31" height="31"></td>
-        <td><img src="{{ '/assets/images/1pics/mizu00.png' | relative_url }}" alt="Iピース 初期状態" width="119" height="60"></td>
-        <td><img src="{{ '/assets/images/1pics/mizu_b.gif' | relative_url }}" alt="Iピース B回転" width="31" height="31"></td>
+        <td>水色 (T)</td>
+        <td><img src="{{ '/assets/images/1pics/mizu_a.gif' | relative_url }}" alt="Tピース A回転" width="31" height="31"></td>
+        <td><img src="{{ '/assets/images/1pics/mizu00.png' | relative_url }}" alt="Tピース 初期状態" width="119" height="60"></td>
+        <td><img src="{{ '/assets/images/1pics/mizu_b.gif' | relative_url }}" alt="Tピース B回転" width="31" height="31"></td>
         <td><span class="highlight">A</span>と同じ</td>
       </tr>
       <tr>
@@ -42,23 +41,23 @@ tags: ["基本メカニクス", "回転", "ゲームプレイループ", "IRS", 
         <td><span class="highlight">A</span>と同じ</td>
       </tr>
       <tr>
-        <td>緑 (S)</td>
-        <td><img src="{{ '/assets/images/1pics/green.gif' | relative_url }}" alt="Sピース 回転" width="31" height="31"></td>
-        <td><img src="{{ '/assets/images/1pics/green00.png' | relative_url }}" alt="Sピース 初期状態" width="119" height="60"></td>
+        <td>緑 (Z)</td>
+        <td><img src="{{ '/assets/images/1pics/green.gif' | relative_url }}" alt="Zピース 回転" width="31" height="31"></td>
+        <td><img src="{{ '/assets/images/1pics/green00.png' | relative_url }}" alt="Zピース 初期状態" width="119" height="60"></td>
         <td><span class="highlight">A</span>と同じ</td>
         <td><span class="highlight">A</span>と同じ</td>
       </tr>
       <tr>
-        <td>紫 (T)</td>
-        <td><img src="{{ '/assets/images/1pics/purple.gif' | relative_url }}" alt="Tピース 回転" width="31" height="31"></td>
-        <td><img src="{{ '/assets/images/1pics/parple00.png' | relative_url }}" alt="Tピース 初期状態" width="119" height="60"></td>
+        <td>紫 (S)</td>
+        <td><img src="{{ '/assets/images/1pics/purple.gif' | relative_url }}" alt="Sピース 回転" width="31" height="31"></td>
+        <td><img src="{{ '/assets/images/1pics/parple00.png' | relative_url }}" alt="Sピース 初期状態" width="119" height="60"></td>
         <td><span class="highlight">A</span>と同じ</td>
         <td><span class="highlight">A</span>と同じ</td>
       </tr>
       <tr>
-        <td>赤 (Z)</td>
-        <td><img src="{{ '/assets/images/1pics/red.gif' | relative_url }}" alt="Zピース 回転" width="41" height="41"></td>
-        <td><img src="{{ '/assets/images/1pics/red00.png' | relative_url }}" alt="Zピース 初期状態" width="119" height="60"></td>
+        <td>赤 (I)</td>
+        <td><img src="{{ '/assets/images/1pics/red.gif' | relative_url }}" alt="Iピース 回転" width="41" height="41"></td>
+        <td><img src="{{ '/assets/images/1pics/red00.png' | relative_url }}" alt="Iピース 初期状態" width="119" height="60"></td>
         <td><span class="highlight">A</span>と同じ</td>
         <td><span class="highlight">A</span>と同じ</td>
       </tr>
@@ -73,7 +72,7 @@ tags: ["基本メカニクス", "回転", "ゲームプレイループ", "IRS", 
   </table>
   <p>
     テトリスの回転法則は「セガ系」と「ＢＰＳ系」に大きく分けられる。ＢＰＳ系は、最近では「ワールドルール」という世界統一基準になりつつあるらしい。<br>
-    ＴＧＭはセガ系の回転法則を踏襲しており、上の表のように、<span class="highlight">Iピース（水色）以外は最も低い辺の高さが変わらないように回転</span>する。地面の上を転がるように、とも言える。<br>
+    ＴＧＭはセガ系の回転法則を踏襲しており、上の表のように、<span class="highlight">Iピース（赤）以外は最も低い辺の高さが変わらないように回転</span>する。地面の上を転がるように、とも言える。<br>
     最初はちょっと不自然に思えるかもしれないが、この回転法則によって、回転入れが使いやすく、高速落下域での操作がやりやすいという特徴があると思う。
   </p>
 
@@ -82,7 +81,7 @@ tags: ["基本メカニクス", "回転", "ゲームプレイループ", "IRS", 
     <img src="{{ '/assets/images/1pics/kiso01.gif' | relative_url }}" alt="TGM フィールド図" width="119" height="239">
     <div class="text example-explanation">
       「フィールド」は<span class="highlight">２０段（ライン）×１０列</span>で構成され、通常下から１段目、２段目・・・、左から１列目、２列目・・・と数える。<br>
-      ただし、左の図のように、回転した場合は上に１段はみ出すことができる。Iピース（水色）を回すにはフィールドの上３段があいていなければならないが、他のブロックなら上２列があいていれば回すことができる。<br>
+      ただし、左の図のように、回転した場合は上に１段はみ出すことができる。Iピース（赤）を回すにはフィールドの上３段があいていなければならないが、他のブロックなら上２列があいていれば回すことができる。<br>
       積み重ねたブロックの集合体を「<span class="highlight">地形</span>」と呼ぶ。<br>
       ブロックが出現したときに地形と重なってしまうとゲームオーバーとなり、「<span class="highlight">窒息</span>」と呼ぶ。<br>
       フィールドの上に表示される、次に現れるブロックを「ＮＥＸＴ表示」、または単に「NEXT」と呼ぶ。
@@ -168,19 +167,5 @@ tags: ["基本メカニクス", "回転", "ゲームプレイループ", "IRS", 
        <a href="{{ '/jp/tips/08-advanced-rotation.html' | relative_url }}">第８章</a>で紹介する回転入れや<a href="{{ '/jp/tips/11-time-attack.html' | relative_url }}">第１１章</a>で紹介する操作最適化など役立つ機会は非常に多い。
      </div>
   </div>
-
-  <hr>
-
-  <nav class="lesson-nav">
-      <div class="nav-item prev">
-        {% comment %} 前の章なし {% endcomment %}
-      </div>
-      <div class="nav-item top">
-        <a href="{{ '/jp/' | relative_url }}">講座トップへ ⤴</a>
-      </div>
-      <div class="nav-item next">
-        <a href="{{ '/jp/tips/02-basic-stacking.html' | relative_url }}">次の章へ →</a>
-      </div>
-    </nav>
 
 </div>

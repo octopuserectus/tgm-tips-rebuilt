@@ -1,0 +1,86 @@
+---
+title: "High-Gravity Stages"
+guide: "TGM"
+order: 5
+layout: tip
+---
+
+<div class="tip-content">
+
+  <h3 class="section-heading">The high-gravity stages at a glance</h3>
+  <p>
+    In the 300s, gravity speeds up from 2G to 4G; in the 400s, it slows down from 5G to 3G.<br>
+    G was explained in <a href="{{ '/en/tips/01-basics.html' | relative_url }}">Chapter 1</a>. A piece appears, unrotated, “one frame’s worth of falling below the spot where it would touch the top of the playfield,” so
+    the paths a piece can take at 2G through 5G look like this.
+  </p>
+
+  <div class="info-section">
+    <div class="example-images">
+      <img src="{{ '/assets/images/5pics/01.png' | relative_url }}" alt="Reachable paths of an I piece falling at 2G" width="119" height="239">
+      <img src="{{ '/assets/images/5pics/02.png' | relative_url }}" alt="Reachable paths of an I piece falling at 3G" width="119" height="239">
+      <img src="{{ '/assets/images/5pics/03.png' | relative_url }}" alt="Reachable paths of an I piece falling at 4G" width="119" height="239">
+      <img src="{{ '/assets/images/5pics/04.png' | relative_url }}" alt="Reachable paths of an I piece falling at 5G" width="119" height="239">
+    </div>
+    <div class="text example-explanation" style="text-align: center;">
+      2G&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      3G&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      4G&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      5G
+    </div>
+  </div>
+
+  <div class="info-section">
+     <div class="example-images">
+        <img src="{{ '/assets/images/5pics/03.gif' | relative_url }}" alt="An L piece heading right under high gravity snags on the stack and stops short of the right edge" width="119" height="239">
+     </div>
+     <div class="text example-explanation">
+        Of course, the figures above assume DAS was already charged before the piece appeared.
+        If you charge late, or gravity is higher than you expected, you end up with the piece “snagging on the stack and not getting there.”
+     </div>
+  </div>
+  <div class="info-section">
+     <div class="example-images">
+        <img src="{{ '/assets/images/5pics/01.gif' | relative_url }}" alt="At 20G a T piece lands stem-down on a bump in the middle, leaving holes under it: the “cyan trap”" width="119" height="239">
+     </div>
+     <div class="text example-explanation">
+        And at 20G, this happens.<br>
+        You can charge DAS before a piece appears, but there is no such thing as buffering the sideways movement itself. On its first frame a piece always appears straight below its spawn point.
+        The figure on the left is a famous way of getting stuck known as the “cyan trap” (水色ハマリ, mizuiro-hamari), and once you are in it there is no way out. Rotate the T and you end up with three columns sitting over the hole, which only makes matters worse.
+     </div>
+  </div>
+  <div class="info-section">
+     <div class="example-images">
+        <img src="{{ '/assets/images/5pics/04.gif' | relative_url }}" alt="With the middle of the stack built high, a J piece slides down the slope to the left wall" width="119" height="239">
+     </div>
+     <div class="text example-explanation">
+        So when gravity is high, keep the middle of the stack high and use the lock delay to slide pieces along the surface.
+        That way, however fast pieces fall, you can take them anywhere you like.
+     </div>
+  </div>
+
+  <p>How to actually stack this way is covered from the next chapter on.</p>
+
+  <hr>
+
+  <h3 class="section-heading">Lock delay reset</h3>
+  <div class="info-section">
+    <div class="example-images">
+      <img src="{{ '/assets/images/5pics/02.gif' | relative_url }}" alt="Pieces stacked on a central peak; an L piece steps down the slope, resetting its lock delay at every step" width="119" height="239">
+    </div>
+    <div class="text example-explanation">
+      Once you start sliding pieces over the stack, there is one thing you must keep in mind: “<span class="highlight">the lock delay is reset whenever the piece drops down a step</span>.”<br>
+      (When you stand an I piece upright its bottom ends up two rows lower, but that does not count as falling.)<br>
+      Say the lock delay is 0.5 seconds, and 0.4 seconds after landing you shift the piece sideways so that it falls: from the new landing it takes another full 0.5 seconds to lock. You can do this as many times as you can make the piece fall, which buys you time before it actually locks when gravity is high.
+    </div>
+  </div>
+  <div class="info-section">
+    <div class="example-images">
+      <img src="{{ '/assets/images/5pics/05.gif' | relative_url }}" alt="A J piece that has not yet locked is dragged to the right by the DAS charge meant for the next piece" width="119" height="239">
+    </div>
+    <div class="text example-explanation">
+      What you have to watch out for is the phenomenon known as “tampering with the past” (過去をいじる, kako o ijiru): you assume the piece has locked and start charging DAS for the next one, but it has not locked yet and you end up moving the previous piece.<br>
+      Ultimately you can prevent this by forcing the lock with a manual lock, but until you are used to it, the way to cope is to charge DAS a little late. The DAS delay is set quite a bit shorter than the lock delay, so even if you start charging the moment the piece appears you will still make it.
+    </div>
+  </div>
+
+</div>

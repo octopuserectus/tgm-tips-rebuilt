@@ -1,19 +1,13 @@
 ---
 permalink: /404.html
-layout: home # Use the main site layout (includes sidebar)
-title: "404 - Page Not Found" # Optional: Set a title for the page
-sitemap: false # Optional: Exclude from sitemap.xml if using jekyll-sitemap
+layout: home
+title: "404 – Page not found"
+sitemap: false
 ---
 
-
-<div class="error-page-content" style="text-align: center; padding-top: 3em;"> 
-  
-  <h1 style="font-size: 4em; margin: 0.2em 0; color: #ff0000;">404</h1>
-
-  <p><strong>Page not found :(</strong></p>
-  <p><img src="{{ '/assets/images/7pics/red5.gif' | relative_url }}" alt="I piece rotation req (right side)" width="119" height="239"><p>
-
-  <p style="margin-top: 2em;">
-    <a href="{{ '/' | relative_url }}">Back to Top</a>
-  </p>
+<div class="error-page">
+  <h1>404</h1>
+  <p><strong>Page not found — this piece has nowhere to go.</strong></p>
+  <p><img src="{{ '/assets/images/7pics/red5.gif' | relative_url }}" alt="An I piece that cannot reach the right-hand side of the playfield" width="119" height="239"></p>
+  <p><a href="{{ '/' | relative_url }}">Back to the start</a></p>
 </div>

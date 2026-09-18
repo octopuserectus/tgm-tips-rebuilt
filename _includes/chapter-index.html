@@ -1,0 +1,20 @@
+{%- comment -%}
+  The three-column table of contents used on each language's index page.
+  Page content renders before its layout, so this pulls in lang.html itself.
+{%- endcomment -%}
+{%- include lang.html -%}
+{%- assign n = 0 -%}
+<div class="guides-container">
+  {%- for group in site.data.chapters %}
+  <section class="guide-section {{ group.guide }}-guide">
+    <h2>{{ ui.guides[group.guide] }}</h2>
+    <ol>
+      {%- for chapter in group.chapters -%}
+      {%- assign n = n | plus: 1 -%}
+      {%- assign path = '/' | append: ui_code | append: '/tips/' | append: chapter.slug | append: '.html' %}
+      <li value="{{ n }}"><a href="{{ path | relative_url }}"><span class="lesson-number">{{ ui.chapter_prefix }}{{ n }}{{ ui.chapter_suffix }}</span>{{ chapter.titles[ui_code] }}</a></li>
+      {%- endfor %}
+    </ol>
+  </section>
+  {%- endfor %}
+</div>

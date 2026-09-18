@@ -1,0 +1,49 @@
+# The 19 chapters of the guide, in order. Single source for the sidebar, the index
+# pages and the previous/next links. "titles" is keyed by locale (see locales.yml).
+
+- guide: tgm
+  chapters:
+    - slug: 01-basics
+      titles: { en: "Basics", en-vd: "Basics", jp: "基礎知識" }
+    - slug: 02-basic-stacking
+      titles: { en: "Basic Stacking", en-vd: "Basic stacking", jp: "基本的な積み方" }
+    - slug: 03-skimming
+      titles: { en: "Skimming", en-vd: "Skimming", jp: "削り" }
+    - slug: 04-recovery
+      titles: { en: "Recovery", en-vd: "Recovery", jp: "復活" }
+    - slug: 05-fast-falling
+      titles: { en: "High-Gravity Stages", en-vd: "Fast falling stages", jp: "高速落下ステージ" }
+    - slug: 06-fifth-column
+      titles: { en: "Building Up the Fifth Column", en-vd: "Increasing the fifth column", jp: "５列目を高くする" }
+    - slug: 07-movement-range
+      titles: { en: "Knowing Your Range of Movement", en-vd: "Understanding the range of movement", jp: "可動範囲を理解する" }
+    - slug: 08-advanced-rotation
+      titles: { en: "Twists", en-vd: "Advanced rotation", jp: "回転入れ" }
+    - slug: 09-rotating-obstacles
+      titles: { en: "Hops and Crossings", en-vd: "Rotating over obstacles", jp: "飛ばし・渡し" }
+    - slug: 10-advanced-stacking
+      titles: { en: "Active Stacking", en-vd: "Advanced stacking", jp: "アクティブな積み方" }
+    - slug: 11-time-attack
+      titles: { en: "Time Attack", en-vd: "Time attack", jp: "タイムアタック" }
+    - slug: 12-advanced-techniques
+      titles: { en: "Advanced Techniques", en-vd: "Advanced techniques", jp: "上級テクニック" }
+
+- guide: tap
+  chapters:
+    - slug: 13-master-m
+      titles: { en: "Master: M Grade", en-vd: "Master m", jp: "マスターｍ" }
+    - slug: 14-death-m
+      titles: { en: "Death: M Grade", en-vd: "Death m", jp: "デスｍ" }
+    - slug: 15-death-gm
+      titles: { en: "Death: GM", en-vd: "Death Gm", jp: "デスGm" }
+    - slug: 16-master-gm
+      titles: { en: "Master: GM", en-vd: "Master Gm", jp: "マスターGm" }
+
+- guide: ti
+  chapters:
+    - slug: 17-new-system
+      titles: { en: "The New System", en-vd: "The new system", jp: "新システム" }
+    - slug: 18-shirase-1300
+      titles: { en: "Shirase to Level 1300", en-vd: "Shirase to Lv.1300", jp: "シラセＬｖ１３００まで" }
+    - slug: 19-invisible-roll
+      titles: { en: "The Invisible Credit Roll", en-vd: "Invisible staff roll", jp: "シャドウスタッフロール" }

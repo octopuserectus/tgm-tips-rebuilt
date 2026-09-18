@@ -1,0 +1,88 @@
+# Japanese -> English terminology used by the /en/ translation.
+# English terms follow https://tetris.wiki/ (Glossary and the TGM series pages) wherever
+# the wiki has an established term. "wiki" is the page name on tetris.wiki, if any.
+# Rendered as a page by en/glossary.html.
+
+- group: "Playfield and pieces"
+  terms:
+    - { jp: "フィールド", romaji: "fīrudo", en: "playfield", wiki: "Playfield", note: "20 rows × 10 columns." }
+    - { jp: "地形", romaji: "chikei", en: "stack", note: "Literally “terrain”: all the blocks locked in the playfield. “Surface” is used when the text means only its top contour (地表)." }
+    - { jp: "段 / 列", romaji: "dan / retsu", en: "row / column", note: "Rows are counted from the bottom, columns from the left." }
+    - { jp: "ブロック", romaji: "burokku", en: "piece (tetromino); block", wiki: "Tetromino", note: "The guide says “block” for a whole tetromino. Here “piece” is the tetromino and “block” is a single cell of it, as on the wiki." }
+    - { jp: "赤・水色・紫・緑・青・オレンジ・黄色", romaji: "", en: "I · T · S · Z · J · L · O", wiki: "Arika_Rotation_System", note: "The guide names pieces by their TGM colors: red I, cyan T, purple S, green Z, blue J, orange L, yellow O. These are not the modern guideline colors." }
+    - { jp: "ＮＥＸＴ", romaji: "nekusuto", en: "NEXT, next piece", wiki: "Piece_preview", note: "The piece preview." }
+    - { jp: "ツモ", romaji: "tsumo", en: "piece (dealt), piece sequence", wiki: "TGM_randomizer", note: "Mahjong word for drawing a tile; here, each piece the randomizer deals." }
+    - { jp: "空洞", romaji: "kūdō", en: "hole", wiki: "Hole", note: "An enclosed empty cell that needs line clears above it." }
+    - { jp: "窪み / 穴", romaji: "kubomi / ana", en: "dent / gap, well", note: "Open depressions in the surface; a deep one-wide “穴” kept for the I piece is a well." }
+    - { jp: "窒息", romaji: "chissoku", en: "top out", wiki: "Top_out", note: "Literally “suffocation”. Strictly a block out: the new piece overlaps the stack as it enters." }
+    - { jp: "待ち", romaji: "machi", en: "wait, waiting for (a piece)", note: "Mahjong term: the piece or pieces a given spot in the stack will accept, e.g. Z待ち = “waiting for a Z”." }
+
+- group: "Game mechanics"
+  terms:
+    - { jp: "回転法則", romaji: "kaiten hōsoku", en: "rotation system", wiki: "Rotation_system", note: "TGM uses the Arika Rotation System (ARS), derived from Sega's." }
+    - { jp: "ワールドルール", romaji: "wārudo rūru", en: "World rule (SRS)", wiki: "Super_Rotation_System" }
+    - { jp: "レベル / セクション", romaji: "reberu / sekushon", en: "level / section", note: "A section is a block of 100 levels." }
+    - { jp: "レベルストップ", romaji: "reberu sutoppu", en: "level stop", note: "At level x99 (and 998) only a line clear advances the counter." }
+    - { jp: "カンスト", romaji: "kansuto", en: "maxing out (level 999)", note: "Short for “counter stop”." }
+    - { jp: "Ｇ / ２０Ｇ", romaji: "", en: "G / 20G", wiki: "20G", note: "1G = one row per frame. At 20G pieces appear directly on the stack." }
+    - { jp: "落下速度", romaji: "rakka sokudo", en: "gravity", wiki: "Drop#Gravity" }
+    - { jp: "固定 / 固定時間", romaji: "kotei / kotei jikan", en: "lock / lock delay", wiki: "Lock_delay" }
+    - { jp: "固定時間リセット", romaji: "", en: "lock delay reset (step reset)", wiki: "Lock_delay#Step_reset", note: "Lock delay restarts whenever the piece falls at least one row." }
+    - { jp: "ＡＲＥ", romaji: "are", en: "ARE", wiki: "ARE", note: "Entry delay between a piece locking and the next one appearing." }
+    - { jp: "せり上がり", romaji: "seri-agari", en: "rising garbage", wiki: "Garbage", note: "Shirase, levels 500–999: rows pushed up from the bottom of the playfield." }
+    - { jp: "横溜め", romaji: "yoko-tame", en: "DAS", wiki: "DAS", note: "Delayed Auto Shift; literally “sideways charge”. 溜める = to charge DAS; 横溜め時間 = DAS delay." }
+    - { jp: "溜め遅れ", romaji: "tame-okure", en: "late charge", note: "DAS that is not yet charged when the piece appears, so the piece starts moving late." }
+    - { jp: "使いまわし", romaji: "tsukaimawashi", en: "carrying over", note: "Keeping down, a rotate button or a DAS direction held from one piece into the next." }
+    - { jp: "ＩＲＳ", romaji: "", en: "IRS", wiki: "IRS", note: "Initial Rotation System." }
+    - { jp: "壁蹴り", romaji: "kabe-keri", en: "wall kick", wiki: "Wall_kick" }
+    - { jp: "補正", romaji: "hosei", en: "kick; floor kick (Ti)", wiki: "Floor_kick", note: "Literally “correction”: the automatic shift when a rotation is obstructed. In the TGM chapters it is the sideways wall kick; in the Ti chapters, the new upward kicks for I and T." }
+    - { jp: "ドロップ", romaji: "doroppu", en: "soft drop", wiki: "Drop#Soft_drop", note: "Holding down while the piece is in the air." }
+    - { jp: "下入れ", romaji: "shita-ire", en: "manual lock", wiki: "Lock_delay", note: "Pressing down on a landed piece to lock it at once instead of waiting out the lock delay." }
+    - { jp: "即落下", romaji: "soku-rakka", en: "sonic drop", wiki: "Drop#Firm_drop", note: "Up on the lever from TAP onward: drop to the stack without locking." }
+    - { jp: "過去をいじる", romaji: "kako o ijiru", en: "tampering with the past", note: "An input meant for the next piece that lands on the previous one because it has not locked yet." }
+    - { jp: "ＨＯＬＤ", romaji: "", en: "Hold", wiki: "Hold_piece" }
+    - { jp: "スタッフロール", romaji: "sutaffu rōru", en: "credit roll", note: "The playable staff credits after level 999." }
+    - { jp: "消えロール / シャドウスタッフロール / ｍロール", romaji: "kie rōru", en: "invisible roll, M-roll", wiki: "Tetris_The_Absolute_The_Grand_Master_2", note: "The credit roll in which pieces turn invisible as they lock." }
+    - { jp: "ランク / 称号", romaji: "ranku / shōgō", en: "grade", wiki: "Grade" }
+    - { jp: "ｍ / Ｇｍ", romaji: "", en: "M / GM", note: "The Master and Grand Master grades." }
+    - { jp: "とりカン", romaji: "torikan", en: "torikan", wiki: "Torikan", note: "From とりあえずカンスト: the time limit at level 500 (and 1000 in Shirase) that ends the game early. The English community uses the Japanese word." }
+
+- group: "Line clears"
+  terms:
+    - { jp: "１段消し・２段消し・３段消し・４段消し", romaji: "", en: "single, double, triple, Tetris", wiki: "Line_clear" }
+    - { jp: "削り", romaji: "kezuri", en: "skimming", note: "Literally “shaving”: clearing one or two lines to tidy the surface rather than waiting for a Tetris." }
+    - { jp: "中抜き / 空中消し", romaji: "nakanuki / kūchū-keshi", en: "clearing from the middle / mid-air clear", note: "A line clear that removes rows from the middle of a piece, leaving part of it hanging above." }
+    - { jp: "復活", romaji: "fukkatsu", en: "recovery", note: "Digging down to holes and getting the stack back in order." }
+    - { jp: "妥協置き / 妥協消し", romaji: "dakyō-oki / dakyō-keshi", en: "compromise placement / compromise clear", note: "Settling for a less-than-ideal placement or a smaller line clear to keep the stack safe." }
+    - { jp: "完全クリア", romaji: "kanzen kuria", en: "full clear (surviving the whole credit roll)", note: "Not a perfect clear / Bravo, which is clearing the playfield of every block." }
+
+- group: "Techniques"
+  terms:
+    - { jp: "寝かせる / 立てる", romaji: "nekaseru / tateru", en: "lay flat / stand upright", note: "Placing a piece in its wide or its tall orientation." }
+    - { jp: "回転入れ", romaji: "kaiten-ire", en: "twist", wiki: "Twist", note: "Rotating a piece into a slot under an overhang." }
+    - { jp: "ずらし入れ", romaji: "zurashi-ire", en: "slide", wiki: "Slide", note: "Shifting a piece sideways under an overhang." }
+    - { jp: "シンクロ", romaji: "shinkuro", en: "synchro", wiki: "Synchro", note: "Rotating and shifting on the same frame." }
+    - { jp: "飛ばし", romaji: "tobashi", en: "hop", note: "Using rotation to carry a piece over an obstacle." }
+    - { jp: "渡し / ３回転渡し", romaji: "watashi", en: "crossing / triple-rotation crossing", note: "Rotating a piece so that its wide side bridges a gap it would otherwise fall into." }
+    - { jp: "逆上がり", romaji: "saka-agari", en: "back hip circle", note: "Gymnastics term for swinging up and over a bar; a rotation that climbs a step." }
+    - { jp: "谷越え", romaji: "tani-goe", en: "valley crossing" }
+    - { jp: "陰謀", romaji: "inbō", en: "the “conspiracy”", wiki: "Arika_Rotation_System", note: "When a rotation overlaps the stack and there is room on both sides, the wall kick always tries right first. Named after players complaining that it was “a conspiracy by the developers!”" }
+    - { jp: "ザンギ入れ", romaji: "zangi-ire", en: "Zangi-move", wiki: "Zangi-move", note: "Sonic drop, shift sideways, then lock." }
+    - { jp: "操作最適化", romaji: "sōsa saitekika", en: "movement optimization (finesse)", wiki: "Finesse" }
+    - { jp: "ゴゴゴる", romaji: "gogogo-ru", en: "to “gogogo”", note: "You press down to lock a piece that has in fact already locked, so the input locks the next piece instead, and the one after that arrives before you have recovered." }
+    - { jp: "とり溜め", romaji: "tori-dame", en: "provisional charge", note: "From とりあえず溜める, “charge for now”: start charging DAS to one side (usually left) before you have decided where the piece goes, and think while it charges." }
+    - { jp: "コンコン", romaji: "konkon", en: "tap-tap", note: "Two separate sideways taps of the stick; slow, so worth avoiding." }
+    - { jp: "左１", romaji: "hidari ichi", en: "left 1", note: "One tap to the left of where the piece appears." }
+    - { jp: "その場立て", romaji: "sonoba-tate", en: "standing a piece upright on the spot" }
+    - { jp: "瞬間裏返し / 瞬間３回転", romaji: "shunkan uragaeshi", en: "instant flip / instant triple rotation", note: "Two (or three) rotations in the same direction entered almost at once with different buttons, e.g. A then C." }
+    - { jp: "シンクロ渡し / フレーム入れ", romaji: "", en: "synchro crossing / frame insertion" }
+    - { jp: "ぬりかべ", romaji: "nurikabe", en: "“plaster wall”", note: "Nickname of a twist." }
+    - { jp: "でんぐり返し", romaji: "denguri-gaeshi", en: "“somersault”", note: "Nickname of a twist that passes a piece through a one-column gap." }
+    - { jp: "伏せ", romaji: "fuse", en: "“face-down”", note: "Nickname of a twist." }
+    - { jp: "パタパタ", romaji: "pata-pata", en: "“flip-flap”", note: "Nickname of the I piece hop." }
+    - { jp: "与作 / 変態入れ", romaji: "yosaku / hentai-ire", en: "“Yosaku” / “freak twist”", note: "Nicknames of two unusual twists." }
+    - { jp: "城", romaji: "shiro", en: "“castle”", note: "A surface that goes up and down one cell at a time, like battlements." }
+    - { jp: "水色ハマリ", romaji: "mizuiro-hamari", en: "“cyan trap”", note: "A well-known way of getting a T piece stuck at high gravity." }
+    - { jp: "回転置き", romaji: "kaiten-oki", en: "rotation placement", note: "The author’s term in the invisible-roll chapter." }
+    - { jp: "見切り", romaji: "mikiri", en: "cutting your losses", note: "Deliberately making a hole in order to start a clean surface above it." }
+    - { jp: "レバー", romaji: "rebā", en: "stick", note: "The arcade joystick." }

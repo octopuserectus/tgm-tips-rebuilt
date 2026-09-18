@@ -1,0 +1,7 @@
+{%- comment -%} Usage: {% include video.html src="/assets/images/16pics/roll.mp4" caption="..." %} {%- endcomment -%}
+<figure class="video">
+  <video controls playsinline preload="metadata" width="320" height="240" src="{{ include.src | relative_url }}"></video>
+  {%- if include.caption %}
+  <figcaption>{{ include.caption }}</figcaption>
+  {%- endif %}
+</figure>

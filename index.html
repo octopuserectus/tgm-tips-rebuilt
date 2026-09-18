@@ -1,61 +1,25 @@
 ---
-title: Select Language
+title: "Tetris: The Grand Master series guide"
+layout: landing
 ---
 
-<style>
-  .language-selector {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 60vh; /* Adjusted to accommodate images */
-    text-align: center;
-  }
-  .language-selector h1 {
-    color: #fca5a5; /* Match theme */
-    margin-bottom: 2em;
-  }
-  .language-selector a {
-    display: inline-block;
-    padding: 1em 2em;
-    margin: 0.5em;
-    background-color: #1f2937; /* Match theme */
-    color: #d1d5db;
-    border: 1px solid #374151;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 1.1em;
-    transition: background-color 0.2s ease, color 0.2s ease;
-  }
-  .language-selector a:hover {
-    background-color: #374151;
-    color: #ffffff;
-  }
-  .title-images { /* Style for the image container */
-    text-align: center; /* Center the container content */
-    margin-top: 1em; /* Add some space below the hr */
-    margin-bottom: 2em; /* Add space above the language selector */
-  }
-  .title-images img { /* Style for the images */
-    margin: 0 5px; /* Add small horizontal space between images */
-    vertical-align: middle; /* Align images nicely */
-  }
-</style>
-
-<h1 class="site-title">Tetris: The Grand Master (TGM) series guide</h1>
-<hr>
-<div class="language-selector">
-  <h1>Select Language / 言語を選択</h1>
-  <div>
-    <a href="{{ '/en-vd/' | relative_url }}">English (villadelfia, incomplete)</a>
-    <a href="{{ '/en-ai/' | relative_url }}">English (AI, full text)</a>
-    <a href="{{ '/jp/' | relative_url }}">日本語 (Japanese, original)</a>
+<div class="landing">
+  <h1 class="site-title">Tetris: The Grand Master <span>series guide</span></h1>
+  <div class="title-images">
+    <img src="{{ '/assets/images/title/tgm1_title.png' | relative_url }}" alt="Tetris: The Grand Master title screen" width="320" height="240">
+    <img src="{{ '/assets/images/title/tgm2_title.png' | relative_url }}" alt="Tetris: The Absolute – The Grand Master 2 PLUS title screen" width="320" height="240">
+    <img src="{{ '/assets/images/title/tgm3_title.png' | relative_url }}" alt="Tetris: The Grand Master 3 – Terror-Instinct title screen" width="320" height="240">
   </div>
-</div>
 
-<div class="title-images">
-  <img src="{{ '/assets/images/title/tgm1_title.png' | relative_url }}" alt="TGM1 Title" width="320" height="240">
-  <img src="{{ '/assets/images/title/tgm2_title.png' | relative_url }}" alt="TGM2 Title" width="320" height="240">
-  <img src="{{ '/assets/images/title/tgm3_title.png' | relative_url }}" alt="TGM3 Title" width="320" height="240">
+  <h2 class="landing__choose">Select Language <span lang="ja">／ 言語を選択</span></h2>
+  <ul class="language-selector">
+    {%- for locale in site.data.locales %}
+    {%- assign path = '/' | append: locale[0] | append: '/' %}
+    <li>
+      <a href="{{ path | relative_url }}" hreflang="{{ locale[1].html_lang }}">
+        <strong lang="{{ locale[1].html_lang }}">{{ locale[1].label_long }}</strong>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
 </div>
-

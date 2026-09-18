@@ -1,9 +1,55 @@
 ---
-# This layout inherits from the default layout
-layout: default 
+layout: default
 ---
+{%- comment -%}
+  A chapter page. Heading, chapter number and previous/next links all come from
+  _data/chapters.yml, so chapter files contain nothing but their content.
+{%- endcomment -%}
+{%- include lang.html -%}
+{%- assign number = 0 -%}
+{%- assign found = false -%}
+{%- assign prev_chapter = nil -%}
+{%- assign next_chapter = nil -%}
+{%- for group in site.data.chapters -%}
+  {%- for chapter in group.chapters -%}
+    {%- if found and next_chapter == nil -%}{%- assign next_chapter = chapter -%}{%- endif -%}
+    {%- if chapter.slug == slug -%}
+      {%- assign found = true -%}
+      {%- assign guide = group.guide -%}
+    {%- endif -%}
+    {%- unless found -%}
+      {%- assign prev_chapter = chapter -%}
+      {%- assign number = number | plus: 1 -%}
+    {%- endunless -%}
+  {%- endfor -%}
+{%- endfor -%}
+{%- assign number = number | plus: 1 -%}
+{%- assign tips_path = '/' | append: ui_code | append: '/tips/' -%}
+{%- assign home_path = '/' | append: ui_code | append: '/' %}
 
-<h1>Lesson {{ page.order }}: {{ page.title | escape }}</h1>
-<hr> 
+<article class="chapter">
+  <header class="chapter__header">
+    <p class="chapter__eyebrow">{{ ui.guides[guide] }} · {{ ui.chapter_prefix }}{{ number }}{{ ui.chapter_suffix }}</p>
+    <h1>{{ page.title | escape }}</h1>
+  </header>
 
-{{ content }}
+  {{ content }}
+</article>
+
+<nav class="lesson-nav" aria-label="{{ ui.prev }} / {{ ui.next }}">
+  <div class="nav-item prev">
+    {%- if prev_chapter %}
+    {%- assign path = tips_path | append: prev_chapter.slug | append: '.html' %}
+    <a rel="prev" href="{{ path | relative_url }}"><small>← {{ ui.prev }}</small>{{ prev_chapter.titles[ui_code] }}</a>
+    {%- endif %}
+  </div>
+  <div class="nav-item top">
+    <a href="{{ home_path | relative_url }}"><small>⤴</small>{{ ui.top }}</a>
+  </div>
+  <div class="nav-item next">
+    {%- if next_chapter %}
+    {%- assign path = tips_path | append: next_chapter.slug | append: '.html' %}
+    <a rel="next" href="{{ path | relative_url }}"><small>{{ ui.next }} →</small>{{ next_chapter.titles[ui_code] }}</a>
+    {%- endif %}
+  </div>
+</nav>

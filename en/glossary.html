@@ -1,0 +1,40 @@
+---
+title: "Glossary"
+layout: home
+description: "Japanese Tetris: The Grand Master terminology and the English terms used in this translation."
+---
+
+<article class="chapter">
+  <header class="chapter__header">
+    <p class="chapter__eyebrow">Translation notes</p>
+    <h1>Glossary</h1>
+  </header>
+
+  <div class="tip-content">
+    <p>
+      The Japanese terms used in the original guide and the English chosen for them in this translation.
+      English terms follow <a href="https://tetris.wiki/Glossary">tetris.wiki</a> wherever the wiki has an
+      established word; the linked terms go to the relevant wiki page.
+    </p>
+
+    {%- for group in site.data.glossary %}
+    <h2 class="section-heading">{{ group.group }}</h2>
+    <div class="table-scroll">
+      <table class="data-table glossary-table">
+        <thead>
+          <tr><th scope="col">Japanese</th><th scope="col">English</th><th scope="col">Notes</th></tr>
+        </thead>
+        <tbody>
+          {%- for term in group.terms %}
+          <tr>
+            <th scope="row"><span lang="ja">{{ term.jp }}</span>{% if term.romaji and term.romaji != '' %}<small>{{ term.romaji }}</small>{% endif %}</th>
+            <td>{% if term.wiki %}<a href="https://tetris.wiki/{{ term.wiki }}">{{ term.en }}</a>{% else %}{{ term.en }}{% endif %}</td>
+            <td>{{ term.note }}</td>
+          </tr>
+          {%- endfor %}
+        </tbody>
+      </table>
+    </div>
+    {%- endfor %}
+  </div>
+</article>

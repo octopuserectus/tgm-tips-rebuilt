@@ -1,0 +1,12 @@
+{%- comment -%}
+  Works out which language section the current page belongs to, from the first
+  URL segment. Sets: lang_code (nil on the landing page), ui_code and ui (UI strings,
+  falling back to English), slug (chapter slug on tip pages, else nil).
+{%- endcomment -%}
+{%- assign url_parts = page.url | split: '/' -%}
+{%- assign lang_code = nil -%}
+{%- if site.data.locales[url_parts[1]] -%}{%- assign lang_code = url_parts[1] -%}{%- endif -%}
+{%- assign ui_code = lang_code | default: 'en' -%}
+{%- assign ui = site.data.locales[ui_code] -%}
+{%- assign slug = nil -%}
+{%- if lang_code and url_parts[2] == 'tips' -%}{%- assign slug = url_parts[3] | remove: '.html' -%}{%- endif -%}

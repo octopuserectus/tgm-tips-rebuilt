@@ -1,0 +1,179 @@
+---
+title: "Basics"
+guide: "TGM"
+order: 1
+layout: tip
+---
+
+<div class="tip-content">
+
+  <h3 class="section-heading">The seven pieces and the buttons</h3>
+  <table class="rotation-table">
+    <thead>
+      <tr>
+        <th>Piece</th>
+        <th><span class="highlight">A</span> button<br>rotation</th>
+        <th>Spawn<br>position / orientation</th>
+        <th><span class="highlight">B</span> button<br>rotation</th>
+        <th><span class="highlight">C</span> button<br>rotation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T (cyan)</td>
+        <td><img src="{{ '/assets/images/1pics/mizu_a.gif' | relative_url }}" alt="T piece rotating counterclockwise with the A button" width="31" height="31"></td>
+        <td><img src="{{ '/assets/images/1pics/mizu00.png' | relative_url }}" alt="T piece as it spawns: flat, pointing down" width="119" height="60"></td>
+        <td><img src="{{ '/assets/images/1pics/mizu_b.gif' | relative_url }}" alt="T piece rotating clockwise with the B button" width="31" height="31"></td>
+        <td>Same as <span class="highlight">A</span></td>
+      </tr>
+      <tr>
+        <td>J (blue)</td>
+        <td><img src="{{ '/assets/images/1pics/blue_a.gif' | relative_url }}" alt="J piece rotating counterclockwise with the A button" width="31" height="31"></td>
+        <td><img src="{{ '/assets/images/1pics/blue00.png' | relative_url }}" alt="J piece as it spawns: flat, hook pointing down on the right" width="119" height="60"></td>
+        <td><img src="{{ '/assets/images/1pics/blue_b.gif' | relative_url }}" alt="J piece rotating clockwise with the B button" width="31" height="31"></td>
+        <td>Same as <span class="highlight">A</span></td>
+      </tr>
+      <tr>
+        <td>L (orange)</td>
+        <td><img src="{{ '/assets/images/1pics/orange_a.gif' | relative_url }}" alt="L piece rotating counterclockwise with the A button" width="31" height="31"></td>
+        <td><img src="{{ '/assets/images/1pics/orange00.png' | relative_url }}" alt="L piece as it spawns: flat, hook pointing down on the left" width="119" height="60"></td>
+        <td><img src="{{ '/assets/images/1pics/orange_b.gif' | relative_url }}" alt="L piece rotating clockwise with the B button" width="31" height="31"></td>
+        <td>Same as <span class="highlight">A</span></td>
+      </tr>
+      <tr>
+        <td>Z (green)</td>
+        <td><img src="{{ '/assets/images/1pics/green.gif' | relative_url }}" alt="Z piece alternating between its two orientations" width="31" height="31"></td>
+        <td><img src="{{ '/assets/images/1pics/green00.png' | relative_url }}" alt="Z piece as it spawns: flat" width="119" height="60"></td>
+        <td>Same as <span class="highlight">A</span></td>
+        <td>Same as <span class="highlight">A</span></td>
+      </tr>
+      <tr>
+        <td>S (purple)</td>
+        <td><img src="{{ '/assets/images/1pics/purple.gif' | relative_url }}" alt="S piece alternating between its two orientations" width="31" height="31"></td>
+        <td><img src="{{ '/assets/images/1pics/parple00.png' | relative_url }}" alt="S piece as it spawns: flat" width="119" height="60"></td>
+        <td>Same as <span class="highlight">A</span></td>
+        <td>Same as <span class="highlight">A</span></td>
+      </tr>
+      <tr>
+        <td>I (red)</td>
+        <td><img src="{{ '/assets/images/1pics/red.gif' | relative_url }}" alt="I piece alternating between flat and upright" width="41" height="41"></td>
+        <td><img src="{{ '/assets/images/1pics/red00.png' | relative_url }}" alt="I piece as it spawns: flat" width="119" height="60"></td>
+        <td>Same as <span class="highlight">A</span></td>
+        <td>Same as <span class="highlight">A</span></td>
+      </tr>
+      <tr>
+        <td>O (yellow)</td>
+        <td>The shape doesn’t change,<br>but technically it does rotate</td>
+        <td><img src="{{ '/assets/images/1pics/yellow00.png' | relative_url }}" alt="O piece as it spawns" width="119" height="60"></td>
+        <td>Same as <span class="highlight">A</span></td>
+        <td>Same as <span class="highlight">A</span></td>
+      </tr>
+      </tbody>
+  </table>
+  <p>
+    Tetris rotation systems fall broadly into two families: “Sega-style” and “BPS-style”. The BPS style has apparently been turning into the “World rule” (SRS), a unified worldwide standard, in recent years.<br>
+    TGM follows the Sega-style rotation system and, as the table above shows, <span class="highlight">every piece except the I rotates so that the height of its lowest edge never changes</span>. You could say the pieces roll along the ground.<br>
+    It may feel a little unnatural at first, but I think this rotation system is what makes twists easy to use and pieces easy to handle at high gravity.
+  </p>
+
+  <h3 class="section-heading">The playfield</h3>
+  <div class="info-section">
+    <img src="{{ '/assets/images/1pics/kiso01.gif' | relative_url }}" alt="The TGM playfield, with rotated pieces sticking out one row above the top" width="119" height="239">
+    <div class="text example-explanation">
+      The playfield is made up of <span class="highlight">20 rows (lines) × 10 columns</span>. Rows are normally counted from the bottom (row 1, row 2, …) and columns from the left (column 1, column 2, …).<br>
+      As the figure on the left shows, however, a rotated piece is allowed to stick out one row above the top. To rotate an I piece the top three rows of the playfield must be empty, but any other piece can be rotated as long as the top two rows are empty.<br>
+      The mass of pieces you have stacked up is called the “<span class="highlight">stack</span>”.<br>
+      If a piece overlaps the stack as it appears, the game is over; this is called a “<span class="highlight">top out</span>”.<br>
+      The upcoming piece shown above the playfield is called the “NEXT display”, or simply “NEXT”.
+    </div>
+  </div>
+
+  <h3 class="section-heading">Levels and maxing out</h3>
+  <p>
+    Progress through the game is expressed as a “level” (Lv).<br>
+    You start at level 0 and clear the game at level 999. This is called “<span class="highlight">maxing out</span>” (カンスト, kansuto, short for “counter stop”).<br>
+    The level goes up by 1 every time a piece appears in the playfield (every piece <span class="highlight">dealt</span>), and when you clear lines it <span class="highlight">goes up by the number of lines cleared</span>.<br>
+    (In other words, maxing out means dropping a little over 700 pieces and clearing a little under 300 lines.)
+  </p>
+  <p>
+    Each block of 100 levels is called a “<span class="highlight">section</span>”.<br>
+    A section boundary (Lv *99 → Lv *00, or Lv 998 → Lv 999 for the last one only) can be crossed only by clearing a line.<br>
+    Dealt pieces alone leave the level stuck at *99; this is called a “<span class="highlight">level stop</span>”. In a time attack it is lost time.
+  </p>
+  <p>
+    Examples: clear 1 line with the piece at Lv 99 and you are at Lv 100; the next piece makes it Lv 101<br>
+    Clear 4 lines with the piece at Lv 98 and you are at Lv 102; the next piece makes it Lv 103<br>
+    Clear 4 lines with the piece at Lv 95 and you are at Lv 99; the next piece is <strong>also</strong> Lv 99
+  </p>
+
+  <h3 class="section-heading">20G</h3>
+  <p>
+    The game shows motion by drawing 60 images a second, and each of those images is called a “<span class="highlight">frame</span>”.<br>
+    Gravity, the speed at which pieces fall, is expressed as “how many rows the piece falls per frame”, in a unit called “<span class="highlight">G</span>”.<br>One of the most distinctive features of the TGM series, practically its symbol, is <strong>20G</strong>, where pieces don’t so much fall as suddenly “appear on the ground”.
+  </p>
+
+  <h3 class="section-heading">Lock delay and ARE</h3>
+  <p>
+    After a piece touches the stack there is a short time before it locks (the piece flashes white for an instant), during which you can still rotate it and move it sideways.<br>
+    At 20G in particular, where a piece is already on the ground the moment it appears, you use this window to slide the piece along the surface.<br>
+    This time is called the “<span class="highlight">lock delay</span>”, and in TGM it is about 0.5 seconds. It gets shorter in TAP’s advanced stages.<br>
+    Lock delay is reset when the piece drops down a step. (See <a href="{{ '/en/tips/05-fast-falling.html' | relative_url }}">Chapter 5</a>.)
+  </p>
+  <p>
+    There is also a short time between a piece locking and the next piece appearing, and this is called “<span class="highlight">ARE</span>”.<br>It gets shorter in TAP’s advanced stages.
+  </p>
+
+  <h3 class="section-heading">Manual lock and DAS</h3>
+  <p>
+    Push the stick down while a piece is falling and it falls at high speed. That speed is 1G, so when natural gravity is already faster than that, nothing changes.<br>
+    Push the stick down while a piece is resting on the ground and the piece is forced to lock even if there is lock delay left.<br>
+    In the TGM series, the term “<span class="highlight">manual lock</span>” (下入れ, shita-ire, literally “pressing down”) usually refers to the latter. The former is also called a “soft drop”.
+  </p>
+  <p>
+    Hold the stick sideways for a while and the piece starts moving sideways at high speed; this is called “<span class="highlight">DAS</span>”.<br>
+    (The speed is the equivalent of 1G, so it is the same as entering a sideways input every frame.)<br>
+    The time it takes to “charge” is called the “<span class="highlight">DAS delay</span>”, about 0.25 seconds in TGM. It gets shorter in TAP’s advanced stages.<br>
+    <span class="highlight">DAS is accepted even before the piece appears</span>, so if you have it already “charged” before then, the piece flies off sideways the instant it appears.<br>
+    This is important in time attack.
+  </p>
+
+  <h3 class="section-heading">IRS</h3>
+  <p>
+    IRS stands for Initial Rotation System (a system for entering a rotation in advance).<br>
+    <span class="highlight">If you are holding a button down when a piece appears</span>, the piece enters the playfield already rotated once.<br>
+    It gives you comfortable control even when gravity is high, so start using it deliberately early on, until you can do it without thinking.
+  </p>
+  <div class="info-section">
+     <div class="example-images">
+        <img src="{{ '/assets/images/1pics/kiso02.png' | relative_url }}" alt="A stack reaching the top of the playfield; the S piece in NEXT would top out if it spawned flat" width="119" height="239">
+        <span class="arrow">→</span>
+        <img src="{{ '/assets/images/1pics/kiso03.png' | relative_url }}" alt="With IRS the S piece spawns upright and clears the stack" width="119" height="239">
+        <img src="{{ '/assets/images/1pics/kiso07.png' | relative_url }}" alt="A stack where the J piece in NEXT fits as it is but would overlap the stack if rotated by IRS" width="119" height="239">
+     </div>
+     <div class="text example-explanation">
+        Avoiding a top out with IRS.<br>
+        Spawned as it is, the piece would top out, but with IRS it can dodge the stack.<br>
+        <span class="highlight">When using IRS is what would cause the top out, the button press is ignored and the piece appears as normal. (corrected 2008-08-26)</span>
+     </div>
+  </div>
+
+  <h3 class="section-heading">Wall kicks</h3>
+   <div class="info-section">
+     <div class="example-images">
+       <img src="{{ '/assets/images/1pics/01.png' | relative_url }}" alt="An upright T piece against the left wall" width="119" height="239">
+       <div class="icon-group">
+         <span>→</span>
+         <img src="{{ '/assets/images/1pics/01.gif' | relative_url }}" alt="The T piece’s rotation" width="31" height="31">
+       </div>
+       <img src="{{ '/assets/images/1pics/02.png' | relative_url }}" alt="The T piece now lying flat, kicked one column away from the wall" width="119" height="239">
+     </div>
+     <div class="text example-explanation">
+       Consider rotating a piece right next to the wall, as in the figure.<br>
+       Going by the rotation system introduced above, it looks as if the rotation should fail, because the piece’s left-hand cell would end up inside the wall.<br>
+       In practice, though, there is room to shift to the right, so the position is corrected automatically and the piece rotates.<br>
+       This makes it easy to rotate a piece that you have carried all the way to the edge at high speed with DAS, and alongside IRS it is one of the things that make the TGM series so comfortable to control.<br>
+       It comes in useful extremely often, for example in the twists introduced in <a href="{{ '/en/tips/08-advanced-rotation.html' | relative_url }}">Chapter 8</a> and the movement optimization introduced in <a href="{{ '/en/tips/11-time-attack.html' | relative_url }}">Chapter 11</a>.
+     </div>
+  </div>
+
+</div>

@@ -1,12 +1,5 @@
 ---
-# This layout inherits from the default layout
-layout: default 
+layout: default
 ---
-
-{% comment %} 
-  This file defines the layout for the home page (index.html).
-  It inherits the main structure (sidebar, main area, mobile nav) from _layouts/default.html.
-  The content from index.html will be placed where {{ content }} is below.
-{% endcomment %}
-
-{{ content }} 
+{%- comment -%} Index page of a language section (and the 404 page): sidebar plus content. {%- endcomment -%}
+{{ content }}

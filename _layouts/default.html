@@ -1,76 +1,84 @@
+{%- include lang.html -%}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ ui.html_lang }}">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" sizes="any"> {% comment %} Standard .ico favicon {% endcomment %}
-  <link rel="icon" href="{{ '/assets/images/icons/icon.svg' | relative_url }}" type="image/svg+xml"> {% comment %} Optional SVG favicon {% endcomment %}
-  <link rel="apple-touch-icon" href="{{ '/assets/images/icons/apple-touch-icon.png' | relative_url }}"> {% comment %} Optional Apple touch icon (e.g., 180x180 png) {% endcomment %}
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-  {% comment %} Link to your main CSS file {% endcomment %}
-  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}"> 
-  
+  <title>{% if page.title %}{{ page.title | escape }} · {% endif %}{{ site.title | escape }}</title>
+  <meta name="description" content="{{ page.description | default: site.description | escape }}">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0f1420">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  {%- if slug %}
+  {%- for locale in site.data.locales %}
+  {%- if locale[1].primary %}
+  {%- assign path = '/' | append: locale[0] | append: '/tips/' | append: slug | append: '.html' %}
+  <link rel="alternate" hreflang="{{ locale[1].html_lang }}" href="{{ path | absolute_url }}">
+  {%- endif %}
+  {%- endfor %}
+  {%- endif %}
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
+  <link rel="icon" href="{{ '/assets/images/icons/icon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{ '/assets/images/icons/apple-touch-icon.png' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
 </head>
 
-<body>
+<body{% if page.layout == 'landing' %} class="no-sidebar"{% endif %}>
+  <a class="skip-link" href="#content">{{ ui.skip }}</a>
 
-  {% comment %} Mobile Navigation Toggle Button (Hidden on Desktop) {% endcomment %}
-  <button id="mobile-nav-toggle" class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-    ☰
+  {%- unless page.layout == 'landing' %}
+  <button id="nav-toggle" class="nav-toggle" type="button" aria-controls="sidebar" aria-expanded="false">
+    <span aria-hidden="true">☰</span> {{ ui.menu }}
   </button>
 
   <aside class="sidebar" id="sidebar">
-    {% comment %} Include the navigation component {% endcomment %}
     {% include navigation.html %}
   </aside>
+  <div class="nav-overlay" id="nav-overlay"></div>
+  {%- endunless %}
 
-  <main class="main-content">
-    {% comment %} Render the content from the specific page (e.g., index.html, 01-basics.html) {% endcomment %}
+  <main class="main-content" id="content">
     {{ content }}
   </main>
 
-  {% comment %} Optional: Overlay for closing menu on mobile {% endcomment %}
-  <div class="nav-overlay" id="nav-overlay"></div>
-
-  {% comment %} Simple JavaScript for Mobile Nav Toggle {% endcomment %}
   <script>
-    const toggleButton = document.getElementById('mobile-nav-toggle');
-    const sidebar = document.getElementById('sidebar');
-    const overlay = document.getElementById('nav-overlay');
-    const body = document.body;
+    (function () {
+      var body = document.body;
+      var toggle = document.getElementById('nav-toggle');
+      var sidebar = document.getElementById('sidebar');
+      var overlay = document.getElementById('nav-overlay');
 
-    if (toggleButton && sidebar) {
-      toggleButton.addEventListener('click', () => {
-        const isOpen = body.classList.toggle('nav-open');
-        toggleButton.setAttribute('aria-expanded', isOpen);
-        // Optional: Change button text/icon
-        // toggleButton.innerHTML = isOpen ? '✕' : '☰'; 
+      function setOpen(open) {
+        body.classList.toggle('nav-open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+
+      if (toggle && sidebar) {
+        toggle.addEventListener('click', function () {
+          setOpen(!body.classList.contains('nav-open'));
+        });
+        overlay.addEventListener('click', function () { setOpen(false); });
+        sidebar.addEventListener('click', function (event) {
+          if (event.target.closest('a')) setOpen(false);
+        });
+
+        // Keep the current chapter in view in the sidebar.
+        var current = sidebar.querySelector('[aria-current="page"]');
+        if (current) sidebar.scrollTop = current.offsetTop - sidebar.clientHeight / 2;
+      }
+
+      // Esc closes the menu; left/right arrows turn the page.
+      document.addEventListener('keydown', function (event) {
+        if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+        if (event.key === 'Escape' && toggle) { setOpen(false); return; }
+        if (/^(INPUT|TEXTAREA|SELECT|VIDEO)$/.test(event.target.tagName)) return;
+        var rel = event.key === 'ArrowLeft' ? 'prev' : event.key === 'ArrowRight' ? 'next' : null;
+        var link = rel && document.querySelector('a[rel="' + rel + '"]');
+        if (link) link.click();
       });
-    }
-    
-    if (overlay) {
-        overlay.addEventListener('click', () => {
-            body.classList.remove('nav-open');
-            toggleButton.setAttribute('aria-expanded', 'false');
-            // toggleButton.innerHTML = '☰';
-        });
-    }
-
-    // Optional: Close nav when a link inside it is clicked
-    if (sidebar) {
-        sidebar.addEventListener('click', (event) => {
-            if (event.target.tagName === 'A') {
-                 body.classList.remove('nav-open');
-                 toggleButton.setAttribute('aria-expanded', 'false');
-                 // toggleButton.innerHTML = '☰';
-            }
-        });
-    }
+    })();
   </script>
-
 </body>
+
 </html>
