@@ -20,7 +20,7 @@
     - slug: 08-advanced-rotation
       titles: { en: "Twists", en-vd: "Advanced rotation", jp: "回転入れ" }
     - slug: 09-rotating-obstacles
-      titles: { en: "Hops and Crossings", en-vd: "Rotating over obstacles", jp: "飛ばし・渡し" }
+      titles: { en: "Rotating Over Obstacles", en-vd: "Rotating over obstacles", jp: "飛ばし・渡し" }
     - slug: 10-advanced-stacking
       titles: { en: "Active Stacking", en-vd: "Advanced stacking", jp: "アクティブな積み方" }
     - slug: 11-time-attack

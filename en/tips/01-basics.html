@@ -71,7 +71,7 @@ layout: tip
       </tbody>
   </table>
   <p>
-    Tetris rotation systems fall broadly into two families: “Sega-style” and “BPS-style”. The BPS style has apparently been turning into the “World rule” (SRS), a unified worldwide standard, in recent years.<br>
+    Tetris rotation systems fall broadly into two families: “Sega-style” and “BPS-style.” The BPS style has apparently been turning into the “World rule” (SRS), a unified worldwide standard, in recent years.<br>
     TGM follows the Sega-style rotation system and, as the table above shows, <span class="highlight">every piece except the I rotates so that the height of its lowest edge never changes</span>. You could say the pieces roll along the ground.<br>
     It may feel a little unnatural at first, but I think this rotation system is what makes twists easy to use and pieces easy to handle at high gravity.
   </p>
@@ -82,23 +82,23 @@ layout: tip
     <div class="text example-explanation">
       The playfield is made up of <span class="highlight">20 rows (lines) × 10 columns</span>. Rows are normally counted from the bottom (row 1, row 2, …) and columns from the left (column 1, column 2, …).<br>
       As the figure on the left shows, however, a rotated piece is allowed to stick out one row above the top. To rotate an I piece the top three rows of the playfield must be empty, but any other piece can be rotated as long as the top two rows are empty.<br>
-      The mass of pieces you have stacked up is called the “<span class="highlight">stack</span>”.<br>
-      If a piece overlaps the stack as it appears, the game is over; this is called a “<span class="highlight">top out</span>”.<br>
-      The upcoming piece shown above the playfield is called the “NEXT display”, or simply “NEXT”.
+      The mass of pieces you have stacked up is called the “<span class="highlight">stack</span>.”<br>
+      If a piece overlaps the stack as it appears, the game is over; this is called a “<span class="highlight">top out</span>.”<br>
+      The upcoming piece shown above the playfield is called the “NEXT display,” or simply “NEXT.”
     </div>
   </div>
 
-  <h3 class="section-heading">Levels and maxing out</h3>
+  <h3 class="section-heading">Levels and reaching level 999</h3>
   <p>
     Progress through the game is expressed as a “level” (Lv).<br>
-    You start at level 0 and clear the game at level 999. This is called “<span class="highlight">maxing out</span>” (the level counter stops there).<br>
-    The level goes up by 1 every time a piece appears in the playfield (every piece <span class="highlight">dealt</span>), and when you clear lines it <span class="highlight">goes up by the number of lines cleared</span>.<br>
-    (In other words, maxing out means dropping a little over 700 pieces and clearing a little under 300 lines.)
+    You start at level 0, and <span class="highlight">reaching level 999</span> ends the game: you have cleared it, and the level counter stops there.<br>
+    The level goes up by 1 <span class="highlight">with each new piece</span> that appears in the playfield, and when you clear lines it <span class="highlight">goes up by the number of lines cleared</span>.<br>
+    (In other words, reaching level 999 means dropping a little over 700 pieces and clearing a little under 300 lines.)
   </p>
   <p>
-    Each block of 100 levels is called a “<span class="highlight">section</span>”.<br>
+    Each block of 100 levels is called a “<span class="highlight">section</span>.”<br>
     A section boundary (Lv *99 → Lv *00, or Lv 998 → Lv 999 for the last one only) can be crossed only by clearing a line.<br>
-    Dealt pieces alone leave the level stuck at *99; this is called a “<span class="highlight">level stop</span>”. In a time attack it is lost time.
+    New pieces alone leave the level stuck at *99; this is called a “<span class="highlight">level stop</span>.” In a time attack it is lost time.
   </p>
   <p>
     Examples: clear 1 line with the piece at Lv 99 and you are at Lv 100; the next piece makes it Lv 101<br>
@@ -108,32 +108,32 @@ layout: tip
 
   <h3 class="section-heading">20G</h3>
   <p>
-    The game shows motion by drawing 60 images a second, and each of those images is called a “<span class="highlight">frame</span>”.<br>
-    Gravity, the speed at which pieces fall, is expressed as “how many rows the piece falls per frame”, in a unit called “<span class="highlight">G</span>”.<br>One of the most distinctive features of the TGM series, practically its symbol, is <strong>20G</strong>, where pieces don’t so much fall as suddenly “appear on the ground”.
+    The game shows motion by drawing 60 images a second, and each of those images is called a “<span class="highlight">frame</span>.”<br>
+    Gravity, the speed at which pieces fall, is expressed as the number of rows the piece falls per frame, in a unit called “<span class="highlight">G</span>.”<br>One of the most distinctive features of the TGM series, practically its symbol, is <strong>20G</strong>, where pieces don’t so much fall as suddenly appear on the ground.
   </p>
 
   <h3 class="section-heading">Lock delay and ARE</h3>
   <p>
     After a piece touches the stack there is a short time before it locks (the piece flashes white for an instant), during which you can still rotate it and move it sideways.<br>
     At 20G in particular, where a piece is already on the ground the moment it appears, you use this window to slide the piece along the surface.<br>
-    This time is called the “<span class="highlight">lock delay</span>”, and in TGM it is about 0.5 seconds. It gets shorter in TAP’s advanced stages.<br>
+    This time is called the “<span class="highlight">lock delay</span>,” and in TGM it is about 0.5 seconds. It gets shorter in TAP’s advanced stages.<br>
     Lock delay is reset when the piece drops down a step. (See <a href="{{ '/en/tips/05-fast-falling.html' | relative_url }}">Chapter 5</a>.)
   </p>
   <p>
-    There is also a short time between a piece locking and the next piece appearing, and this is called “<span class="highlight">ARE</span>”.<br>It gets shorter in TAP’s advanced stages.
+    There is also a short time between a piece locking and the next piece appearing, and this is called “<span class="highlight">ARE</span>.”<br>It gets shorter in TAP’s advanced stages.
   </p>
 
   <h3 class="section-heading">Manual lock and DAS</h3>
   <p>
     Push the stick down while a piece is falling and it falls at high speed. That speed is 1G, so when natural gravity is already faster than that, nothing changes.<br>
     Push the stick down while a piece is resting on the ground and the piece is forced to lock even if there is lock delay left.<br>
-    In the TGM series, “pressing down” usually means the latter, a “<span class="highlight">manual lock</span>”. The former is also called a “soft drop”.
+    In the TGM series, “pressing down” usually means the latter, a “<span class="highlight">manual lock</span>.” The former is also called a “soft drop.”
   </p>
   <p>
-    Hold the stick sideways for a while and the piece starts moving sideways at high speed; this is called “<span class="highlight">DAS</span>”.<br>
+    Hold the stick sideways for a while and the piece starts moving sideways at high speed; this is called “<span class="highlight">DAS</span>.”<br>
     (The speed is the equivalent of 1G, so it is the same as entering a sideways input every frame.)<br>
-    The time it takes to “charge” is called the “<span class="highlight">DAS delay</span>”, about 0.25 seconds in TGM. It gets shorter in TAP’s advanced stages.<br>
-    <span class="highlight">DAS is accepted even before the piece appears</span>, so if you have it already “charged” before then, the piece flies off sideways the instant it appears.<br>
+    The time it takes to “charge” is called the “<span class="highlight">DAS delay</span>,” about 0.25 seconds in TGM. It gets shorter in TAP’s advanced stages.<br>
+    <span class="highlight">DAS is accepted even before the piece appears</span>, so if you have it already charged before then, the piece flies off sideways the instant it appears.<br>
     This is important in time attack.
   </p>
 
@@ -153,7 +153,7 @@ layout: tip
      <div class="text example-explanation">
         Avoiding a top out with IRS.<br>
         Spawned as it is, the piece would top out, but with IRS it can dodge the stack.<br>
-        <s>Conversely, there are also cases where “the piece would have been safe spawning as it is, but using IRS makes it top out.”</s>
+        <s>Conversely, there are also cases where the piece would have been safe spawning as it is, but using IRS makes it top out.</s>
         <span class="highlight">When using IRS is what would cause the top out, the button press is ignored and the piece appears as normal. (corrected 2008-08-26)</span>
      </div>
   </div>
