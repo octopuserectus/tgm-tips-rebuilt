@@ -1,7 +1,8 @@
 {%- comment -%}
   Works out which language section the current page belongs to, from the first
   URL segment. Sets: lang_code (nil on the landing page), ui_code and ui (UI strings,
-  falling back to English), slug (chapter slug on tip pages, else nil).
+  falling back to English), slug (chapter slug on tip pages, else nil) and guide
+  (tgm / tap / ti, the part of the guide a chapter belongs to).
 {%- endcomment -%}
 {%- assign url_parts = page.url | split: '/' -%}
 {%- assign first_segment = url_parts[1] -%}
@@ -11,3 +12,9 @@
 {%- assign ui = site.data.locales[ui_code] -%}
 {%- assign slug = nil -%}
 {%- if lang_code and url_parts[2] == 'tips' -%}{%- assign slug = url_parts[3] | remove: '.html' -%}{%- endif -%}
+{%- assign guide = nil -%}
+{%- for group in site.data.chapters -%}
+  {%- for chapter in group.chapters -%}
+    {%- if chapter.slug == slug -%}{%- assign guide = group.guide -%}{%- endif -%}
+  {%- endfor -%}
+{%- endfor -%}

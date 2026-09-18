@@ -7,8 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title %}{{ page.title | escape }} · {% endif %}{{ site.title | escape }}</title>
   <meta name="description" content="{{ page.description | default: site.description | escape }}">
-  <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#0f1420">
+  <meta name="color-scheme" content="dark light">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <meta property="og:site_name" content="{{ site.title | escape }}">
   <meta property="og:title" content="{{ page.title | default: site.title | escape }}">
@@ -30,12 +29,16 @@
   <link rel="apple-touch-icon" href="{{ '/assets/images/icons/apple-touch-icon.png' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
   <script>
-    // Apply the saved diagram size before first paint.
-    try { if (localStorage.getItem('diagrams') === '2x') document.documentElement.classList.add('diagrams-2x'); } catch (e) {}
+    // Apply the saved theme and diagram size before first paint.
+    try {
+      var savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.setAttribute('data-theme', savedTheme);
+      if (localStorage.getItem('diagrams') === '2x') document.documentElement.classList.add('diagrams-2x');
+    } catch (e) {}
   </script>
 </head>
 
-<body{% if page.layout == 'landing' %} class="no-sidebar"{% endif %}>
+<body class="{% if page.layout == 'landing' %}no-sidebar{% endif %}{% if guide %} guide-{{ guide }}{% endif %}">
   <a class="skip-link" href="#content">{{ ui.skip }}</a>
 
   {%- unless page.layout == 'landing' %}
@@ -57,6 +60,12 @@
       <a href="https://tgm.tips/" rel="noopener noreferrer">tgm.tips</a>
       <a href="https://tetris.wiki/" rel="noopener noreferrer">tetris.wiki</a>
       <a href="https://github.com/octopuserectus/tgm-tips-rebuilt" rel="noopener noreferrer">{{ ui.footer_source }}</a>
+      <div class="theme-switch" role="group" aria-label="{{ ui.theme }}">
+        <span>{{ ui.theme }}</span>
+        <button type="button" value="auto">{{ ui.theme_auto }}</button>
+        <button type="button" value="light">{{ ui.theme_light }}</button>
+        <button type="button" value="dark">{{ ui.theme_dark }}</button>
+      </div>
     </footer>
   </main>
 
@@ -131,6 +140,24 @@
         });
       }
       showSize();
+
+      // Theme switch: auto follows the system setting.
+      var themeButtons = document.querySelectorAll('.theme-switch button');
+      function showTheme() {
+        var current = document.documentElement.getAttribute('data-theme') || 'auto';
+        for (var m = 0; m < themeButtons.length; m++) {
+          themeButtons[m].setAttribute('aria-pressed', themeButtons[m].value === current ? 'true' : 'false');
+        }
+      }
+      for (var m = 0; m < themeButtons.length; m++) {
+        themeButtons[m].addEventListener('click', function () {
+          if (this.value === 'auto') document.documentElement.removeAttribute('data-theme');
+          else document.documentElement.setAttribute('data-theme', this.value);
+          try { localStorage.setItem('theme', this.value); } catch (e) {}
+          showTheme();
+        });
+      }
+      showTheme();
 
       // Esc closes the menu; left/right arrows turn the page.
       document.addEventListener('keydown', function (event) {

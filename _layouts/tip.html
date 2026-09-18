@@ -13,10 +13,7 @@ layout: default
 {%- for group in site.data.chapters -%}
   {%- for chapter in group.chapters -%}
     {%- if found and next_chapter == nil -%}{%- assign next_chapter = chapter -%}{%- endif -%}
-    {%- if chapter.slug == slug -%}
-      {%- assign found = true -%}
-      {%- assign guide = group.guide -%}
-    {%- endif -%}
+    {%- if chapter.slug == slug -%}{%- assign found = true -%}{%- endif -%}
     {%- unless found -%}
       {%- assign prev_chapter = chapter -%}
       {%- assign number = number | plus: 1 -%}
@@ -54,7 +51,7 @@ layout: default
     {%- endif %}
   </div>
   <div class="nav-item top">
-    <a href="{{ home_path | relative_url }}"><small>⤴</small>{{ ui.top }}</a>
+    <a href="{{ home_path | relative_url }}"><small>↑</small>{{ ui.top }}</a>
   </div>
   <div class="nav-item next">
     {%- if next_chapter %}

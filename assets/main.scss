@@ -4,34 +4,72 @@
 
 // ---------------------------------------------------------------------------
 // Tokens
+//
+// The palette follows the original site: black page, grey text, red headings,
+// yellow emphasis, green links. Dark is the default; light applies when the system
+// asks for it or when the reader picks it (data-theme on <html>, see default.html).
 // ---------------------------------------------------------------------------
-:root {
-  --bg: #0f1420;
-  --surface: #171e2e;
-  --surface-2: #1f2839;
-  --border: #2c374c;
-  --text: #d6dbe6;
-  --text-strong: #f4f6fa;
-  --muted: #94a0b5;
-  --accent: #ff8f8f;      // headings: the red of the I piece, softened
-  --link: #5fd4a8;
-  --link-hover: #93e8c8;
-  --highlight: #ffd24a;
+@mixin dark-theme {
+  --bg: #0a0a0b;
+  --surface: #141416;
+  --surface-2: #1e1e22;
+  --border: #2b2b31;
+  --text: #cfcdc8;
+  --text-strong: #f5f3ee;
+  --muted: #8d8a84;
+  --accent: #ff6257;
+  --link: #5bd66f;
+  --link-hover: #9af0a6;
+  --highlight: #ffdd4a;
+  --highlight-bg: transparent;
+  --highlight-pad: 0;
+  --shadow: 0 0 0 1px #2b2b31;
+}
 
-  // TGM (ARS) piece colors
-  --piece-i: #ff3b3b;
+@mixin light-theme {
+  --bg: #f6f4ef;
+  --surface: #ffffff;
+  --surface-2: #ece9e1;
+  --border: #d9d4c8;
+  --text: #2c2a26;
+  --text-strong: #111010;
+  --muted: #6d6961;
+  --accent: #c0281f;
+  --link: #0f7a3c;
+  --link-hover: #0a5a2c;
+  --highlight: #2c2300;
+  --highlight-bg: #ffe374;
+  --highlight-pad: 0.2em;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+}
+
+:root {
+  @include dark-theme;
+
+  // TGM piece colors, also used as the accent of each guide
+  --piece-i: #ff3b30;
   --piece-t: #25d9e8;
   --piece-s: #c45cf0;
   --piece-z: #35d435;
   --piece-j: #4d7dff;
   --piece-l: #ff9a2e;
   --piece-o: #f5e13a;
+  --guide: var(--piece-i);
 
   --sidebar-width: 18rem;
-  --radius: 8px;
+  --radius: 6px;
   --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans",
     "Hiragino Kaku Gothic ProN", "Yu Gothic UI", Meiryo, sans-serif;
+  color-scheme: dark;
 }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) { @include light-theme; color-scheme: light; }
+}
+:root[data-theme="light"] { @include light-theme; color-scheme: light; }
+
+.guide-tgm { --guide: var(--piece-i); }
+.guide-tap { --guide: var(--piece-j); }
+.guide-ti { --guide: var(--piece-s); }
 
 // ---------------------------------------------------------------------------
 // Base
@@ -66,7 +104,7 @@ a:hover { color: var(--link-hover); }
 
 h1, h2, h3 { line-height: 1.25; color: var(--text-strong); }
 hr { border: 0; height: 1px; background: var(--border); margin: 2.5rem 0; }
-small { color: var(--muted); }
+small, s { color: var(--muted); }
 strong, b { color: var(--text-strong); }
 
 img, video { max-width: 100%; height: auto; }
@@ -81,7 +119,11 @@ img, video { max-width: 100%; height: auto; }
 }
 .skip-link:focus { top: 0.5rem; }
 
-.highlight, .highlight-yellow { color: var(--highlight); font-weight: 600; }
+.highlight, .highlight-yellow {
+  color: var(--highlight); font-weight: 600;
+  background: var(--highlight-bg); border-radius: 3px; padding: 0 var(--highlight-pad);
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
 
 // ---------------------------------------------------------------------------
 // Sidebar
@@ -128,6 +170,7 @@ img, video { max-width: 100%; height: auto; }
   background: var(--surface-2); color: var(--text-strong); font-weight: 600;
   box-shadow: inset 3px 0 0 var(--accent);
 }
+.site-nav__list a[aria-current="page"] { box-shadow: inset 3px 0 0 var(--guide); }
 .site-nav__num {
   flex: 0 0 1.4rem; text-align: right;
   color: var(--muted); font-variant-numeric: tabular-nums; font-weight: 400;
@@ -154,27 +197,31 @@ img, video { max-width: 100%; height: auto; }
   padding: 2rem clamp(1rem, 4vw, 3rem) 3rem;
 }
 
-.chapter__header { margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+.chapter__header { margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid var(--guide); }
 .chapter__eyebrow {
   margin: 0 0 0.25rem;
   font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--accent);
+  color: var(--muted);
+}
+.chapter__eyebrow::before {
+  content: ""; display: inline-block; width: 0.7em; height: 0.7em; margin-right: 0.5em;
+  background: var(--guide); border-radius: 2px;
 }
 .chapter__header h1 { margin: 0; font-size: clamp(1.6rem, 4vw, 2.2rem); }
 .chapter__header { display: flex; flex-wrap: wrap; align-items: flex-end; column-gap: 1.5rem; row-gap: 0.75rem; }
 .chapter__eyebrow { flex: 0 0 100%; }
 .chapter__header h1 { flex: 1 1 auto; }
 
-.diagram-size { display: flex; align-items: center; gap: 0.25rem; font-size: 0.8rem; color: var(--muted); }
-.diagram-size span { margin-right: 0.35rem; }
-.diagram-size button {
+.diagram-size, .theme-switch { display: flex; align-items: center; gap: 0.25rem; font-size: 0.8rem; color: var(--muted); }
+.diagram-size span, .theme-switch span { margin-right: 0.35rem; }
+.diagram-size button, .theme-switch button {
   padding: 0.2rem 0.6rem;
   font: inherit; font-weight: 600; color: var(--muted);
   background: transparent; border: 1px solid var(--border); border-radius: 6px;
   cursor: pointer;
 }
-.diagram-size button:hover { color: var(--text-strong); border-color: var(--muted); }
-.diagram-size button[aria-pressed="true"] { color: var(--text-strong); background: var(--surface-2); border-color: var(--muted); }
+.diagram-size button:hover, .theme-switch button:hover { color: var(--text-strong); border-color: var(--muted); }
+.diagram-size button[aria-pressed="true"], .theme-switch button[aria-pressed="true"] { color: var(--text-strong); background: var(--surface-2); border-color: var(--muted); }
 
 .page-toc {
   margin: 0 0 2rem; padding: 0.9rem 1.1rem;
@@ -197,6 +244,10 @@ img, video { max-width: 100%; height: auto; }
   border-bottom: 1px solid var(--border);
 }
 .tip-content > .section-heading:first-child { margin-top: 0; }
+// A rule followed by a heading would draw two lines: the heading's own underline is enough.
+.tip-content hr + .section-heading { margin-top: 0; }
+.tip-content hr { visibility: hidden; margin: 1.25rem 0; }
+.tip-content hr + p, .tip-content hr + .info-section { margin-top: 0; }
 .section-heading.red-heading { color: var(--piece-i); }
 
 .tip-content p { margin: 0 0 1rem; }
@@ -224,7 +275,7 @@ img, video { max-width: 100%; height: auto; }
 }
 .example-images img, .info-section > img, .bordered-image {
   display: block; border-radius: 3px;
-  box-shadow: 0 0 0 1px var(--border);
+  box-shadow: var(--shadow);
 }
 .example-images .placeholder { display: none; }
 .example-explanation { font-size: 0.95rem; }
@@ -381,7 +432,7 @@ img, video { max-width: 100%; height: auto; }
   font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted);
 }
 
-.free-images img { margin-right: 0.75rem; border-radius: 3px; box-shadow: 0 0 0 1px var(--border); }
+.free-images img { margin-right: 0.75rem; border-radius: 3px; box-shadow: var(--shadow); }
 
 .history { display: grid; grid-template-columns: max-content 1fr; gap: 0.3rem 1rem; margin: 0; font-size: 0.925rem; }
 .history dt { color: var(--muted); font-variant-numeric: tabular-nums; }
@@ -407,7 +458,7 @@ img, video { max-width: 100%; height: auto; }
 .landing__choose { margin: 2.5rem 0 1rem; font-size: 1.1rem; color: var(--text-strong); }
 .landing__choose span { color: var(--muted); font-weight: 400; }
 .title-images { display: flex; justify-content: center; gap: 0.75rem; }
-.title-images img { flex: 1 1 0; min-width: 0; max-width: 320px; border-radius: var(--radius); box-shadow: 0 0 0 1px var(--border); }
+.title-images img { flex: 1 1 0; min-width: 0; max-width: 320px; border-radius: var(--radius); box-shadow: var(--shadow); }
 
 .language-selector {
   list-style: none; margin: 0; padding: 0;
@@ -433,6 +484,9 @@ img, video { max-width: 100%; height: auto; }
   border-top: 1px solid var(--border);
   font-size: 0.85rem;
 }
+.site-footer { align-items: center; }
+.site-footer .theme-switch { margin-left: auto; font-size: inherit; }
+.no-sidebar .site-footer .theme-switch { margin-left: 0; }
 .site-footer a { color: var(--muted); text-decoration: none; }
 .site-footer a:hover { color: var(--link-hover); text-decoration: underline; }
 .no-sidebar .site-footer { justify-content: center; }
@@ -467,7 +521,8 @@ img, video { max-width: 100%; height: auto; }
 }
 
 @media print {
-  body { display: block; background: #fff; color: #000; }
-  .sidebar, .nav-toggle, .nav-overlay, .lesson-nav, .skip-link, .diagram-size, .site-footer { display: none !important; }
+  :root { @include light-theme; }
+  body { display: block; }
+  .sidebar, .nav-toggle, .nav-overlay, .lesson-nav, .skip-link, .diagram-size, .site-footer, .page-toc { display: none !important; }
   .info-section { break-inside: avoid; }
 }

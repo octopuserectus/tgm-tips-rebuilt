@@ -64,25 +64,25 @@
     - { jp: "シンクロ", romaji: "shinkuro", en: "synchro", wiki: "Synchro", note: "Rotating and shifting on the same frame." }
     - { jp: "飛ばし", romaji: "tobashi", en: "hop", note: "Using rotation to carry a piece over an obstacle." }
     - { jp: "渡し / ３回転渡し", romaji: "watashi", en: "crossing / triple-rotation crossing", note: "Rotating a piece so that its wide side bridges a gap it would otherwise fall into." }
-    - { jp: "逆上がり", romaji: "saka-agari", en: "back hip circle", note: "Gymnastics term for swinging up and over a bar; a rotation that climbs a step." }
+    - { jp: "逆上がり", romaji: "saka-agari", en: "climbing a step with a rotation", note: "Literally a gymnast’s back hip circle on the bar." }
     - { jp: "谷越え", romaji: "tani-goe", en: "valley crossing" }
     - { jp: "陰謀", romaji: "inbō", en: "the “conspiracy”", wiki: "Arika_Rotation_System", note: "When a rotation overlaps the stack and there is room on both sides, the wall kick always tries right first. Named after players complaining that it was “a conspiracy by the developers!”" }
     - { jp: "ザンギ入れ", romaji: "zangi-ire", en: "Zangi-move", wiki: "Zangi-move", note: "Sonic drop, shift sideways, then lock." }
     - { jp: "操作最適化", romaji: "sōsa saitekika", en: "movement optimization (finesse)", wiki: "Finesse" }
-    - { jp: "ゴゴゴる", romaji: "gogogo-ru", en: "to “gogogo”", note: "You press down to lock a piece that has in fact already locked, so the input locks the next piece instead, and the one after that arrives before you have recovered." }
+    - { jp: "ゴゴゴる", romaji: "gogogo-ru", en: "locking the wrong piece", note: "You press down to lock a piece that has in fact already locked, so the input locks the next piece instead, and the one after that arrives before you have recovered." }
     - { jp: "とり溜め", romaji: "tori-dame", en: "provisional charge", note: "From とりあえず溜める, “charge for now”: start charging DAS to one side (usually left) before you have decided where the piece goes, and think while it charges." }
-    - { jp: "コンコン", romaji: "konkon", en: "tap-tap", note: "Two separate sideways taps of the stick; slow, so worth avoiding." }
+    - { jp: "コンコン", romaji: "konkon", en: "double tap", note: "Two separate sideways taps of the stick; slow, so worth avoiding." }
     - { jp: "左１", romaji: "hidari ichi", en: "left 1", note: "One tap to the left of where the piece appears." }
     - { jp: "その場立て", romaji: "sonoba-tate", en: "standing a piece upright on the spot" }
     - { jp: "瞬間裏返し / 瞬間３回転", romaji: "shunkan uragaeshi", en: "instant flip / instant triple rotation", note: "Two (or three) rotations in the same direction entered almost at once with different buttons, e.g. A then C." }
     - { jp: "シンクロ渡し / フレーム入れ", romaji: "", en: "synchro crossing / frame insertion" }
-    - { jp: "ぬりかべ", romaji: "nurikabe", en: "“plaster wall”", note: "Nickname of a twist." }
-    - { jp: "でんぐり返し", romaji: "denguri-gaeshi", en: "“somersault”", note: "Nickname of a twist that passes a piece through a one-column gap." }
-    - { jp: "伏せ", romaji: "fuse", en: "“face-down”", note: "Nickname of a twist." }
-    - { jp: "パタパタ", romaji: "pata-pata", en: "“flip-flap”", note: "Nickname of the I piece hop." }
-    - { jp: "与作 / 変態入れ", romaji: "yosaku / hentai-ire", en: "“Yosaku” / “freak twist”", note: "Nicknames of two unusual twists." }
-    - { jp: "城", romaji: "shiro", en: "“castle”", note: "A surface that goes up and down one cell at a time, like battlements." }
-    - { jp: "水色ハマリ", romaji: "mizuiro-hamari", en: "“cyan trap”", note: "A well-known way of getting a T piece stuck at high gravity." }
+    - { jp: "ぬりかべ", romaji: "nurikabe", en: "wall-kick twist", note: "Literally “plastered wall”. A Japanese nickname; the translation just describes the twist." }
+    - { jp: "でんぐり返し", romaji: "denguri-gaeshi", en: "tumbling twist", note: "Literally “somersault”. A twist that passes a piece through a one-column gap." }
+    - { jp: "伏せ", romaji: "fuse", en: "face-down twist", note: "Literally “lying face down”." }
+    - { jp: "パタパタ", romaji: "pata-pata", en: "I piece hop", note: "The sound of flapping: the I is flipped flat and upright again to get over an obstacle." }
+    - { jp: "与作 / 変態入れ", romaji: "yosaku / hentai-ire", en: "(two unusual twists)", note: "Japanese nicknames with no English equivalent; the translation describes the twists instead." }
+    - { jp: "城", romaji: "shiro", en: "castle battlements", note: "A surface that goes up and down one cell at a time." }
+    - { jp: "水色ハマリ", romaji: "mizuiro-hamari", en: "getting stuck with the T", note: "Literally “cyan trap”: a well-known way of wedging a T piece at high gravity." }
     - { jp: "回転置き", romaji: "kaiten-oki", en: "rotation placement", note: "The author’s term in the invisible-roll chapter." }
     - { jp: "見切り", romaji: "mikiri", en: "cutting your losses", note: "Deliberately making a hole in order to start a clean surface above it." }
     - { jp: "レバー", romaji: "rebā", en: "stick", note: "The arcade joystick." }
