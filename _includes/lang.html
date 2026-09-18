@@ -4,8 +4,9 @@
   falling back to English), slug (chapter slug on tip pages, else nil).
 {%- endcomment -%}
 {%- assign url_parts = page.url | split: '/' -%}
+{%- assign first_segment = url_parts[1] -%}
 {%- assign lang_code = nil -%}
-{%- if site.data.locales[url_parts[1]] -%}{%- assign lang_code = url_parts[1] -%}{%- endif -%}
+{%- if site.data.locales[first_segment] -%}{%- assign lang_code = first_segment -%}{%- endif -%}
 {%- assign ui_code = lang_code | default: 'en' -%}
 {%- assign ui = site.data.locales[ui_code] -%}
 {%- assign slug = nil -%}
