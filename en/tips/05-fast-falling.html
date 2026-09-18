@@ -14,18 +14,22 @@ layout: tip
     the paths a piece can take at 2G through 5G look like this.
   </p>
 
-  <div class="info-section">
-    <div class="example-images">
-      <img src="{{ '/assets/images/5pics/01.png' | relative_url }}" alt="Reachable paths of an I piece falling at 2G" width="119" height="239">
-      <img src="{{ '/assets/images/5pics/02.png' | relative_url }}" alt="Reachable paths of an I piece falling at 3G" width="119" height="239">
-      <img src="{{ '/assets/images/5pics/03.png' | relative_url }}" alt="Reachable paths of an I piece falling at 4G" width="119" height="239">
-      <img src="{{ '/assets/images/5pics/04.png' | relative_url }}" alt="Reachable paths of an I piece falling at 5G" width="119" height="239">
+  <div class="info-section gravity-examples">
+    <div class="gravity-example">
+      <img src="{{ '/assets/images/5pics/01.png' | relative_url }}" alt="Leftmost and rightmost paths of an I piece moved with DAS while falling at 2G" width="119" height="239">
+      <span class="gravity-label">2G</span>
     </div>
-    <div class="text example-explanation" style="text-align: center;">
-      2G&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      3G&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      4G&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      5G
+    <div class="gravity-example">
+      <img src="{{ '/assets/images/5pics/02.png' | relative_url }}" alt="Leftmost and rightmost paths of an I piece moved with DAS while falling at 3G" width="119" height="239">
+      <span class="gravity-label">3G</span>
+    </div>
+    <div class="gravity-example">
+      <img src="{{ '/assets/images/5pics/03.png' | relative_url }}" alt="Leftmost and rightmost paths of an I piece moved with DAS while falling at 4G" width="119" height="239">
+      <span class="gravity-label">4G</span>
+    </div>
+    <div class="gravity-example">
+      <img src="{{ '/assets/images/5pics/04.png' | relative_url }}" alt="Leftmost and rightmost paths of an I piece moved with DAS while falling at 5G" width="119" height="239">
+      <span class="gravity-label">5G</span>
     </div>
   </div>
 
@@ -34,17 +38,17 @@ layout: tip
         <img src="{{ '/assets/images/5pics/03.gif' | relative_url }}" alt="An L piece heading right under high gravity snags on the stack and stops short of the right edge" width="119" height="239">
      </div>
      <div class="text example-explanation">
-        Of course, the figures above assume DAS was already charged before the piece appeared.
+        Of course, the figures above assume DAS was already charged before the piece appeared.<br>
         If you charge late, or gravity is higher than you expected, you end up with the piece “snagging on the stack and not getting there.”
      </div>
   </div>
   <div class="info-section">
      <div class="example-images">
-        <img src="{{ '/assets/images/5pics/01.gif' | relative_url }}" alt="At 20G a T piece lands stem-down on a bump in the middle, leaving holes under it: the “cyan trap”" width="119" height="239">
+        <img src="{{ '/assets/images/5pics/01.gif' | relative_url }}" alt="At 20G a T piece appears stem-down in the mouth of a one-wide gap in the middle and is wedged there with a hole under its stem: the “cyan trap”" width="119" height="239">
      </div>
      <div class="text example-explanation">
         And at 20G, this happens.<br>
-        You can charge DAS before a piece appears, but there is no such thing as buffering the sideways movement itself. On its first frame a piece always appears straight below its spawn point.
+        You can charge DAS before a piece appears, but there is no such thing as buffering the sideways movement itself. On its first frame a piece always appears straight below its spawn point.<br>
         The figure on the left is a famous way of getting stuck known as the “cyan trap” (水色ハマリ, mizuiro-hamari), and once you are in it there is no way out. Rotate the T and you end up with three columns sitting over the hole, which only makes matters worse.
      </div>
   </div>
@@ -53,7 +57,7 @@ layout: tip
         <img src="{{ '/assets/images/5pics/04.gif' | relative_url }}" alt="With the middle of the stack built high, a J piece slides down the slope to the left wall" width="119" height="239">
      </div>
      <div class="text example-explanation">
-        So when gravity is high, keep the middle of the stack high and use the lock delay to slide pieces along the surface.
+        So when gravity is high, keep the middle of the stack high and use the lock delay to slide pieces along the surface.<br>
         That way, however fast pieces fall, you can take them anywhere you like.
      </div>
   </div>
@@ -65,7 +69,7 @@ layout: tip
   <h3 class="section-heading">Lock delay reset</h3>
   <div class="info-section">
     <div class="example-images">
-      <img src="{{ '/assets/images/5pics/02.gif' | relative_url }}" alt="Pieces stacked on a central peak; an L piece steps down the slope, resetting its lock delay at every step" width="119" height="239">
+      <img src="{{ '/assets/images/5pics/02.gif' | relative_url }}" alt="Pieces stacked on a central peak; an L and then an I step down the slopes to the sides, resetting their lock delay at every step" width="119" height="239">
     </div>
     <div class="text example-explanation">
       Once you start sliding pieces over the stack, there is one thing you must keep in mind: “<span class="highlight">the lock delay is reset whenever the piece drops down a step</span>.”<br>

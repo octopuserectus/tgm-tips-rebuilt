@@ -161,6 +161,35 @@ img, video { max-width: 100%; height: auto; }
   color: var(--accent);
 }
 .chapter__header h1 { margin: 0; font-size: clamp(1.6rem, 4vw, 2.2rem); }
+.chapter__header { display: flex; flex-wrap: wrap; align-items: flex-end; column-gap: 1.5rem; row-gap: 0.75rem; }
+.chapter__eyebrow { flex: 0 0 100%; }
+.chapter__header h1 { flex: 1 1 auto; }
+
+.diagram-size { display: flex; align-items: center; gap: 0.25rem; font-size: 0.8rem; color: var(--muted); }
+.diagram-size span { margin-right: 0.35rem; }
+.diagram-size button {
+  padding: 0.2rem 0.6rem;
+  font: inherit; font-weight: 600; color: var(--muted);
+  background: transparent; border: 1px solid var(--border); border-radius: 6px;
+  cursor: pointer;
+}
+.diagram-size button:hover { color: var(--text-strong); border-color: var(--muted); }
+.diagram-size button[aria-pressed="true"] { color: var(--text-strong); background: var(--surface-2); border-color: var(--muted); }
+
+.page-toc {
+  margin: 0 0 2rem; padding: 0.9rem 1.1rem;
+  max-width: 48rem;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  font-size: 0.925rem;
+}
+.page-toc h2 {
+  margin: 0 0 0.4rem;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted);
+}
+.page-toc ol { margin: 0; padding-left: 1.4rem; columns: 2 16rem; column-gap: 2rem; }
+.page-toc li { break-inside: avoid; padding: 0.1rem 0; }
+.page-toc a { text-decoration: none; }
+.page-toc a:hover { text-decoration: underline; }
 
 .section-heading {
   margin: 2.5rem 0 1rem; padding-bottom: 0.35rem;
@@ -171,6 +200,9 @@ img, video { max-width: 100%; height: auto; }
 .section-heading.red-heading { color: var(--piece-i); }
 
 .tip-content p { margin: 0 0 1rem; }
+// Keep running text to a comfortable measure; diagrams and tables may use the full width.
+.tip-content > p, .tip-content > ul, .tip-content > ol, .intro-text { max-width: 48rem; }
+.section-heading { scroll-margin-top: 1rem; }
 .tip-content ul, .tip-content ol { padding-left: 1.4rem; }
 .small-text { font-size: 1rem; }
 .japanese-text { color: var(--muted); }
@@ -275,6 +307,16 @@ img, video { max-width: 100%; height: auto; }
   color: #5271ff; font-size: 1.5rem; font-weight: 800; letter-spacing: 0.05em;
   text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 }
+
+// 2x diagrams (the switch in the chapter header)
+.diagrams-2x .tip-content img[width="119"] { width: 238px; }
+.diagrams-2x .tip-content img[width="31"],
+.diagrams-2x .example-images .icon-group img,
+.diagrams-2x .small-rotation-img { width: 62px; height: 62px; }
+.diagrams-2x .tip-content img[width="41"] { width: 82px; }
+.diagrams-2x .gravity-example, .diagrams-2x .gravity-column { width: 238px; }
+.diagrams-2x .sync-step-img-arrow { flex-basis: 238px; }
+.diagrams-2x .video video { max-width: 640px; }
 
 // Video
 .video { margin: 0; }
@@ -385,6 +427,16 @@ img, video { max-width: 100%; height: auto; }
 .error-page { text-align: center; padding-top: 2rem; }
 .error-page h1 { margin: 0; font-size: 4rem; color: var(--piece-i); }
 
+.site-footer {
+  display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem;
+  margin-top: 3rem; padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+.site-footer a { color: var(--muted); text-decoration: none; }
+.site-footer a:hover { color: var(--link-hover); text-decoration: underline; }
+.no-sidebar .site-footer { justify-content: center; }
+
 // ---------------------------------------------------------------------------
 // Small screens
 // ---------------------------------------------------------------------------
@@ -404,6 +456,10 @@ img, video { max-width: 100%; height: auto; }
   .lesson-nav { grid-template-columns: 1fr 1fr; }
   .lesson-nav .nav-item.top { grid-column: 1 / -1; grid-row: 2; }
   .sync-step { flex-direction: column; align-items: flex-start; }
+
+  // Wide tables scroll inside themselves instead of stretching the page.
+  .tip-content table { display: block; max-width: 100%; overflow-x: auto; background: transparent; }
+  .tip-content table td, .tip-content table tbody th { background: var(--surface); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -412,6 +468,6 @@ img, video { max-width: 100%; height: auto; }
 
 @media print {
   body { display: block; background: #fff; color: #000; }
-  .sidebar, .nav-toggle, .nav-overlay, .lesson-nav, .skip-link { display: none !important; }
+  .sidebar, .nav-toggle, .nav-overlay, .lesson-nav, .skip-link, .diagram-size, .site-footer { display: none !important; }
   .info-section { break-inside: avoid; }
 }

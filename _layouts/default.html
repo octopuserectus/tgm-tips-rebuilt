@@ -10,6 +10,13 @@
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#0f1420">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:site_name" content="{{ site.title | escape }}">
+  <meta property="og:title" content="{{ page.title | default: site.title | escape }}">
+  <meta property="og:description" content="{{ page.description | default: site.description | escape }}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ '/assets/images/title/tgm1_title.png' | absolute_url }}">
+  <meta name="twitter:card" content="summary">
   {%- if slug %}
   {%- for locale in site.data.locales %}
   {%- if locale[1].primary %}
@@ -22,6 +29,10 @@
   <link rel="icon" href="{{ '/assets/images/icons/icon.svg' | relative_url }}" type="image/svg+xml">
   <link rel="apple-touch-icon" href="{{ '/assets/images/icons/apple-touch-icon.png' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+  <script>
+    // Apply the saved diagram size before first paint.
+    try { if (localStorage.getItem('diagrams') === '2x') document.documentElement.classList.add('diagrams-2x'); } catch (e) {}
+  </script>
 </head>
 
 <body{% if page.layout == 'landing' %} class="no-sidebar"{% endif %}>
@@ -40,6 +51,13 @@
 
   <main class="main-content" id="content">
     {{ content }}
+
+    <footer class="site-footer">
+      <a href="https://web.archive.org/web/http://www13.plala.or.jp/TETRiS_TGM/kouza/" rel="noopener noreferrer">{{ ui.footer_original }}</a>
+      <a href="https://tgm.tips/" rel="noopener noreferrer">tgm.tips</a>
+      <a href="https://tetris.wiki/" rel="noopener noreferrer">tetris.wiki</a>
+      <a href="https://github.com/octopuserectus/tgm-tips-rebuilt" rel="noopener noreferrer">{{ ui.footer_source }}</a>
+    </footer>
   </main>
 
   <script>
@@ -67,6 +85,52 @@
         var current = sidebar.querySelector('[aria-current="page"]');
         if (current) sidebar.scrollTop = current.offsetTop - sidebar.clientHeight / 2;
       }
+
+      // Number the sections so they can be linked to (the ids are the same in every
+      // language), and list them at the top of longer chapters.
+      var headings = document.querySelectorAll('.tip-content .section-heading');
+      var toc = document.getElementById('page-toc');
+      for (var i = 0; i < headings.length; i++) {
+        headings[i].id = 'section-' + (i + 1);
+        if (toc) {
+          var item = document.createElement('li');
+          var link = document.createElement('a');
+          link.href = '#' + headings[i].id;
+          link.textContent = headings[i].textContent;
+          item.appendChild(link);
+          toc.querySelector('ol').appendChild(item);
+        }
+      }
+      if (toc && headings.length > 2) toc.hidden = false;
+      if (location.hash) {
+        var target = document.getElementById(location.hash.slice(1));
+        if (target) target.scrollIntoView();
+      }
+
+      // Switching language keeps your place in the chapter.
+      var langLinks = document.querySelectorAll('.site-nav__langs a');
+      for (var j = 0; j < langLinks.length; j++) {
+        langLinks[j].addEventListener('click', function () {
+          this.href = this.href.split('#')[0] + location.hash;
+        });
+      }
+
+      // Diagram size switch (1x / 2x), remembered between visits.
+      var sizeButtons = document.querySelectorAll('.diagram-size button');
+      function showSize() {
+        var big = document.documentElement.classList.contains('diagrams-2x');
+        for (var k = 0; k < sizeButtons.length; k++) {
+          sizeButtons[k].setAttribute('aria-pressed', (sizeButtons[k].value === '2x') === big ? 'true' : 'false');
+        }
+      }
+      for (var k = 0; k < sizeButtons.length; k++) {
+        sizeButtons[k].addEventListener('click', function () {
+          document.documentElement.classList.toggle('diagrams-2x', this.value === '2x');
+          try { localStorage.setItem('diagrams', this.value); } catch (e) {}
+          showSize();
+        });
+      }
+      showSize();
 
       // Esc closes the menu; left/right arrows turn the page.
       document.addEventListener('keydown', function (event) {

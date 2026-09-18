@@ -31,7 +31,17 @@ layout: default
   <header class="chapter__header">
     <p class="chapter__eyebrow">{{ ui.guides[guide] }} · {{ ui.chapter_prefix }}{{ number }}{{ ui.chapter_suffix }}</p>
     <h1>{{ page.title | escape }}</h1>
+    <div class="diagram-size" role="group" aria-label="{{ ui.diagram_size }}">
+      <span>{{ ui.diagram_size }}</span>
+      <button type="button" value="1x" aria-pressed="true">1×</button>
+      <button type="button" value="2x" aria-pressed="false">2×</button>
+    </div>
   </header>
+
+  <nav class="page-toc" id="page-toc" aria-label="{{ ui.on_this_page }}" hidden>
+    <h2>{{ ui.on_this_page }}</h2>
+    <ol></ol>
+  </nav>
 
   {{ content }}
 </article>

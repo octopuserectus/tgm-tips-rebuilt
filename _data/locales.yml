@@ -19,6 +19,10 @@ en:
   menu: "Menu"
   skip: "Skip to content"
   same_page_in: "This page in"
+  on_this_page: "On this page"
+  diagram_size: "Diagram size"
+  footer_original: "Original Japanese guide (Web Archive)"
+  footer_source: "Site source on GitHub"
 
 en-vd:
   label: "English (villadelfia)"
@@ -36,6 +40,10 @@ en-vd:
   menu: "Menu"
   skip: "Skip to content"
   same_page_in: "This page in"
+  on_this_page: "On this page"
+  diagram_size: "Diagram size"
+  footer_original: "Original Japanese guide (Web Archive)"
+  footer_source: "Site source on GitHub"
 
 jp:
   label: "日本語"
@@ -54,3 +62,7 @@ jp:
   menu: "メニュー"
   skip: "本文へ"
   same_page_in: "他の言語で読む"
+  on_this_page: "このページの内容"
+  diagram_size: "図の大きさ"
+  footer_original: "オリジナルの講座（Web Archive）"
+  footer_source: "GitHub"
